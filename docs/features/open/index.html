@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>作品を開き、拡張を準備する — 機能ガイド — TurboWarp-Plus-Editor</title>
+<meta name="description" content="TurboWarp Plusで作品を新しく作る・SB3を開く・拡張を追加して実行条件を確認する・読み込みを診断する方法。">
+<link rel="stylesheet" href="../guide.css">
+<link rel="alternate" hreflang="en" href="index.en.html">
+</head>
+<body>
+<header><a href="https://kubohiroya.github.io/turbowarp-plus-editor/">TurboWarp-Plus-Editor</a><a href="https://github.com/kubohiroya/turbowarp-plus-editor">GitHub</a></header>
+<main>
+<p class="breadcrumb"><a href="../">機能ガイド</a> › 1. 作品を開き、拡張を準備する · <a href="index.en.html" hreflang="en" lang="en">English</a></p>
+<p class="eyebrow">機能ガイド 1/14 · 2026年11月27日更新</p>
+<h1>作品を開き、拡張を準備する</h1>
+<p class="lead">新しい作品を始め、手元のSB3を開き、公式カタログから拡張を追加します。拡張を含む作品は、取得元と実行条件を確かめてから開きます。</p>
+<nav class="topic-nav" aria-label="機能ガイドの分野">
+<ul>
+<li><a href="../open/" aria-current="page">作品を開く</a></li>
+<li><a href="../screen/">メニューと画面</a></li>
+<li><a href="../sprites/">スプライトとステージ</a></li>
+<li><a href="../stage/">実行画面</a></li>
+<li><a href="../workspace/">作業領域</a></li>
+<li><a href="../blocks/">ブロック</a></li>
+<li><a href="../search/">検索と置換</a></li>
+<li><a href="../documents/">文書と拡張データ</a></li>
+<li><a href="../reuse/">再利用</a></li>
+<li><a href="../save/">保存と配布</a></li>
+<li><a href="../git/">Gitと作品フォルダ</a></li>
+<li><a href="../github/">GitHubで開発</a></li>
+<li><a href="../testing/">テスト</a></li>
+<li><a href="../editor-guide/">エディター案内</a></li>
+</ul>
+<p><a href="../feature-map/">機能索引と利用条件</a></p>
+</nav>
+<nav class="page-toc" aria-label="このページの目次">
+<ol>
+<li><a href="#start">1.1 作品を新しく作る・SB3を開く</a></li>
+<li><a href="#loading">1.2 読み込みの経過を確かめる</a></li>
+<li><a href="#extensions">1.3 カタログから拡張を追加する</a></li>
+<li><a href="#review">1.4 作品を開く前に拡張の実行条件を確認する</a></li>
+<li><a href="#retry">1.5 拡張の取得に失敗したとき</a></li>
+<li><a href="#project-diagnostics">1.6 作品が開けないときに診断を読む</a></li>
+<li><a href="#project-catalog">1.7 プロジェクト一覧で作品を管理する</a></li>
+</ol>
+</nav>
+
+<section id="start">
+
+<h2>1.1 作品を新しく作る・SB3を開く</h2>
+
+<p>公開版（GitHub Pages）の<a href="https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=ja">エディターを日本語で開く</a>と、新しい作品の状態で始まります。作業中に新しい作品へ切り替えるには、「ファイル」→「新しいプロジェクトを作成…」を選び、作成先を選んで「作成」を押します。</p>
+<div class="table-scroll" role="region" aria-label="新しいプロジェクトの作成先" tabindex="0">
+<table><caption>選べる作成先</caption><thead><tr><th scope="col">作成先</th><th scope="col">作られるもの</th></tr></thead><tbody>
+<tr><th scope="row">メモリ上の SB3（既定）</th><td>初期の作品。保存するまでどこにも書かない。これまでの「新しいプロジェクトを作成」と同じ</td></tr>
+<tr><th scope="row">ブラウザー内のプロジェクトフォルダ</th><td>ブラウザー内に作品名のフォルダを作り、初期の作品を書いて開く</td></tr>
+<tr><th scope="row">手元のプロジェクトフォルダ</th><td>選んだ空のフォルダに初期の作品を書いて開く。フォルダを選べるChromeやEdgeなどで使える</td></tr>
+<tr><th scope="row">Git のリモートリポジトリ（GitHub）</th><td>GitHubに新しいリポジトリを作り、初期の作品を最初のコミットとして送る。作業用の写しを手元のフォルダかブラウザー内に置いて開く。GitHub接続付きのエディターで使える</td></tr>
+</tbody></table></div>
+<p>フォルダやリポジトリを選んだときは、作品名を入力します。作品名が<a href="../save/#project-properties">保存用の名前</a>の規則（英数字と「-」「_」「.」）に収まらないときは、フォルダやリポジトリに使う保存用の名前も入力します。</p>
+<figure class="guide-detail"><a href="../images/new-project-dialog.png"><img src="../images/new-project-dialog.png" width="512" height="290" alt="「新しいプロジェクトを作成」ダイアログ。作成先に、メモリ上の SB3（選択中）、ブラウザー内のプロジェクトフォルダ、手元のプロジェクトフォルダが並び、その下に作品名の欄とキャンセル・作成のボタンがある。" loading="lazy"></a><figcaption>「ファイル」→「新しいプロジェクトを作成…」。GitHub接続付きのエディターでは、作成先に「Git のリモートリポジトリ」も並びます。</figcaption></figure>
+<p>手元の作品は「ファイル」→「SB3ファイルを開く…」から開きます。Scratch 3で保存したSB3も、標準TurboWarpで保存したSB3も開けます。旧形式の .sb、.sb2 も選べますが、上書き保存はできないため、編集後は「プロジェクトを保存」で保存先を選んで .sb3 にします。SB3をsb3-toolchain（作品をファイル単位に展開するツール）で展開したフォルダを、このガイドでは「作品フォルダ」と呼びます（画面では「プロジェクトフォルダ」と表示）。作品フォルダは「フォルダを開く…」から、ブラウザーに保存したフォルダは「ブラウザーに保存したフォルダを開く…」から開きます（<a href="../git/#project-folder">作品フォルダを開いて保存する</a>）。GitHub接続付きのエディターでは、GitHubにある作品のリポジトリを「Git のリモートリポジトリを開く…」で開けます（<a href="../git/#open-remote">Gitのリモートリポジトリを開く</a>）。</p>
+<p>「SB3ファイルを開く…」「プロジェクト一覧…」「SB3ファイルのURLを開く…」「フォルダを開く…」「ブラウザーに保存したフォルダを開く…」「Git のリモートリポジトリを開く…」を選ぶと、新しいタブが開き、そのタブで別の作品を開きます。元のタブは、編集中の作品・元に戻す履歴・実行状態ごとそのまま残ります。フォルダを開くときは、新しいタブに出る「フォルダを選ぶ」（ブラウザーに保存したフォルダでは「ブラウザーに保存したフォルダを選ぶ」）を押してフォルダを選びます。「SB3ファイルを開く…」では、元のタブでファイルを選ぶと新しいタブが開き、そのタブで作品が開きます。ブラウザーが新しいタブを止めたときは、「新しいタブで開く」を押します。</p>
+<figure><a href="../images/current-open-folder.png"><img src="../images/current-open-folder.png" width="1440" height="960" alt="エディター全体。ファイルメニューが開き、新しいプロジェクトを作成…、プロジェクト一覧…、SB3ファイルを開く…、SB3ファイルのURLを開く…、フォルダを開く…、ブラウザーに保存したフォルダを開く…、Git のリモートリポジトリを開く…、区切り線のあとにリリース…、プロジェクトを保存、プロジェクトのコピーを保存…、書き出し…、作品のプロパティ、組み込みデータ…、機能拡張…、復元ポイントが並ぶ。" loading="lazy"></a><figcaption>「ファイル」メニュー。ローカルGitのパネルは、リポジトリのあるフォルダを開いたあとに、メニューバーのブランチのボタンから開きます。<a href="../screen/#file-menu">ファイルメニューの項目</a> · <a href="../git/#local-git">ローカルGitの開き方</a></figcaption></figure>
+<p>展開後の大きさが標準の上限（64 MiB）を超える作品を開こうとすると、「大きな作品を開く」の確認が出ます。確認画面には、展開後のおおよその大きさと、メモリを大量に使ってタブが応答しなくなるおそれがあることが表示されます。「開く」を選んだときだけ、その回に限り最大256 MiBまで開きます。既定で選ばれているのは「開かない」です。作成者や入手元に心当たりのない作品は開かないでください。</p>
+
+</section>
+
+<section id="loading">
+
+<h2>1.2 読み込みの経過を確かめる</h2>
+
+<p>SB3の読み込み中は、「プロジェクトを読み込み中…」の下に現在の工程が表示され、その下に「読み込み履歴」が並びます。大きな作品や多くの拡張を含む作品で、どこに時間がかかっているかを確かめられます。</p>
+<div class="table-scroll" role="region" aria-label="読み込み中に表示される工程" tabindex="0">
+<table><caption>読み込み中に表示される工程</caption><thead><tr><th scope="col">表示</th><th scope="col">行っていること</th></tr></thead><tbody>
+<tr><th scope="row">プロジェクトの読み込みを準備中…</th><td>ファイルを受け取り、読み込みを始める</td></tr>
+<tr><th scope="row">SB3 内の作品データを確認中…</th><td>Plusの組み込みデータや拡張の保存情報を確かめる</td></tr>
+<tr><th scope="row">SB3 を検査・展開中…</th><td>ZIPの構造を検査して展開する</td></tr>
+<tr><th scope="row">プロジェクトを解析中…</th><td>作品データ（project.json）を読み取る</td></tr>
+<tr><th scope="row">画像・音声を読み込み中…</th><td>素材を読み込む。後ろに「(読み込み済みの件数/総数)」が付く</td></tr>
+<tr><th scope="row">拡張機能を読み込み中…</th><td>拡張コードを取得・照合する</td></tr>
+<tr><th scope="row">ユーザーの確認待ち…</th><td><a href="#review">拡張の確認画面</a>で選ぶのを待っている</td></tr>
+<tr><th scope="row">エディターを準備中…</th><td>読み込んだ作品を画面に表示する</td></tr>
+</tbody></table></div>
+<p>「読み込み履歴」には、完了した工程ごとに、時刻と読み込み開始からの経過秒数が並びます。まだ完了した工程がないときは「完了した工程はまだありません。」と表示されます。読み込みに失敗したときの原因は、<a href="#project-diagnostics">作品の診断</a>で確かめます。</p>
+
+</section>
+
+<section id="extensions">
+
+<h2>1.3 カタログから拡張を追加する</h2>
+
+<p>「ファイル」→「機能拡張…」を開くと、「機能拡張」ダイアログに作品で使用中の拡張が並びます。「機能拡張の追加」を押すと「機能拡張を作品に追加する」画面が開くので、上部の「TurboWarp Plus」を選びます。<a href="../screen/#layout">Scratch配置</a>では、左下の拡張ボタンからも同じ画面を開けます。</p>
+<p>Plus標準配置では、横型パレット末尾の▼から「機能拡張を追加」を選んでも、同じライブラリを直接開けます。開いたら「TurboWarp Plus」タブを選びます。</p>
+<ol><li>追加する拡張にチェックを入れます。チェックボックスのほか、拡張のアイコンを押しても選べます。その拡張が必要とする拡張も自動で選ばれます。</li><li>上部の「すべての動かし方」で、選んだ拡張を「サンドボックスの中で」動かすか「サンドボックスなしで」動かすかをまとめて選べます。</li><li>拡張コードをどこから読み込むかを「読み込み元」（「キャッシュを残す（既定）」「毎回取得する」「作品の中から」「作品の中の data: アドレスから」）で選びます。「すべての読み込み元」でまとめて設定するか、拡張ごとに設定します。読み込み元は、作品を保存するときの拡張コードの置き方も決めます。このガイドではこれを格納方式と呼びます（「機能拡張」ダイアログでも「格納方式」と表示されます。<a href="../save/#storage">拡張コードの格納方式を選ぶ</a>）。</li><li>「追加」を押します。</li></ol>
+<figure class="guide-detail"><a href="../images/extensions-dialog.png"><img src="../images/extensions-dialog.png" width="640" height="184" alt="機能拡張ダイアログ。「使用中の機能拡張はありません。」と表示され、機能拡張の追加、閉じる、格納方式を適用のボタンが並ぶ。" loading="lazy"></a><figcaption>拡張を使っていない作品で開いた「機能拡張」ダイアログ。拡張がある作品では、拡張ごとに格納方式を選ぶ欄が並びます。</figcaption></figure>
+<figure><a href="../images/catalog-current.png"><img src="../images/catalog-current.png" width="1440" height="1000" alt="機能拡張を作品に追加する画面でTurboWarp Plusを選んだところ。TurboWarp-Markdownにチェックが入っている。各行に拡張のアイコン・名前・ID・信頼の印・バージョン・配信元のURL・説明・製作者と、読み込み元の選択肢が並ぶ。" loading="lazy"></a><figcaption>拡張の追加画面で「TurboWarp-Markdown」を選んだところ。名前の横の、TurboWarp Plusのロゴに緑のチェックを重ねた印は、このエディターが信頼する拡張であることを示します。安全を保証する印ではありません。</figcaption></figure>
+<p>公式カタログに載っている拡張は、エディターが信頼済みとして扱います。作品を開くときに個別には確認せず、サンドボックスなしで動かします。拡張の説明はエディターの表示言語に合わせて表示され、提供元のWebサイト、リリース、製作者の連絡先へのリンクも開けます。カタログにないURLから追加するときは、「すべて」や「TurboWarp」にある標準の「カスタム拡張機能」を使います。</p>
+
+</section>
+
+<section id="review">
+
+<h2>1.4 作品を開く前に拡張の実行条件を確認する</h2>
+
+<p>確認が必要な拡張を含む作品を開くと、実行前に「確認: この作品は機能拡張を使います」の画面が出ます。Plus形式の拡張と通常のカスタム拡張をまとめて表示し、拡張ごとに名前・ID・取得元・SHA-256・製作者（未検証の申告）・リソース利用の申告を示します。内容を確かめてから、上部のボタンで次のどれかを選びます。</p>
+<ul><li>「すべて有効にして実行」: 一覧のすべての拡張を有効にして作品を開きます。</li><li>「実行しない」: 拡張を動かさず、作品を開くのをやめます。</li><li>「機能拡張を個別に確認」: 個別確認モードに切り替え、拡張ごとに「動かさない」「様子を見るためにサンドボックス内で動かす」「信頼してサンドボックスなしで動かす」から選びます。選び終えたら「選んだ内容で実行」を押します。モードを切り替えただけでは実行しません。</li></ul>
+<figure class="guide-detail"><a href="../images/review-dialog.png"><img src="../images/review-dialog.png" width="768" height="697" alt="作品を開く際の拡張の確認画面「確認: この作品は機能拡張を使います」。説明文の下に「実行しない」「機能拡張を個別に確認」「すべて有効にして実行」のボタンが並び、個別確認モードでBlock editor demoの行に、ID、作品の中にあること、SHA-256、製作者、リソース利用：未申告、動かし方の3つのボタンがある。「信頼してサンドボックスなしで動かす」が選ばれ、右下に「選んだ内容で実行」がある。" loading="lazy"></a><figcaption>カタログにない拡張を作品の中に含む作品（説明用に用意したもの）を開き、個別確認モードで「信頼してサンドボックスなしで動かす」を選んだ例。「選んだ内容で実行」を押すまで、拡張は実行されません。</figcaption></figure>
+<ul><li>個別確認モードでは、最初は「様子を見るためにサンドボックス内で動かす」が選ばれています。作品のすべての拡張が「サンドボックスなしが必要」と申告している場合は、最初から「信頼してサンドボックスなしで動かす」が選ばれています。</li><li>「サンドボックスなしが必要」と申告している拡張にほかの動かし方を選ぶと、警告が表示されます。</li><li>サンドボックスなしで動かす拡張を選ぶと、画面下部に注意が表示されます。「閉じる」で消しても、選んだ内容は変わりません。</li><li>「動かさない」を選んだ拡張は、コードを取得せず、読み込みません。</li><li>ZIPにまとめて配布された拡張では、SHA-256が一致したZIP内のコードから拡張名を読み取り、実行前に表示します。名前を確定できない場合は拡張のIDを表示します。</li></ul>
+<p>SHA-256で確かめるのは、コードの内容が記録されたものと一致するかどうかです。サンドボックスなしの拡張は、作品・エディター・このサイトのデータにアクセスできます。「すべて有効にして実行」や「信頼してサンドボックスなしで動かす」は、内容と提供元を確かめた信頼できるコードにだけ選びます。</p>
+
+</section>
+
+<section id="retry">
+
+<h2>1.5 拡張の取得に失敗したとき</h2>
+
+<p>拡張コードの取得を待っている間は、画面中央に待機中のダイアログが表示されます。</p>
+<ul><li>カタログの一覧の取得に失敗した場合は「再試行」で一覧を取り直します。</li><li>拡張コードの取得に失敗し、やり直せば成功する見込みがある場合だけ「もう一度試す」が表示されます。選んだ格納方式はそのまま保たれます。</li><li>ハッシュの不一致や配信元の404など、やり直しても結果が変わらない失敗では、表示された理由を確認します。</li></ul>
+<p>失敗した回の詳しい記録は<a href="#project-diagnostics">作品の診断</a>で確認できます。</p>
+
+</section>
+
+<section id="project-diagnostics">
+
+<h2>1.6 作品が開けないときに診断を読む</h2>
+
+<p>「ファイル」→「作品のプロパティ」を開き、右下の「作品の診断…」を押すと、作品の読み込み結果を確かめられます。Plus拡張については、取得元・実行モード・コード照合に使うSHA-256と、検証・許可・再試行・失敗などのイベントが表示されます。</p>
+<figure><a href="../images/project-diagnostics.png"><img src="../images/project-diagnostics.png" width="1440" height="1000" alt="作品の診断画面。読み込みの記録で読み込み完了の回を選び、説明用の拡張plusfixtureを展開して、取得元extensions/plusfixture.js・実行モードunsandboxed・SHA-256と、内容を検証済み・実行を許可済み・読み込み完了のイベントを表示している。" loading="lazy"></a><figcaption>説明用の拡張を含む作品を実際に開き、拡張名を押して詳細を展開した例。イベントを押すと、その記録の詳細も展開できます。記録を見るだけでは、作品や実行許可は変わりません。</figcaption></figure>
+<ol><li>上部の「読み込みの記録」で、確認したい回を選びます。直近5回を保持し、各回の最新50件のイベントを表示します。</li><li>拡張やイベントの行を展開し、取得元・検証結果・理由コード・再試行回数などを確認します。失敗した回も、次の作品を開いた後で選べます。</li><li>「診断をコピー」で、選んだ回の記録をコピーします。クリップボードへ書き込めない環境では、選択してコピーできるテキストを表示します。</li><li>「閉じる」またはEscでエディターへ戻ります。診断を開閉しても作品データは変わりません。</li></ol>
+<h3>失敗の画面から診断を開く</h3>
+<p>読み込みに失敗したときは、「作品を開けませんでした」の画面に切り替わります。この画面の「詳細ログを表示」を押すと、その回の診断が開きます。この画面を離れたあとも、直近5回に含まれる記録は作品のプロパティの「作品の診断…」から開けます。通信エラーでやり直せる場合は、<a href="#retry">拡張の取得に失敗したとき</a>に表示される「もう一度試す」を使います。</p>
+<figure><a href="../images/project-diagnostics-failure.png"><img src="../images/project-diagnostics-failure.png" width="1440" height="1000" alt="ハッシュが一致しないテスト作品の診断。読み込み失敗・キャンセルの記録を選び、読み込みを拒否したイベントを展開して、理由コードDIGEST_MISMATCHを含む詳細を表示している。背後に「作品を開けませんでした」の画面がある。" loading="lazy"></a><figcaption>テスト作品のSHA-256を意図的に不一致にして、実際の拒否を記録した画面。「作品を開けませんでした」の画面の「詳細ログを表示」から開いています。失敗の理由を確かめるためにコードを実行し直す必要はありません。</figcaption></figure>
+<div class="flow" role="img" aria-label="作品読み込み時の検証と実行許可の確認から読み込み結果を記録し、作品のプロパティから開く診断で回を選択して確認またはコピー。失敗時の詳細ログ表示からも同じ診断へ移動する。"><div>作品を開く<br><small>検証・許可の確認</small></div><span>→</span><div>読み込み結果を記録<br><small>成功・再試行・失敗</small></div><span>→</span><div>作品の診断<br><small>回を選択・詳細・コピー</small></div></div>
+<h3>診断の記録が残る範囲</h3>
+<p>記録はエディターを開いている間だけ保持され、ページを再読み込みすると消えます。コピーした記録には作品名、取得URL、失敗理由などが含まれます。記録を見ても実行の許可は変わりません。許可は<a href="#review">作品を開く前の確認画面</a>で選びます。</p>
+
+</section>
+<section id="project-catalog">
+<h2>1.7 プロジェクト一覧で作品を管理する</h2>
+
+<p>「ファイル」→「プロジェクト一覧…」を開くと、登録したSB3、ブラウザー内・手元の作品フォルダ、リモートリポジトリを同じ一覧から開けます。「並び順」で最終利用日時・名前・保存場所と、昇順・降順を選びます。作品の保存場所も確認してから操作してください。</p>
+<div class="table-scroll" role="region" aria-label="プロジェクト一覧の操作" tabindex="0"><table><thead><tr><th scope="col">操作</th><th scope="col">変わるもの</th></tr></thead><tbody>
+<tr><th scope="row">プロジェクト名の変更</th><td>作品を開き、作品情報の名前を変更して保存します。保存先のファイル・フォルダ名とは別です。</td></tr>
+<tr><th scope="row">保存先の名前の変更</th><td>保存先のファイル・フォルダ名を変更します。両方を変更できる場合は「プロジェクト名と保存先の名前を揃える」を選べます。</td></tr>
+<tr><th scope="row">一覧から除外</th><td>一覧の参照だけを消します。保存データは残るので、後から保存先を選んで開き直せます。</td></tr>
+<tr><th scope="row">保存データを削除</th><td>確認後、保存先のファイルやフォルダ自体を消します。一覧を整理するだけなら「一覧から除外」を使います。</td></tr>
+</tbody></table></div>
+<p>使えない操作は無効になり、理由が表示されます。手元の保存先を変更・削除できるかはブラウザーのファイル操作機能とアクセス権に依存します。編集中の作品の保存データを削除するには、先に別の作品を開きます。リモートリポジトリの登録解除は「一覧から除外」で行います。GitHub上のリポジトリ名変更・削除をこの一覧から行う機能はありません。</p>
+<p>ブラウザー内の作品は、そのブラウザーの保存領域にあります。一覧を別の端末へ持ち出すだけでは作品は移りません。共有・バックアップには<a href="../save/#save">SB3への保存</a>や<a href="../git/">Gitでの管理</a>を使ってください。</p>
+</section>
+<nav class="pager" aria-label="前後のページ">
+<a class="prev" href="../"><small>前のページ</small>機能ガイドの目次</a>
+<a class="next" href="../screen/"><small>次のページ</small>2. 画面の構成とメニュー</a>
+</nav>
+</main>
+<footer><a href="../../">トップへ</a> · <a href="https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=ja">エディターを開く</a><p>独立したTurboWarpフォーク。画面・仕様は撮影時点のものです。現在の配信元は<a href="https://kubohiroya.github.io/turbowarp-plus-editor/build-info.json">配信バージョン</a>で確認できます。</p></footer>
+</body></html>

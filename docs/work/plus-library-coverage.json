@@ -1,0 +1,538 @@
+{
+  "chapters": 56,
+  "topics": 7,
+  "recommended": [
+    1,
+    6,
+    7,
+    19,
+    24,
+    36,
+    45,
+    53
+  ],
+  "totalDialogueSeconds": 1226,
+  "coverage": [
+    {
+      "chapter": 1,
+      "title": "こんな場面で助かる",
+      "references": [
+        "search/#project-search",
+        "workspace/#split-panes",
+        "git/#block-diff"
+      ],
+      "mode": "Guideで体験"
+    },
+    {
+      "chapter": 2,
+      "title": "Scratchの作品を開く",
+      "references": [
+        "open/#start",
+        "open/#loading"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 3,
+      "title": "画面の地図を覚える",
+      "references": [
+        "screen/#menu-bar",
+        "screen/#plus-menu",
+        "screen/#file-menu",
+        "screen/#edit-menu",
+        "screen/#extension-controls",
+        "screen/#layout"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 4,
+      "title": "スプライトをすぐ見つける",
+      "references": [
+        "sprites/#sprite-drawer",
+        "sprites/#sprite-tabs",
+        "sprites/#backdrop"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 5,
+      "title": "実行画面を好きな場所へ",
+      "references": [
+        "stage/#stage-open",
+        "stage/#stage-controls",
+        "stage/#stage-menu",
+        "stage/#dock",
+        "stage/#ime-keys"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 6,
+      "title": "見比べながら作る",
+      "references": [
+        "workspace/#splitter",
+        "workspace/#split-panes",
+        "workspace/#multi-edit-view",
+        "workspace/#panel-popout",
+        "workspace/#detached-panels",
+        "workspace/#workspace-restore"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 7,
+      "title": "欲しいブロックを検索",
+      "references": [
+        "blocks/#palette",
+        "blocks/#palette-search"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 8,
+      "title": "パレットを使いやすくする",
+      "references": [
+        "blocks/#palette-size",
+        "blocks/#palette-order",
+        "blocks/#palette-popout",
+        "blocks/#palette-groups"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 9,
+      "title": "必要なグループだけ表示",
+      "references": [
+        "blocks/#palette-groups"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 10,
+      "title": "長いセリフと数値を入力",
+      "references": [
+        "blocks/#argument-text",
+        "blocks/#palette"
+      ],
+      "mode": "Guideで体験"
+    },
+    {
+      "chapter": 11,
+      "title": "スクリプトをまとめて選ぶ",
+      "references": [
+        "blocks/#script-selection",
+        "blocks/#delete-preview"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 12,
+      "title": "別のスプライトにコピー",
+      "references": [
+        "blocks/#script-selection",
+        "blocks/#arrange"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 13,
+      "title": "別作品へコードや背景を渡す",
+      "references": [
+        "reuse/#transfer",
+        "sprites/#backdrop"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 14,
+      "title": "間違えた編集を取り消す",
+      "references": [
+        "screen/#target-undo",
+        "screen/#sprite-restore",
+        "blocks/#delete-preview"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 15,
+      "title": "長いコードを見渡す",
+      "references": [
+        "blocks/#minimap",
+        "blocks/#arrange"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 16,
+      "title": "コードとコメントを整える",
+      "references": [
+        "blocks/#clean-up-comments",
+        "blocks/#arrange"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 17,
+      "title": "処理の入口を一覧する",
+      "references": [
+        "sprites/#functions"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 18,
+      "title": "一つのスクリプトに集中",
+      "references": [
+        "sprites/#functions",
+        "blocks/#context-menu"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 19,
+      "title": "関数のつながりを見る",
+      "references": [
+        "sprites/#functions",
+        "blocks/#context-menu"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 20,
+      "title": "メッセージの行き先を探す",
+      "references": [
+        "sprites/#messages"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 21,
+      "title": "変数とリストの値を見る",
+      "references": [
+        "sprites/#variable-pane"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 22,
+      "title": "変数やリストを統合する",
+      "references": [
+        "sprites/#variable-merge",
+        "search/#search-scope"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 23,
+      "title": "変数を共有する範囲を変える",
+      "references": [
+        "sprites/#variable-merge"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 24,
+      "title": "作品全体から探す",
+      "references": [
+        "search/#project-search",
+        "search/#search-scope"
+      ],
+      "mode": "Guideで体験"
+    },
+    {
+      "chapter": 25,
+      "title": "直す場所だけ置換する",
+      "references": [
+        "search/#replace"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 26,
+      "title": "絵と音を並べて編集",
+      "references": [
+        "sprites/#media-panes",
+        "workspace/#split-panes"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 27,
+      "title": "文字にWebフォントを使う",
+      "references": [
+        "sprites/#web-fonts",
+        "save/#packager"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 28,
+      "title": "用意された素材を取り込む",
+      "references": [
+        "reuse/#bundle-assets",
+        "sprites/#backdrop"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 29,
+      "title": "カタログから拡張を追加",
+      "references": [
+        "open/#extensions",
+        "feature-map/#catalog"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 30,
+      "title": "拡張の確認と診断を読む",
+      "references": [
+        "open/#review",
+        "open/#retry",
+        "open/#project-diagnostics"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 31,
+      "title": "フォームで複雑な値を編集",
+      "references": [
+        "documents/#forms"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 32,
+      "title": "文書とコードを並べて直す",
+      "references": [
+        "documents/#documents",
+        "documents/#yaml-tabs"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 33,
+      "title": "素材と場面をプレビュー",
+      "references": [
+        "documents/#asset-preview",
+        "documents/#runtime"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 34,
+      "title": "動かない理由を調べる",
+      "references": [
+        "screen/#extension-controls"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 35,
+      "title": "期待する動きをテストにする",
+      "references": [
+        "testing/#prepare"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 36,
+      "title": "テスト失敗からコードへ戻る",
+      "references": [
+        "testing/#run",
+        "testing/#results",
+        "testing/#isolation",
+        "testing/#workflow"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 37,
+      "title": "保存とコピーを使い分ける",
+      "references": [
+        "save/#save",
+        "screen/#file-menu"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 38,
+      "title": "少し前の状態へ戻る",
+      "references": [
+        "save/#restore-points",
+        "git/#local-git"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 39,
+      "title": "作品に情報を添える",
+      "references": [
+        "save/#project-properties",
+        "save/#project-uri"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 40,
+      "title": "作品に入れるデータを選ぶ",
+      "references": [
+        "save/#storage",
+        "save/#payload-formats"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 41,
+      "title": "作品をSB3やHTMLで配る",
+      "references": [
+        "save/#save",
+        "save/#packager"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 42,
+      "title": "作品一覧を整理する",
+      "references": [
+        "open/#project-catalog"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 43,
+      "title": "作品をフォルダで管理",
+      "references": [
+        "git/#sb3-toolchain",
+        "git/#project-folder",
+        "github/#migrate"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 44,
+      "title": "フォルダと外部編集を見る",
+      "references": [
+        "git/#project-folder"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 45,
+      "title": "変更をブロックの差分で読む",
+      "references": [
+        "git/#block-diff",
+        "git/#local-git"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 46,
+      "title": "意味のある変更を残す",
+      "references": [
+        "git/#local-git",
+        "github/#edit",
+        "github/#commit"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 47,
+      "title": "別のアイデアを試す",
+      "references": [
+        "github/#flow",
+        "github/#issue",
+        "github/#branch",
+        "git/#local-git"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 48,
+      "title": "GitHubへ作品を持っていく",
+      "references": [
+        "github/#migrate",
+        "git/#github-sync",
+        "git/#open-remote"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 49,
+      "title": "手元とGitHubを同期する",
+      "references": [
+        "git/#github-sync",
+        "github/#push"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 50,
+      "title": "変更を見てもらう",
+      "references": [
+        "github/#pull-request",
+        "git/#pull-request-review"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 51,
+      "title": "確認して変更を取り込む",
+      "references": [
+        "github/#merge",
+        "github/#trouble"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 52,
+      "title": "作品の版を公開する",
+      "references": [
+        "github/#release",
+        "github/#trouble",
+        "save/#packager"
+      ],
+      "mode": "操作例で確認"
+    },
+    {
+      "chapter": 53,
+      "title": "案内役がエディターに現れる",
+      "references": [
+        "editor-guide/#try",
+        "editor-guide/#targets"
+      ],
+      "mode": "Guideで体験"
+    },
+    {
+      "chapter": 54,
+      "title": "案内付きの作品を作る",
+      "references": [
+        "editor-guide/#targets",
+        "editor-guide/#blocks",
+        "editor-guide/#results",
+        "editor-guide/#editing"
+      ],
+      "mode": "Guideで体験"
+    },
+    {
+      "chapter": 55,
+      "title": "AIに相談する入口を作る",
+      "references": [
+        "screen/#ai-agents",
+        "feature-map/#availability"
+      ],
+      "mode": "画面で試す"
+    },
+    {
+      "chapter": 56,
+      "title": "便利なアドオンを見つける",
+      "references": [
+        "screen/#plus-menu",
+        "feature-map/#addons",
+        "feature-map/#catalog"
+      ],
+      "mode": "画面で試す"
+    }
+  ]
+}

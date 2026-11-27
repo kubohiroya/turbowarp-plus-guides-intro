@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>スプライトでエディターの操作を案内する — 機能ガイド — TurboWarp-Plus-Editor</title>
+<meta name="description" content="マスコットをステージの外へ出し、エディターの操作場所を示して、実操作を待つ教材を作れます。">
+<link rel="stylesheet" href="../guide.css">
+<link rel="alternate" hreflang="en" href="index.en.html">
+</head><body>
+<header><a href="https://kubohiroya.github.io/turbowarp-plus-editor/">TurboWarp-Plus-Editor</a><a href="https://github.com/kubohiroya/turbowarp-plus-editor">GitHub</a></header>
+<main>
+<p class="breadcrumb"><a href="../">機能ガイド</a> › 14. スプライトでエディターの操作を案内する · <a href="index.en.html" hreflang="en" lang="en">English</a></p>
+<p class="eyebrow">機能ガイド 14/14 · 2026年11月27日更新</p>
+<h1>スプライトでエディターの操作を案内する</h1><p class="lead">マスコットをステージの外へ出し、エディターの操作場所を示して、実操作を待つ教材を作れます。</p>
+<nav class="topic-nav" aria-label="機能ガイドの分野">
+<ul>
+<li><a href="../open/">作品を開く</a></li>
+<li><a href="../screen/">メニューと画面</a></li>
+<li><a href="../sprites/">スプライトとステージ</a></li>
+<li><a href="../stage/">実行画面</a></li>
+<li><a href="../workspace/">作業領域</a></li>
+<li><a href="../blocks/">ブロック</a></li>
+<li><a href="../search/">検索と置換</a></li>
+<li><a href="../documents/">文書と拡張データ</a></li>
+<li><a href="../reuse/">再利用</a></li>
+<li><a href="../save/">保存と配布</a></li>
+<li><a href="../git/">Gitと作品フォルダ</a></li>
+<li><a href="../github/">GitHubで開発</a></li>
+<li><a href="../testing/">テスト</a></li>
+<li><a href="../editor-guide/" aria-current="page">エディター案内</a></li>
+</ul>
+<p><a href="../feature-map/">機能索引と利用条件</a></p>
+</nav>
+<nav class="page-toc" aria-label="このページの目次"><ol><li><a href="#try">14.1 ガイド付き作品を開いて試す</a></li>
+<li><a href="#targets">14.2 座標の代わりに場所の名前を選ぶ</a></li>
+<li><a href="#blocks">14.3 案内を表示し、操作を待つ</a></li>
+<li><a href="#results">14.4 完了・中断・利用不可を分けて場面を進める</a></li>
+<li><a href="#editing">14.5 編集・デバッガー・保存・Gitと併用する</a></li></ol></nav>
+<section id="try"><h2>14.1 ガイド付き作品を開いて試す</h2>
+
+<p>組み込み拡張「エディター案内」は、作品からエディターの操作場所を示す機能です。ガイド付き作品を開くと、その作品が案内を呼び出したときに表示します。エディターを開いただけで、ツアーが自動的に始まる機能ではありません。</p>
+<ol><li><a href="../samples/editor-guide.sb3" download>最小サンプルSB3</a>を保存し、Plus Editorの「ファイル」→「SB3ファイルを開く…」から開きます。</li><li>実行画面が見えない場合は「実行画面の開き方」から「引出しで表示」を選びます。緑の旗を押すと、案内役がステージの外の「作品全体の検索」のそばに現れます。案内に従って検索欄をクリックすると、案内が終わります。</li><li>ステージの余白をクリックして文字入力欄からフォーカスを外し、コード画面を表示したままGキーを押すと、コードの変更を待つ別の案内を試せます。練習用の「1秒待つ」の値を変えると終了します。</li></ol>
+<p>このサンプルには、案内待ちの結果を受け取る処理と、独立して進む「時計」があります。「エディター案内」のブロックを変更して、自分の教材の入口にできます。<a href="../samples/editor-guide/project.json">作品データ</a>・<a href="../samples/editor-guide/mascot.svg">オリジナルの案内役SVG</a>も参照できます（<a href="../samples/NOTICE.txt">サンプルの注記</a>）。この組み込み拡張に対応するPlus Editorで使用してください。</p>
+<figure><a href="../images/editor-guide-search.png"><img src="../images/editor-guide-search.png" width="1700" height="1100" alt="ステージ外の検索欄を案内するサンプル。公開版と同じ固定Editor（1558b6c）の日本語UIで確認。" loading="lazy"></a><figcaption>ステージ外の検索欄を案内するサンプル。公開版と同じ固定Editor（1558b6c）の日本語UIで確認。</figcaption></figure>
+</section>
+<section id="targets"><h2>14.2 座標の代わりに場所の名前を選ぶ</h2>
+
+<p>対象には論理名を使います。ピクセル座標やCSSセレクターを作品に埋め込む必要はありません。任意の場所の名前を作品側で新しく宣言できるわけではなく、EditorのGuideホストが登録した場所から選びます。</p>
+<div class="table-scroll" role="region" aria-label="案内対象の論理名" tabindex="0"><table><thead><tr><th scope="col">名前</th><th scope="col">指す場所・条件</th></tr></thead><tbody>
+<tr><th scope="row"><code>project.search</code></th><td>作品全体の検索欄。別のタブを開いても残るため、検索・保存・Gitを併用する教材の入口に向きます。</td></tr>
+<tr><th scope="row"><code>code.workspace</code></th><td>現在のコード領域。コードを表示して使います。変更待ちに <code>event:workspace.changed</code> を使えます。</td></tr>
+<tr><th scope="row"><code>editor.greenFlag</code></th><td>緑の旗。実行画面などで旗が表示されている必要があります。旗を押すと作品を再開始するため、継続中の教材の確認ボタンには向きません。</td></tr>
+<tr><th scope="row"><code>sprite.list</code></th><td>登録されたスプライト一覧。配置によって対象を取得できない場合があります。「案内できる」で確認してから使います。</td></tr>
+</tbody></table></div>
+<p>対象が非表示・未提供・複数候補の場合は案内できません。「[対象] を案内できる」で分岐し、案内できないときはステージ内の説明やスキップを用意します。パネルを別OSウィンドウに移した場合も、同じ文書内にある対象だけが案内の範囲です。</p>
+</section>
+<section id="blocks"><h2>14.3 案内を表示し、操作を待つ</h2>
+
+<ul><li><strong>「[対象] を案内する [メッセージ]」</strong>：場所を示す説明を表示します。</li><li><strong>「[対象] を [メッセージ] と案内して [操作] を待つ」</strong>：説明を表示し、実操作の結果を値として返します。</li><li><strong>「このスプライトを [対象] の [側] に出し [メッセージ] と話して [操作] を待つ」</strong>：呼び出したスプライト自身を、対象の左・右・上・下・中央に表示します。ステージでは使えません。</li><li><strong>「エディター案内を閉じる」「案内の結果」「案内の結果の理由」</strong>：表示の終了と、終了状態の確認に使います。</li></ul>
+<p>待つ操作は、対象への実クリックを待つ <code>click</code>、またはコードの変更を待つ <code>event:workspace.changed</code> など、対象が提供するイベントです。説明を読んだことや案内を閉じたことを、実操作の完了とは扱いません。</p>
+<p>たとえば「案内結果」を、対象 <code>code.workspace</code>、側「右」、メッセージ「待つ秒数を変えてみよう」、操作 <code>event:workspace.changed</code> のスプライト案内ブロックの値にします。その後、「案内結果」が <code>completed</code> なら次へ、それ以外なら再試行・スキップへ分岐します。コードが何か変わったことを検出するだけなので、特定の値への変更や正解まで保証したい場合は、作品側で別に判定します。</p>
+<p>案内中のスプライトには、その時点のコスチューム・大きさ・向き・効果が反映されます。セリフはGuideブロックのメッセージです。通常の「と言う」ブロックの吹き出しや音声合成を自動で移す機能ではありません。ステージ側の表示は一時的に隠れ、案内が終わると現在の可視状態に従って戻ります。教材には専用の案内役を用意すると管理しやすくなります。</p>
+<figure><a href="../images/editor-guide-workspace.png"><img src="../images/editor-guide-workspace.png" width="1700" height="1100" alt="Gキーで始める2つ目の案内。ブロックを実際に編集して待機を終えます。案内役の表示はマウス操作を通します。" loading="lazy"></a><figcaption>Gキーで始める2つ目の案内。ブロックを実際に編集して待機を終えます。案内役の表示はマウス操作を通します。</figcaption></figure>
+</section>
+<section id="results"><h2>14.4 完了・中断・利用不可を分けて場面を進める</h2>
+
+<div class="table-scroll" role="region" aria-label="Guideの終了状態" tabindex="0"><table><thead><tr><th scope="col">結果</th><th scope="col">教材側の扱い</th></tr></thead><tbody>
+<tr><th scope="row"><code>completed</code></th><td>待っていた実操作が届きました。次の説明や課題へ進めます。</td></tr>
+<tr><th scope="row"><code>cancelled</code></th><td>案内を閉じた、別の案内が置き換えたなど。完了扱いにせず、再試行やスキップを選べるようにします。</td></tr>
+<tr><th scope="row"><code>unavailable</code></th><td>対象やスプライトが使えません。配置を案内し直すか、ステージ内の代替説明を出します。</td></tr>
+<tr><th scope="row"><code>timeout</code></th><td>期限付きのホスト呼び出しが時間切れになりました。通常のScratch待機ブロックに暗黙の制限時間はありません。</td></tr>
+</tbody></table></div>
+<p>1つのVMで同時に進める案内は1件です。二人の案内役がいる場合も、交互に呼び出します。紙芝居では、その場面の処理から案内を呼び、戻り値を受け取って次へ進めます。場面移動時には待機を管理し、案内を閉じてから次の案内を開始してください。</p>
+<p>作品停止・作品の切り替え・呼び出し元スレッドの停止・対象の消滅などで表示と待機を解除します。途中から再開したい教材は、章・場面などの進行を作品側で管理します。Guide表示だけを保存して途中再開することはできません。</p>
+</section>
+<section id="editing"><h2>14.5 編集・デバッガー・保存・Gitと併用する</h2>
+
+<p>待つのはGuideを呼んだスレッドです。他のスクリプトは動作を続けます。スプライト案内の表示はマウス操作を通すため、その裏にあるエディターを操作し、別スプライトや紙芝居の他の部分を編集できます。ただし、実行中のコードや共有変数を変更した影響は通常のScratchと同じです。</p>
+<p>作品全体のSB3保存、作品フォルダの保存、Gitの差分確認や保存済み変更のローカルコミットを妨げません。保存するのは作品データで、スレッドの実行位置や一時的な案内表示ではありません。Gitの権限・競合検査・実行中の操作制限も通常どおりです。</p>
+<p>デバッガーのログ・変数確認を併用できます。VM全体の一時停止やステップ実行は案内役にも及びます。一時停止中に案内対象を操作しても、教材側の続きはVM再開後に進みます。停止前に説明を出しておくと迷いにくくなります。</p>
+<p>タブの切り替えでコード領域などの案内対象が消えると、利用不可で終わる場合があります。併用する教材は検索欄など表示が続く場所を選ぶか、戻ってから再試行します。ブランチ切り替え、pull後の再読み込み、別作品の読み込みなど、作品を置き換える操作をまたいで同じ実行が続く保証はありません。</p>
+</section>
+<nav class="pager" aria-label="前後のページ"><a class="prev" href="../testing/"><small>前のページ</small>13. テストを書いて作品の動作を確かめる</a>
+</nav>
+</main><footer><a href="../../">トップへ</a> · <a href="https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=ja">エディターを開く</a><p>独立したTurboWarpフォーク。画面・仕様は撮影時点のものです。現在の配信元は<a href="https://kubohiroya.github.io/turbowarp-plus-editor/build-info.json">配信バージョン</a>で確認できます。</p></footer></body></html>

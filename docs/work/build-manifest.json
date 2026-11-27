@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "title": "プラとモコのPlusエディター案内",
+  "issue": "kubohiroya/turbowarp-plus-editor#724",
+  "app": {
+    "formatVersion": 1,
+    "repository": "kubohiroya/turbowarp-kamishibai-app",
+    "version": "4.0.21",
+    "tag": "v4.0.21",
+    "commit": "714e7270fb29b2ba3800fca67be9e0507f23d10c",
+    "publishedAt": "2026-11-26T16:12:38Z",
+    "sourceIdentity": "sha256:b2871398e9c58a1bacc4022d42d8d208e1236b6a3dd5aacd2667e8932ac814e5",
+    "artifact": {
+      "filename": "kamishibai-4.0.21.sb3",
+      "sha256": "fad8fa5a01133b8d9461a79ff4f988927f73b8199e34ff3f5f187afb428e9bcb",
+      "size": 1593889,
+      "url": "https://github.com/kubohiroya/turbowarp-kamishibai-app/releases/download/v4.0.21/kamishibai-4.0.21.sb3"
+    }
+  },
+  "builder": {
+    "name": "@kubohiroya/turbowarp-kamishibai-app",
+    "version": "4.0.21"
+  },
+  "sources": {
+    "story/plus-library-chapters.txt": "c038975babd0e17f86e9df96c4c8fe1736350a81f1476deb46a7f867251629ce",
+    "story/plus-library.k4.yml": "d0542044f7719808502677344ad59b2eca0495b360819f9d737588d6b80d475c"
+  },
+  "artifact": {
+    "filename": "plus-library-4.0.sb3",
+    "bytes": 6571155,
+    "sha256": "9b5185e277b0d464bdd4ec5bfcfec1bd0adef2d052842eb9abf291b17e71879c"
+  },
+  "chapters": 56,
+  "topics": 7,
+  "recommended": [
+    1,
+    6,
+    7,
+    19,
+    24,
+    36,
+    45,
+    53
+  ],
+  "totalDialogueSeconds": 1226
+}

@@ -1,0 +1,10 @@
+機能ガイドの最小サンプル
+
+editor-guide.sb3 は editor-guide/project.json とオリジナルのSVG素材を
+まとめた作品です。外部から取得した画像・音声は含みません。
+このリポジトリのライセンスに従います。
+
+Minimal feature-guide sample
+
+editor-guide.sb3 contains editor-guide/project.json and original SVG assets.
+It contains no third-party image or audio assets and follows this repository's license.

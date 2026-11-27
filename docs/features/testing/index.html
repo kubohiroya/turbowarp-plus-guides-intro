@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>テストを書いて作品の動作を確かめる — 機能ガイド — TurboWarp-Plus-Editor</title>
+<meta name="description" content="ブロックで期待する結果を書き、専用の実行画面で繰り返し確認します。失敗した値から元のブロックへ戻り、修正を進められます。">
+<link rel="stylesheet" href="../guide.css">
+<link rel="alternate" hreflang="en" href="index.en.html">
+</head><body>
+<header><a href="https://kubohiroya.github.io/turbowarp-plus-editor/">TurboWarp-Plus-Editor</a><a href="https://github.com/kubohiroya/turbowarp-plus-editor">GitHub</a></header>
+<main>
+<p class="breadcrumb"><a href="../">機能ガイド</a> › 13. テストを書いて作品の動作を確かめる · <a href="index.en.html" hreflang="en" lang="en">English</a></p>
+<p class="eyebrow">機能ガイド 13/14 · 2026年11月27日更新</p>
+<h1>テストを書いて作品の動作を確かめる</h1><p class="lead">ブロックで期待する結果を書き、専用の実行画面で繰り返し確認します。失敗した値から元のブロックへ戻り、修正を進められます。</p>
+<nav class="topic-nav" aria-label="機能ガイドの分野">
+<ul>
+<li><a href="../open/">作品を開く</a></li>
+<li><a href="../screen/">メニューと画面</a></li>
+<li><a href="../sprites/">スプライトとステージ</a></li>
+<li><a href="../stage/">実行画面</a></li>
+<li><a href="../workspace/">作業領域</a></li>
+<li><a href="../blocks/">ブロック</a></li>
+<li><a href="../search/">検索と置換</a></li>
+<li><a href="../documents/">文書と拡張データ</a></li>
+<li><a href="../reuse/">再利用</a></li>
+<li><a href="../save/">保存と配布</a></li>
+<li><a href="../git/">Gitと作品フォルダ</a></li>
+<li><a href="../github/">GitHubで開発</a></li>
+<li><a href="../testing/" aria-current="page">テスト</a></li>
+<li><a href="../editor-guide/">エディター案内</a></li>
+</ul>
+<p><a href="../feature-map/">機能索引と利用条件</a></p>
+</nav>
+<nav class="page-toc" aria-label="このページの目次"><ol><li><a href="#prepare">13.1 作品の中にテストを書く</a></li>
+<li><a href="#run">13.2 専用のテスト実行画面で動かす</a></li>
+<li><a href="#results">13.3 失敗した値とブロックを確認する</a></li>
+<li><a href="#isolation">13.4 編集中の作品とテストの関係を理解する</a></li>
+<li><a href="#workflow">13.5 編集・Git・拡張づくりに組み込む</a></li></ol></nav>
+<section id="prepare"><h2>13.1 作品の中にテストを書く</h2>
+
+<p>テストとは「この操作をしたら、この結果になる」を繰り返し確かめるスクリプトです。作品を改良したとき、今まで動いていた処理が壊れていないかを調べられます。通常の実行画面で遊ぶ操作とは分けて実行します。</p>
+<ol><li><a href="../open/#extensions">公式カタログ</a>から <strong>TurboWarp-Test</strong> を追加します。</li><li>調べたいスプライトまたはステージに、テスト名を付けたテストハットを置きます。</li><li>入力値を用意し、調べたい処理を実行し、拡張の確かめるブロックで実際の値と期待する値を比べます。</li></ol>
+<p>たとえば「加点後の得点」というテストで、得点を0にし、加点処理を1回呼んで、結果が10かを確かめます。別の入力・境界値・異常時も、それぞれ名前を付けたテストにすると、何が壊れたかを探しやすくなります。</p>
+<p>共通の準備は同じ対象の「テストの前に」ハットに書けます。1つのスプライト・ステージに置ける準備ハットは1つです。緑の旗の初期化処理は自動実行されないため、テストが必要とする初期値は準備かテスト自身に書きます。ブロックの詳細は<a href="https://kubohiroya.github.io/turbowarp-test/">TurboWarp-Testのガイド</a>を参照してください。</p>
+</section>
+<section id="run"><h2>13.2 専用のテスト実行画面で動かす</h2>
+
+<ol><li>実行画面の表示メニュー（▼）から「テスト実行画面を開く」を選びます。</li><li>作品のテスト一覧を確認します。「すべて実行」で全件、各テストの「実行」で1件を実行します。</li><li>実行中は専用の実行画面と状態を確認します。中断するには「止める」を押します。</li></ol>
+<p>実行を始める時点の作品の写しを使います。通常のテスト実行の前にファイル保存を必須とする機能ではありません。実行後にコードを直した場合は、もう一度実行して新しい結果を確認してください。古い結果が自動的に新しいコードの証明になるわけではありません。</p>
+<p>「この作品にはテストがありません」と出たら、通常のイベントハットだけでなくTurboWarp-Testのテストハットがあるかを確認します。メニューやパネルの配置は<a href="../stage/#stage-menu">実行画面の表示メニュー</a>も参照してください。</p>
+</section>
+<section id="results"><h2>13.3 失敗した値とブロックを確認する</h2>
+
+<div class="table-scroll" role="region" aria-label="テストの結果" tabindex="0"><table><thead><tr><th scope="col">状態</th><th scope="col">意味と次の操作</th></tr></thead><tbody>
+<tr><th scope="row">成功</th><td>スクリプトが終わり、失敗した確かめるブロックがありません。期待する振る舞いを本当に確かめているかも見直します。</td></tr>
+<tr><th scope="row">失敗</th><td>確かめるブロックで不一致がありました。期待・実際の値を比べます。</td></tr>
+<tr><th scope="row">時間切れ</th><td>フレーム上限内に準備やテストが終わりませんでした。終了条件や待機を見直します。</td></tr>
+<tr><th scope="row">エラー</th><td>準備ハットの重複や実行時の例外などで動かせませんでした。表示された理由を確認します。</td></tr>
+</tbody></table></div>
+<p>失敗した項目の「ブロックを表示」を押すと、該当するスプライト・ステージのコードを開き、失敗した確かめるブロックへ移動します。対象のブロックを消したり作り直したりした後は、現在のコードに対応するよう再実行してください。</p>
+<p>結果にはテスト対象の拡張ビルドの識別情報が含まれる場合があります。拡張を更新した後は、新しいビルドで再実行して結果を確認します。</p>
+</section>
+<section id="isolation"><h2>13.4 編集中の作品とテストの関係を理解する</h2>
+
+<p>各テストは専用のVMに作品の写しを読み込み直して動かします。編集中のVM、選んだスプライト、コードの取り消し履歴をテスト用に操作しません。前のテストが変えた変数やスプライトの状態を次のテストへ引き継がないため、テスト同士が独立した準備を持てます。</p>
+<p>専用実行ではコンパイラーを使わず、緑の旗も押しません。普段の緑の旗での動作、表示・音・入力・拡張の外部通信まで同じ条件で検証したことにはなりません。必要な場面は通常の実行やデバッガーでも確かめてください。作品をコピーしても、外部サービスへのアクセスが模擬になるわけではありません。</p>
+<p>既定の上限は3000フレームです。ここでのフレームは実行器の処理回数で、3000秒や一定の実時間を意味しません。</p>
+</section>
+<section id="workflow"><h2>13.5 編集・Git・拡張づくりに組み込む</h2>
+
+<p>小さく修正し、関連するテストを動かし、失敗箇所を直してから保存・差分確認・コミットへ進むと、変更の理由と確認内容を結び付けられます。テストのブロックも作品の一部なので、SB3や作品フォルダに保存して一緒に管理します。</p>
+<p>テストパッケージにはCI向けのJUnit XML出力APIもありますが、この章で説明するEditorの実行画面にJUnitファイルのダウンロード操作はありません。CIへの接続は開発者向けの組み込み作業です。Gitの保存世代に対する検査と、ここでの編集中の作品に対する手動実行も区別してください。</p>
+</section>
+<nav class="pager" aria-label="前後のページ"><a class="prev" href="../github/"><small>前のページ</small>12. GitHubで作品を開発する</a>
+<a class="next" href="../editor-guide/"><small>次のページ</small>14. スプライトでエディターの操作を案内する</a>
+</nav>
+</main><footer><a href="../../">トップへ</a> · <a href="https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=ja">エディターを開く</a><p>独立したTurboWarpフォーク。画面・仕様は撮影時点のものです。現在の配信元は<a href="https://kubohiroya.github.io/turbowarp-plus-editor/build-info.json">配信バージョン</a>で確認できます。</p></footer></body></html>

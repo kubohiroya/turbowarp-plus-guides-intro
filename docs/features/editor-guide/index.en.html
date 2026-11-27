@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guide editor actions with a sprite — Feature guide — TurboWarp-Plus-Editor</title>
+<meta name="description" content="Bring a mascot outside the Stage, point to named editor controls, and wait for real actions in an interactive lesson.">
+<link rel="stylesheet" href="../guide.css">
+<link rel="alternate" hreflang="ja" href="index.html">
+</head><body>
+<header><a href="https://kubohiroya.github.io/turbowarp-plus-editor/">TurboWarp-Plus-Editor</a><a href="https://github.com/kubohiroya/turbowarp-plus-editor">GitHub</a></header>
+<main>
+<p class="breadcrumb"><a href="../index.en.html">Feature guide</a> › 14. Guide editor actions with a sprite · <a href="index.html" hreflang="ja" lang="ja">日本語</a></p>
+<p class="eyebrow">Feature guide 14/14 · Updated November 27, 2026</p>
+<h1>Guide editor actions with a sprite</h1><p class="lead">Bring a mascot outside the Stage, point to named editor controls, and wait for real actions in an interactive lesson.</p>
+<nav class="topic-nav" aria-label="Feature guide topics">
+<ul>
+<li><a href="../open/index.en.html">Open projects</a></li>
+<li><a href="../screen/index.en.html">Menus and screen</a></li>
+<li><a href="../sprites/index.en.html">Sprites and the Stage</a></li>
+<li><a href="../stage/index.en.html">Run view</a></li>
+<li><a href="../workspace/index.en.html">Workspace</a></li>
+<li><a href="../blocks/index.en.html">Blocks</a></li>
+<li><a href="../search/index.en.html">Search and replace</a></li>
+<li><a href="../documents/index.en.html">Documents and extension data</a></li>
+<li><a href="../reuse/index.en.html">Reuse</a></li>
+<li><a href="../save/index.en.html">Save and distribute</a></li>
+<li><a href="../git/index.en.html">Git and project folders</a></li>
+<li><a href="../github/index.en.html">Develop on GitHub</a></li>
+<li><a href="../testing/index.en.html">Test projects</a></li>
+<li><a href="../editor-guide/index.en.html" aria-current="page">Editor Guide</a></li>
+</ul>
+<p><a href="../feature-map/index.en.html">Feature directory and availability</a></p>
+</nav>
+<nav class="page-toc" aria-label="On this page"><ol><li><a href="#try">14.1 Open a guided project</a></li>
+<li><a href="#targets">14.2 Choose a named place instead of coordinates</a></li>
+<li><a href="#blocks">14.3 Show a guide and wait for an action</a></li>
+<li><a href="#results">14.4 Separate completion, cancellation and unavailability</a></li>
+<li><a href="#editing">14.5 Combine guides with editing, debugging, saving and Git</a></li></ol></nav>
+<section id="try"><h2>14.1 Open a guided project</h2>
+
+<p>The built-in Editor Guide extension lets a project point to controls in the editor. A guide appears when the project calls it, rather than automatically starting a tour when the editor opens.</p>
+<ol><li>Download the <a href="../samples/editor-guide.sb3" download>minimal sample SB3</a> and open it through File → Open SB3 File… in Plus Editor.</li><li>If the Stage is hidden, use the stage-opening menu to show it in the drawer. Press the green flag. The mascot appears outside the Stage beside Search project. Click the search field to complete the guide.</li><li>Click the Stage background to leave text input, keep the code area open, and press G to try a guide that waits for a code change. Change the sample's “wait 1 seconds” value to finish it.</li></ol>
+<p>The sample receives the guide result and has an independent clock. Edit its Editor Guide blocks as a starting point for your own lesson. The <a href="../samples/editor-guide/project.json">project data</a> and <a href="../samples/editor-guide/mascot.svg">original mascot SVG</a> are also available (<a href="../samples/NOTICE.txt">sample notice</a>). Sample messages are in Japanese. Use a Plus Editor build supporting this built-in extension.</p>
+<figure><a href="../images/editor-guide-search.png"><img src="../images/editor-guide-search.png" width="1700" height="1100" alt="The sample mascot beside project search, outside the Stage. Captured with the public Editor source baseline 1558b6c; Japanese UI." loading="lazy"></a><figcaption>The sample mascot beside project search, outside the Stage. Captured with the public Editor source baseline 1558b6c; Japanese UI.</figcaption></figure>
+</section>
+<section id="targets"><h2>14.2 Choose a named place instead of coordinates</h2>
+
+<p>Targets use logical names rather than pixel coordinates or CSS selectors. A project chooses from places registered by the Editor Guide host; it cannot declare an arbitrary new editor target itself.</p>
+<div class="table-scroll" role="region" aria-label="Guide target names" tabindex="0"><table><thead><tr><th scope="col">Name</th><th scope="col">Place and conditions</th></tr></thead><tbody>
+<tr><th scope="row"><code>project.search</code></th><td>The project search field. It remains visible across tabs, making it useful for lessons combining search, saving and Git.</td></tr>
+<tr><th scope="row"><code>code.workspace</code></th><td>The current code area, which must be visible. Supports <code>event:workspace.changed</code>.</td></tr>
+<tr><th scope="row"><code>editor.greenFlag</code></th><td>The green flag must be visible, such as in the stage view. Pressing it restarts the project, so avoid it as a confirmation button in an ongoing lesson.</td></tr>
+<tr><th scope="row"><code>sprite.list</code></th><td>The registered sprite list. Some layouts cannot resolve it; check availability before use.</td></tr>
+</tbody></table></div>
+<p>Hidden, missing or ambiguous targets cannot be guided. Branch using “can guide [target]” and provide stage instructions or a skip route when unavailable. Only targets in the same document are supported, including when panels can otherwise move to separate OS windows.</p>
+</section>
+<section id="blocks"><h2>14.3 Show a guide and wait for an action</h2>
+
+<ul><li><strong>guide [target] saying [message]</strong> displays a pointer and explanation.</li><li><strong>guide [target] saying [message] and wait for [action]</strong> waits for the real action and returns its result.</li><li><strong>guide with this sprite [side] of [target] saying [message] and wait for [action]</strong> places the calling sprite left, right, above, below or in the center of the target. It is unavailable on the Stage.</li><li><strong>hide editor guide, guide result, guide result reason</strong> close the guide and inspect its outcome.</li></ul>
+<p>Actions include <code>click</code> for a real click on the target and supported events such as <code>event:workspace.changed</code>. Reading or closing the explanation is not treated as completing the requested action.</p>
+<p>For example, set a result variable to a sprite-guide reporter targeting <code>code.workspace</code>, side right, message “Try changing the wait duration”, action <code>event:workspace.changed</code>. Continue only when the result is <code>completed</code>; otherwise offer retry or skip. This event detects a code change, not a particular correct answer. Check the intended value separately if the lesson needs that guarantee.</p>
+<p>The displayed sprite follows its current costume, size, direction and effects. Its speech comes from the Guide message; ordinary “say” bubbles and text-to-speech are not automatically relocated. The Stage drawable is temporarily hidden and restored according to its current visibility when the guide ends. A dedicated mascot makes lesson behavior easier to manage.</p>
+<figure><a href="../images/editor-guide-workspace.png"><img src="../images/editor-guide-workspace.png" width="1700" height="1100" alt="The second guide waits for an actual code change. The mascot projection passes pointer input through to the block editor. Japanese UI." loading="lazy"></a><figcaption>The second guide waits for an actual code change. The mascot projection passes pointer input through to the block editor. Japanese UI.</figcaption></figure>
+</section>
+<section id="results"><h2>14.4 Separate completion, cancellation and unavailability</h2>
+
+<div class="table-scroll" role="region" aria-label="Guide outcomes" tabindex="0"><table><thead><tr><th scope="col">Result</th><th scope="col">Lesson response</th></tr></thead><tbody>
+<tr><th scope="row"><code>completed</code></th><td>The awaited action arrived. Continue to the next explanation or task.</td></tr>
+<tr><th scope="row"><code>cancelled</code></th><td>The guide was closed or superseded. Offer retry or skip rather than treating it as completion.</td></tr>
+<tr><th scope="row"><code>unavailable</code></th><td>The target or sprite cannot be used. Explain the layout or provide instructions on the Stage.</td></tr>
+<tr><th scope="row"><code>timeout</code></th><td>A host call with an explicit deadline timed out. Ordinary Scratch guide waits have no implicit timeout.</td></tr>
+</tbody></table></div>
+<p>One VM has one active guide at a time. Two mascots should take turns. A paper-story scene calls the guide, receives the result and then continues. Manage waits when changing scenes, closing the previous guide before starting another.</p>
+<p>Stopping or replacing the project, stopping the calling thread, or losing the target releases the display and wait. Lessons needing resume behavior must track their own chapter or scene; saving the guide display alone does not provide resumable execution.</p>
+</section>
+<section id="editing"><h2>14.5 Combine guides with editing, debugging, saving and Git</h2>
+
+<p>Only the calling thread waits; unrelated scripts keep running. The sprite projection passes pointer input through, so you can operate the editor underneath and edit other sprites or scenes. Editing running code or shared variables has the usual Scratch effects.</p>
+<p>Guides do not prevent whole-project SB3 saves, project-folder saves, Git diff inspection or local commits of saved changes. Saves contain project data, not the running thread position or temporary guide display. Normal Git permission checks, conflict checks and restrictions during execution still apply.</p>
+<p>Debugger logs and variable inspection remain usable. VM-wide pause and stepping affect the mascot too. If an action completes while paused, the lesson's continuation runs after the VM resumes. Explain the task before pausing.</p>
+<p>Switching tabs can hide a guide target such as the code area and end the wait as unavailable. Prefer persistent targets such as search, or offer retry after returning. Branch switching, reloading after pull and loading another project replace execution state; they do not guarantee continuation of the same running lesson.</p>
+</section>
+<nav class="pager" aria-label="Previous and next pages"><a class="prev" href="../testing/index.en.html"><small>Previous</small>13. Write tests and check project behavior</a>
+</nav>
+</main><footer><a href="../../">Home</a> · <a href="https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=en">Open the editor</a><p>An independent TurboWarp fork. Screens and behavior are as of the time of capture. The current build is listed in <a href="https://kubohiroya.github.io/turbowarp-plus-editor/build-info.json">build-info.json</a>.</p></footer></body></html>

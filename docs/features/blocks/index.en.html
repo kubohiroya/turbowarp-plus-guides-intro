@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find, place and organize blocks — Feature guide — TurboWarp-Plus-Editor</title>
+<meta name="description" content="The TurboWarp Plus horizontal palette, searching within a palette category, opening the palette in a separate window, delete preview, the minimap, context menus, switching the code layout view and rearranging code, and copying code to another sprite.">
+<link rel="alternate" hreflang="ja" href="index.html">
+<link rel="stylesheet" href="../guide.css">
+</head>
+<body>
+<header><a href="https://kubohiroya.github.io/turbowarp-plus-editor/">TurboWarp-Plus-Editor</a><a href="https://github.com/kubohiroya/turbowarp-plus-editor">GitHub</a></header>
+<main>
+<p class="breadcrumb"><a href="../index.en.html">Feature guide</a> › 6. Find, place and organize blocks · <a href="index.html" hreflang="ja" lang="ja">日本語</a></p>
+<p class="eyebrow">Feature guide 6/14 · Updated November 27, 2026</p>
+<h1>Find, place and organize blocks</h1>
+<p class="lead">Find blocks in the horizontal palette at the top of the code area and place them. Move around long code with the minimap, and tidy it up with context menus.</p>
+<nav class="topic-nav" aria-label="Feature guide topics">
+<ul>
+<li><a href="../open/index.en.html">Open projects</a></li>
+<li><a href="../screen/index.en.html">Menus and screen</a></li>
+<li><a href="../sprites/index.en.html">Sprites and the Stage</a></li>
+<li><a href="../stage/index.en.html">Run view</a></li>
+<li><a href="../workspace/index.en.html">Workspace</a></li>
+<li><a href="../blocks/index.en.html" aria-current="page">Blocks</a></li>
+<li><a href="../search/index.en.html">Search and replace</a></li>
+<li><a href="../documents/index.en.html">Documents and extension data</a></li>
+<li><a href="../reuse/index.en.html">Reuse</a></li>
+<li><a href="../save/index.en.html">Save and distribute</a></li>
+<li><a href="../git/index.en.html">Git and project folders</a></li>
+<li><a href="../github/index.en.html">Develop on GitHub</a></li>
+<li><a href="../testing/index.en.html">Test projects</a></li>
+<li><a href="../editor-guide/index.en.html">Editor Guide</a></li>
+</ul>
+<p><a href="../feature-map/index.en.html">Feature directory and availability</a></p>
+</nav>
+<nav class="page-toc" aria-label="On this page">
+<ol>
+<li><a href="#palette">6.1 Place blocks from the horizontal palette</a></li>
+<li><a href="#palette-search">6.2 Search across the block palette</a></li>
+<li><a href="#palette-size">6.3 Resize a category flyout</a></li>
+<li><a href="#palette-order">6.4 Reorder the categories</a></li>
+<li><a href="#palette-popout">6.5 Open the block palette in a separate window</a></li>
+<li><a href="#delete-preview">6.6 Delete blocks by dropping them on the palette</a></li>
+<li><a href="#minimap">6.7 Move around long code with the minimap and zoom</a></li>
+<li><a href="#context-menu">6.8 Work with context menus</a></li>
+<li><a href="#arrange">6.9 Rearrange code and copy it to another sprite</a></li>
+<li><a href="#script-selection">6.10 Select, move and copy several scripts together</a></li>
+<li><a href="#argument-text">Long and multiline arguments</a></li><li><a href="#clean-up-comments">Clean up with comments</a></li>
+<li><a href="#palette-add-extension">Add extensions from the palette</a></li>
+<li><a href="#copy-palette-groups">Show groups used by a copied script</a></li>
+</ol>
+</nav>
+
+<section id="palette">
+
+<h2>6.1 Place blocks from the horizontal palette</h2>
+
+<p>In the <a href="../screen/index.en.html#layout">Plus layout</a>, the categories are lined up horizontally at the top of the code area, in this order: "Motion", "Looks", "Sound", "Events", "Control", "Sensing", "Operators", "Variables", "Lists", and "My Blocks". Adding an extension adds its category as well. Variable and list blocks are split into "Variables" and "Lists".</p>
+<p>Click a category to open a flyout of its blocks below it. Drag the block you want into the code area. To close the flyout, press Esc or click outside it. Each category remembers its flyout's scroll position.</p>
+<h3 id="palette-groups">Choose which block groups to show</h3>
+<p>Open the ▼ menu at the end of the category strip and choose the block-group visibility settings to select groups for the sprite or the Stage you are editing. Use a settings shortcut to choose a set, or change the individual checkboxes, then confirm. Hiding a group does not delete placed blocks or unload an extension. Adding an extension shows its groups for the target being edited.</p>
+<p>When you add a sprite, the settings dialog may also open, depending on the extensions and existing visibility settings. Select an existing sprite as the copy source and press Copy to transfer its selection to the checkboxes. Adjust the checkboxes before confirming.</p>
+<figure class="guide-detail"><a href="../images/en/palette-groups-current.png"><img src="../images/en/palette-groups-current.png" width="576" height="446" alt="Block-group visibility settings with shortcuts, checkboxes for standard groups, Cancel and Confirm." loading="lazy"></a><figcaption>Visibility settings opened from the palette’s ▼ menu. Select groups, then confirm.</figcaption></figure>
+<h3>Open a group or pin it open</h3>
+<p>If an extension groups its blocks, click a group icon to open a child palette containing its inner groups or categories. Press the pin at the top right to expand its contents immediately after the group in the parent palette. Press the pin on the expanded group's icon to fold it back into a child palette. Nested groups supplied by an extension can be opened in the same way.</p>
+<p>The visible groups, pin state and order are included in the <a href="../workspace/index.en.html#workspace-restore">screen state saved with the project</a>.</p>
+<p>Normally you cannot switch the palette between horizontal and vertical display. If you open the editor with <code>twPlusHorizontalBlockPalette=1</code> added to the URL, you can right-click the palette to switch between horizontal and vertical display. Your <a href="#palette-order">custom category order</a> carries over when you switch.</p>
+<h3 id="argument-text">Edit long or multiline text</h3>
+<p>When a text argument of a placed block is long, it is shown cut to fit 30 half-width characters (a full-width character counts as two), ending in "…". A value with line breaks shows only its first line. Click such a value to open the "Edit text" dialog; "Save" applies the change and "Cancel" discards it. A saved change can be undone in one step. Only the display is shortened; the value stays the same.</p>
+<p>Press Shift+Enter in a one-line text argument to continue in the text dialog with a line break at the caret. IME composition keys remain text-entry operations. Numeric fields, dropdowns and extension-specific field editors keep their own editing behavior.</p>
+<p>Number argument fields convert full-width digits and signs to half-width forms and remove characters the field does not accept, when you type, paste or finish IME composition. Text argument fields are unchanged. See the <a href="../scratch-numeric-input-spec/">number-input specification note (Japanese)</a> for the scope and limits.</p>
+
+<h3 id="palette-add-extension">Add extensions from the palette</h3><p>Use the ▼ at the end of the category row and choose “Add Extension”. Select “TurboWarp Plus” in the library and <a href="../open/index.en.html#extensions">choose the extensions to add</a>.</p>
+<figure class="guide-detail"><a href="../images/palette-add-detail-046.png"><img src="../images/palette-add-detail-046.png" width="475" height="165" alt="The ▼ at the end of the horizontal palette includes Add Extension (Japanese UI)." loading="lazy"></a><figcaption>The ▼ at the end of the horizontal palette includes Add Extension (Japanese UI).</figcaption></figure>
+</section>
+
+<section id="palette-search">
+
+<h2>6.2 Search across the block palette</h2>
+
+<p>Type in "Search blocks" at the top of the flyout to search block labels across all categories shown in the palette, regardless of group depth. Groups hidden for the current sprite or the Stage are excluded. Matching a category name shows all of that category's blocks.</p>
+<p>Search works with IME input too, and you can drag filtered blocks straight into the code area. When nothing matches, "No matching blocks" is shown. Clearing the search restores the category and scroll position you had before searching.</p>
+<figure class="guide-detail"><a href="../images/en/palette-search.png"><img src="../images/en/palette-search.png" width="660" height="560" alt="Searching for if with Motion open shows matching Motion and Control blocks together." loading="lazy"></a><figcaption>Searching for “if” while Motion is open also finds the condition blocks in Control.</figcaption></figure>
+<p>To find blocks used in the project, use the <a href="../search/index.en.html#project-search">project-wide search</a> in the menu bar.</p>
+
+</section>
+
+<section id="palette-size">
+
+<h2>6.3 Resize a category flyout</h2>
+
+<p>Drag the diagonal lines at the bottom right of the flyout to change its width and height. The size is saved in the browser for each category. When the pane or screen is narrow, the flyout fits within the available space, and it opens at the saved size again once there is enough room.</p>
+<figure class="guide-detail"><a href="../images/en/palette-resize-detail.png"><img src="../images/en/palette-resize-detail.png" width="330" height="230" alt="The bottom right of the Looks flyout. In the bottom-right corner is a diagonal-line handle for changing the width and height." loading="lazy"></a><figcaption>The diagonal lines at the bottom right of the flyout are the resize handle.</figcaption></figure>
+<p>On a large screen, if you want the palette always visible, you can also <a href="#palette-popout">open the block palette in a separate window</a>.</p>
+
+</section>
+
+<section id="palette-order">
+
+<h2>6.4 Reorder the categories</h2>
+
+<p>Press and hold a category, then release it on the frame that marks the destination to reorder it. While you drag, a preview of the category follows the pointer. Release it outside the palette or press Esc to cancel. You can also reorder items within the same group, either in a child palette or where the group is pinned open. Items cannot move to another group or depth.</p>
+<p>Reordering marks the project as changed. Save and reopen the project to restore the order of top-level categories and items within each group. Projects without a saved order use the default arrangement.</p>
+<figure class="guide-detail"><a href="../images/en/palette-order-detail.png"><img src="../images/en/palette-order-detail.png" width="540" height="64" alt="In the horizontal palette, the Motion category is held down and being moved to the position of Sound. Sound has a destination frame, with a preview of Motion over it." loading="lazy"></a><figcaption>Reorder categories while watching the preview of the held category and the destination frame.</figcaption></figure>
+
+</section>
+
+<section id="palette-popout">
+
+<h2>6.5 Open the block palette in a separate window</h2>
+
+<p>Choose "Open block palette in another window" from "Editor panel layout" to move the horizontal palette into a separate browser window. Choose a category with the round category buttons on the left, then drag blocks into the editor's code area. The "Block palette layout" button at the top right shows the current arrangement as an icon. Press it to switch the arrangement with "Arrange horizontally" and "Arrange vertically", or choose "Return this panel to the editor" to bring the palette back into the editor.</p>
+<p>In the separate window you can also open child palettes, pin groups open and fold them again. Pin state and order are shared with the palette in the editor.</p>
+<figure class="guide-detail"><a href="../images/en/palette-popout.png"><img src="../images/en/palette-popout.png" width="520" height="520" alt="The block palette opened in a separate window. Round category buttons from Motion to My Blocks are stacked on the left, and Motion blocks are shown. The layout button is at the top right." loading="lazy"></a><figcaption>The block palette in a separate window. While it is there, the horizontal palette inside the editor is hidden.</figcaption></figure>
+
+</section>
+
+<section id="delete-preview">
+
+<h2>6.6 Delete blocks by dropping them on the palette</h2>
+
+<p>When you drag a block from the code area onto the palette, a trash can appears to show that releasing it there will delete it. The same happens when you drag back a block you just took from the palette. If you move it back to the code area without releasing, nothing is deleted.</p>
+
+</section>
+
+<section id="minimap">
+
+<h2>6.7 Move around long code with the minimap and zoom</h2>
+
+<p>In the Plus layout, the minimap at the bottom right of the code area gives an overview of where all of the open sprite's blocks are. The minimap and the buttons below it appear only while the pointer is over the code area. The frame in the minimap is the area currently in view. To move to distant blocks, click the destination in the minimap or drag the frame. Use the buttons below it to zoom out, zoom in, or reset the zoom.</p>
+<figure><a href="../images/en/minimap-current.png"><img src="../images/en/minimap-current.png" width="1440" height="1000" alt="Free layout with a function definition and call, and a message receiver placed far away. The minimap at the bottom right also shows the script outside the viewport." loading="lazy"></a><figcaption>The minimap also shows scripts placed far outside the viewport, and its frame marks the area in view. Solid arrows show function calls; dashed arrows show message broadcasts.</figcaption></figure>
+<p>Free layout can zoom out to 2%. You can see scripts spread across a large area, then zoom in where you want to edit.</p>
+<p>Buttons at the bottom left of Free layout independently show or hide function-call and message arrows. Each pane keeps its own settings, which are also included in the screen state saved with the project. They do not change the scripts. An arrow is omitted when both endpoints are outside the viewport.</p>
+<p>To hide the minimap, specify <code>twPlusWorkspaceMinimap=0</code>.</p>
+
+</section>
+
+<section id="context-menu">
+
+<h2>6.8 Work with context menus</h2>
+
+<p>In the context menus for blocks, empty space in the code area, sprite tiles, costumes, sounds, and so on, each item has an icon that represents its action.</p>
+<figure class="guide-detail"><a href="../images/en/workspace-context-menu.png"><img src="../images/en/workspace-context-menu.png" width="533" height="261" alt="The context menu for empty space in Free layout, with the Change code layout view submenu open to Normal, Z, and N layout views." loading="lazy"></a><figcaption>The context menu for empty space in the code area, with the "Change code layout view" submenu open.</figcaption></figure>
+<figure class="guide-detail"><a href="../images/en/sprite-context-menu.png"><img src="../images/en/sprite-context-menu.png" width="420" height="360" alt="The context menu for a sprite tile: Open, duplicate, export, Rename sprite, delete, and create folder, each with an icon." loading="lazy"></a><figcaption>The context menu for a sprite tile.</figcaption></figure>
+<figure class="guide-detail"><a href="../images/en/block-context-menu.png"><img src="../images/en/block-context-menu.png" width="533" height="424" alt="A block context menu, starting with Edit this script in a separate view and Open relationships for this script." loading="lazy"></a><figcaption>A block context menu in Free layout. The first two items open the script for individual editing or show its relationships.</figcaption></figure>
+<div class="table-scroll" role="region" aria-label="Main context menu items" tabindex="0">
+<table><caption>Main items</caption><thead><tr><th scope="col">Where you right-click</th><th scope="col">Main items</th></tr></thead><tbody>
+<tr><th scope="row">Block</th><td>In Free layout, the first two items are "Edit this script in a separate view" and "Open relationships for this script". A function-call block also has "Show this function" for opening the called function. These are followed by Edit (definition blocks), Add Comment, cut, duplicate and copy actions, Save Stack to File…, Tidy Up, Leaving Room Below This Stack, Delete Block, and other applicable actions. Dividers separate groups</td></tr>
+<tr><th scope="row">Hat block with blocks below it (including definition blocks)</th><td>The block items plus Fold. A folded script shows only its hat, with a "▸ Folded" mark below it. To restore it, click the mark or choose "Unfold" from the context menu</td></tr>
+<tr><th scope="row">Empty space in the code area</th><td>Undo, Redo, Clean up Blocks, Add Comment, Delete Blocks, Load from File…, Paste, Change code layout view</td></tr>
+<tr><th scope="row">Sprite tile</th><td>Open, duplicate, export, Rename sprite, delete, create folder</td></tr>
+<tr><th scope="row">"Stage" tile</th><td>Open, Export Stage</td></tr>
+<tr><th scope="row">Costume or sound</th><td>duplicate, export, delete</td></tr>
+</tbody></table></div>
+<p>"Edit this script in a separate view" opens Hats and functions on the left and an editing area for the entire script containing the chosen block on the right. "Open relationships for this script" centers that script in Calls on the left and opens it for editing on the right. These two items are available in Free layout; they are not added in Z/N views or while individually editing a script (<a href="../sprites/index.en.html#functions">List hats and functions and see their calls</a>).</p>
+<p>With the debugger enabled, command blocks also have an action to set a breakpoint. A marked block has a red outline and dot; execution pauses just before it runs. Use the same menu to remove the breakpoint. These marks last only for the current editing session and are not saved in the project. Adding one during compiled execution takes effect from the next start (<a href="../screen/index.en.html#extension-controls">Open the debugger</a>).</p>
+<p>Items added by addons (exporting a block as an image, switching between local and global variables, moving to the front or back, and so on) also have icons. How to export and import scripts and how to copy and paste them is explained in <a href="../reuse/index.en.html#transfer">Transfer scripts and the Stage to another project</a>.</p>
+<p>Switching the code layout view and copying code to another sprite are covered in <a href="#arrange">Rearrange code and copy it to another sprite</a>.</p>
+
+
+<h3 id="clean-up-comments">Keep comments with scripts during cleanup</h3><p>Clean up blocks preserves each attached comment’s offset from its block and adds space to avoid covering nearby scripts. Unattached comments that overlap scripts move into a separate column. Save the project to keep the resulting positions. For a preview organized by calls and messages, use <a href="#arrange">semantic rearrangement</a>.</p>
+</section>
+
+<section id="arrange">
+
+<h2>6.9 Rearrange code and copy it to another sprite</h2>
+
+<h3>Switch the code layout view</h3>
+<p>Right-click empty space in the code area and choose "Normal layout view", "Z layout view", or "N layout view" from "Change code layout view". The current view has a check mark. Use these views when you want to read scripts that are far apart in order.</p>
+<ul><li><strong>Z layout view</strong>: Scripts whose top edges are at about the same height are treated as one row. The rows are followed from the top, and within a row the scripts are followed from left to right.</li><li><strong>N layout view</strong>: Scripts whose left edges are at about the same position are treated as one column. The columns are followed from the left, and within a column the scripts are followed from top to bottom.</li></ul>
+<p>Both views show the scripts in a spaced vertical column, in the order they were followed, and the minimap follows that arrangement. Changing the view does not change block positions in the project or the edit history. Click a script to open an editing dialog and edit its contents while keeping its free-layout position.</p>
+<p>At each script's top edge, ▼ on the left means expanded and ▶ means folded. Click the icon to toggle that script. Right-click the background for "Fold all" or "Unfold all". Connecting arrows extend to the right before making broad turns, and a left margin leaves room for arrows entering the first block.</p>
+<p>Message arrows use fine dashes for "broadcast" and longer dashes for "broadcast and wait", without hourglass icons. Free layout, Hats and functions, the call graph, and minimaps use the same distinction.</p>
+<p>The pointer shows a wait cursor while a panel switches or an opened project first draws its code.</p>
+<figure><a href="../images/en/zn-layout.png"><img src="../images/en/zn-layout.png" width="1440" height="1000" alt="Z layout view. Fold buttons sit along the left edge, and the minimap follows the vertical arrangement." loading="lazy"></a><figcaption>Z layout view. Fold buttons sit along the left edge, and the minimap follows the vertical arrangement.</figcaption></figure>
+<h3>Rearrange code blocks</h3>
+<p>To actually rearrange block positions, use "Rearrange Code Blocks" in the <a href="../screen/index.en.html#edit-menu">"Edit" menu</a>. For the scripts in the open code tab, choose an "Order" ("Z · by row" or "N · by column") and a "Direction" ("Vertical" or "Horizontal"), and a preview of the new arrangement appears in the dialog. Confirm with "Rearrange". The order is worked out the same way as in the views above; "Vertical" lines the scripts up in a single column and "Horizontal" in a single row, evenly spaced. A single "Undo" reverts the rearrangement. The steps are also illustrated in the <a href="../ball-demo/index.en.html#section-4-3">Ball Demo tutorial</a>.</p>
+<h3>Rearrange scripts by relationships</h3>
+<p>Right-click the free-layout background and choose "Rearrange scripts by relationships" to preview the current sprite or stage. Calls lead from callers to definitions, and messages from senders to receiver hats, generally from left to right. Cycles stay together and unrelated groups are separated. Comments are included when avoiding overlaps. Other sprites stay in place.</p>
+<p>Choose "Rearrange" to apply or "Cancel" to leave the project unchanged. One Undo restores the original positions. If the code or target changes during preview, choose "Recalculate". External and unresolved links are identified; computed message names are not guessed. The layout represents static relationships, not a guaranteed execution order. If calculation cannot finish safely, the original positions are kept.</p>
+<h3>Copy blocks into another sprite's code</h3>
+<p>Split the panel or <a href="../workspace/index.en.html#panel-popout">open a code panel in a separate window</a> so that the code tabs of two sprites, the source and the destination, are side by side. Drag a block from one code area and drop it in the other to copy it into that sprite. Connected blocks are copied as a whole script, and the original blocks stay where they were, still connected. In the destination, "Undo" cancels the copy. Press Esc while dragging to stop without copying.</p>
+
+<h3 id="copy-palette-groups">Show groups used by a copied script</h3><p>After a successful copy, the destination palette shows the groups used by the copied blocks. For example, when you copy a script containing Looks blocks to a sprite that hid Looks, that group becomes visible on the destination sprite. Copying to the Stage follows the same rule. You can adjust the setting afterwards.</p>
+</section>
+<section id="script-selection">
+<h2>6.10 Select, move and copy several scripts together</h2>
+
+<p>The free-layout code area can select several separate scripts. This selects scripts, rather than arbitrary disconnected blocks within one script.</p>
+<div class="table-scroll" role="region" aria-label="Multi-script selection" tabindex="0"><table><thead><tr><th scope="col">Action</th><th scope="col">Result</th></tr></thead><tbody>
+<tr><th scope="row">Ctrl-click (⌘-click on macOS)</th><td>Add or remove a script from the selection. Ctrl-click on macOS opens the context menu.</td></tr>
+<tr><th scope="row">Shift-drag on the background</th><td>Add scripts intersecting the rectangle to the selection.</td></tr>
+<tr><th scope="row">Shift+Alt-drag on the background</th><td>Remove scripts intersecting the rectangle from the selection.</td></tr>
+<tr><th scope="row">Esc, background click or changing targets</th><td>Clear the group selection. Selection is not saved in the project.</td></tr>
+</tbody></table></div>
+<p>Drag a selected script to move the group while preserving relative positions. Drop the group onto another sprite or the Stage in the sprite list to copy it, keeping the originals. Check that the destination can use the copied blocks and variables.</p>
+<p>Dropping onto the palette, pressing Delete or Backspace, or using the selection's delete menu acts on the whole selection. A grouped move or deletion takes one Undo to reverse. If deletion would remove a function definition still in use, a warning cancels the entire deletion. Check the selection outlines before deleting.</p>
+<p>Use the <a href="#arrange">rearrangement preview</a> for semantic organization, or <a href="../reuse/index.en.html#transfer">script transfer</a> to send code to another project.</p>
+</section>
+<nav class="pager" aria-label="Previous and next pages">
+<a class="prev" href="../workspace/index.en.html"><small>Previous</small>5. Split the workspace and open panels separately</a>
+<a class="next" href="../search/index.en.html"><small>Next</small>7. Search and replace across the project</a>
+</nav>
+</main>
+<footer><a href="../../">Home</a> · <a href="https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=en">Open the editor</a><p>An independent TurboWarp fork. Screens and behavior are as of the time of capture. The current build is listed in <a href="https://kubohiroya.github.io/turbowarp-plus-editor/build-info.json">build-info.json</a>.</p></footer>
+</body></html>

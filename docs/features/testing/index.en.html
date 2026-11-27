@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Write tests and check project behavior — Feature guide — TurboWarp-Plus-Editor</title>
+<meta name="description" content="Express expected results with blocks, run them in a dedicated view, and return from a failed value to its source block.">
+<link rel="stylesheet" href="../guide.css">
+<link rel="alternate" hreflang="ja" href="index.html">
+</head><body>
+<header><a href="https://kubohiroya.github.io/turbowarp-plus-editor/">TurboWarp-Plus-Editor</a><a href="https://github.com/kubohiroya/turbowarp-plus-editor">GitHub</a></header>
+<main>
+<p class="breadcrumb"><a href="../index.en.html">Feature guide</a> › 13. Write tests and check project behavior · <a href="index.html" hreflang="ja" lang="ja">日本語</a></p>
+<p class="eyebrow">Feature guide 13/14 · Updated November 27, 2026</p>
+<h1>Write tests and check project behavior</h1><p class="lead">Express expected results with blocks, run them in a dedicated view, and return from a failed value to its source block.</p>
+<nav class="topic-nav" aria-label="Feature guide topics">
+<ul>
+<li><a href="../open/index.en.html">Open projects</a></li>
+<li><a href="../screen/index.en.html">Menus and screen</a></li>
+<li><a href="../sprites/index.en.html">Sprites and the Stage</a></li>
+<li><a href="../stage/index.en.html">Run view</a></li>
+<li><a href="../workspace/index.en.html">Workspace</a></li>
+<li><a href="../blocks/index.en.html">Blocks</a></li>
+<li><a href="../search/index.en.html">Search and replace</a></li>
+<li><a href="../documents/index.en.html">Documents and extension data</a></li>
+<li><a href="../reuse/index.en.html">Reuse</a></li>
+<li><a href="../save/index.en.html">Save and distribute</a></li>
+<li><a href="../git/index.en.html">Git and project folders</a></li>
+<li><a href="../github/index.en.html">Develop on GitHub</a></li>
+<li><a href="../testing/index.en.html" aria-current="page">Test projects</a></li>
+<li><a href="../editor-guide/index.en.html">Editor Guide</a></li>
+</ul>
+<p><a href="../feature-map/index.en.html">Feature directory and availability</a></p>
+</nav>
+<nav class="page-toc" aria-label="On this page"><ol><li><a href="#prepare">13.1 Write tests inside a project</a></li>
+<li><a href="#run">13.2 Run tests in their own view</a></li>
+<li><a href="#results">13.3 Inspect failed values and blocks</a></li>
+<li><a href="#isolation">13.4 Understand the relationship to your editor</a></li>
+<li><a href="#workflow">13.5 Use tests while editing and developing extensions</a></li></ol></nav>
+<section id="prepare"><h2>13.1 Write tests inside a project</h2>
+
+<p>A test repeats a claim: after this operation, this result should follow. It helps detect regressions when a project changes, separately from playing the project on its normal stage.</p>
+<ol><li>Add <strong>TurboWarp-Test</strong> from the <a href="../open/index.en.html#extensions">official catalog</a>.</li><li>Place a named test hat on the sprite or Stage being checked.</li><li>Prepare inputs, run the behavior, then compare actual and expected values with assertion blocks.</li></ol>
+<p>For example, “score after awarding points” sets the score to zero, calls the award routine once and checks that the score is ten. Give separate names to different inputs, boundary cases and failure cases so the results explain what broke.</p>
+<p>A target's “before tests” hat can perform shared setup. Only one setup hat is allowed per sprite or Stage. Green-flag scripts do not run automatically, so initialize test inputs in setup or the test itself. See the <a href="https://kubohiroya.github.io/turbowarp-test/">TurboWarp-Test guide</a> for its blocks.</p>
+</section>
+<section id="run"><h2>13.2 Run tests in their own view</h2>
+
+<ol><li>Choose Open test run view from the stage display menu (▼).</li><li>Check the list. Use Run all for every test or a test's Run button for one.</li><li>Watch the dedicated stage and status. Use Stop to interrupt the run.</li></ol>
+<p>A run uses a copy of the project captured when you start it. Normal manual test runs do not require saving a file first. After editing code, run again to obtain a result for the new code; an earlier result does not validate later edits.</p>
+<p>If no tests are listed, check for TurboWarp-Test test hats rather than only ordinary event hats. See also the <a href="../stage/index.en.html#stage-menu">stage display menu</a>.</p>
+</section>
+<section id="results"><h2>13.3 Inspect failed values and blocks</h2>
+
+<div class="table-scroll" role="region" aria-label="Test outcomes" tabindex="0"><table><thead><tr><th scope="col">Status</th><th scope="col">Meaning and next step</th></tr></thead><tbody>
+<tr><th scope="row">Passed</th><td>The script ended without a failing assertion. Also check that the assertions actually cover the intended behavior.</td></tr>
+<tr><th scope="row">Failed</th><td>An assertion did not match. Compare expected and actual values.</td></tr>
+<tr><th scope="row">Timed out</th><td>Setup or the test exceeded its frame limit. Review termination conditions and waits.</td></tr>
+<tr><th scope="row">Error</th><td>Duplicate setup hats or an exception prevented execution. Read the reason shown.</td></tr>
+</tbody></table></div>
+<p>Show block opens the relevant sprite or Stage and centers the failed assertion. If you deleted or recreated the block after a run, rerun the test so the result corresponds to current code.</p>
+<p>Results may include identifiers for the tested extension builds. Rerun after updating an extension to check its new build.</p>
+</section>
+<section id="isolation"><h2>13.4 Understand the relationship to your editor</h2>
+
+<p>Each test reloads the project copy in a dedicated VM. The test does not operate the editor VM, selected sprite or code undo history. State changed by one test is not carried into the next, so each can have independent setup.</p>
+<p>The runner disables compilation and does not press the green flag. A passing run does not establish identical behavior for normal green-flag execution, graphics, sound, input or external communication. Check these with ordinary execution and the debugger where needed. A copied project does not make external service access a mock.</p>
+<p>The default limit is 3000 frames. A frame counts runner steps, not seconds or a fixed amount of wall-clock time.</p>
+</section>
+<section id="workflow"><h2>13.5 Use tests while editing and developing extensions</h2>
+
+<p>Make a small change, run related tests, fix failures, then save, inspect the diff and commit. Test blocks are part of the project and can be saved with the SB3 or project folder.</p>
+<p>The test package also provides a JUnit XML API for CI, but the Editor view described here has no JUnit download action. CI integration is a developer task. Checks of a saved Git generation are also distinct from these manual runs of the current editor project.</p>
+</section>
+<nav class="pager" aria-label="Previous and next pages"><a class="prev" href="../github/index.en.html"><small>Previous</small>12. Develop projects on GitHub</a>
+<a class="next" href="../editor-guide/index.en.html"><small>Next</small>14. Guide editor actions with a sprite</a>
+</nav>
+</main><footer><a href="../../">Home</a> · <a href="https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=en">Open the editor</a><p>An independent TurboWarp fork. Screens and behavior are as of the time of capture. The current build is listed in <a href="https://kubohiroya.github.io/turbowarp-plus-editor/build-info.json">build-info.json</a>.</p></footer></body></html>

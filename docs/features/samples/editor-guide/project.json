@@ -1,0 +1,424 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": {
+        "guide-result": [
+          "案内結果",
+          ""
+        ],
+        "clock": [
+          "時計",
+          0
+        ]
+      },
+      "lists": {},
+      "broadcasts": {},
+      "blocks": {
+        "clock-flag": {
+          "opcode": "event_whenflagclicked",
+          "next": "clock-zero",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 20,
+          "y": 30
+        },
+        "clock-zero": {
+          "opcode": "data_setvariableto",
+          "next": "clock-loop",
+          "parent": "clock-flag",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                4,
+                "0"
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "時計",
+              "clock"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "clock-loop": {
+          "opcode": "control_forever",
+          "next": null,
+          "parent": "clock-zero",
+          "inputs": {
+            "SUBSTACK": [
+              2,
+              "clock-tick"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "clock-tick": {
+          "opcode": "data_changevariableby",
+          "next": "clock-wait",
+          "parent": "clock-loop",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                4,
+                "1"
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "時計",
+              "clock"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "clock-wait": {
+          "opcode": "control_wait",
+          "next": null,
+          "parent": "clock-tick",
+          "inputs": {
+            "DURATION": [
+              1,
+              [
+                4,
+                "1"
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "80ac0e129d7638c8fde26856ae5d8be7",
+          "name": "Backdrop",
+          "md5ext": "80ac0e129d7638c8fde26856ae5d8be7.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 240,
+          "rotationCenterY": 180
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "off",
+      "textToSpeechLanguage": null
+    },
+    {
+      "isStage": false,
+      "name": "案内役",
+      "variables": {},
+      "lists": {},
+      "broadcasts": {},
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "df29563a5f71eb9fe0296d8256228fcb",
+          "name": "Mascot",
+          "md5ext": "df29563a5f71eb9fe0296d8256228fcb.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 50,
+          "rotationCenterY": 50
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 1,
+      "visible": true,
+      "x": 0,
+      "y": 0,
+      "size": 100,
+      "direction": 90,
+      "draggable": false,
+      "rotationStyle": "all around",
+      "blocks": {
+        "search": {
+          "opcode": "event_whenflagclicked",
+          "next": "search-result",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 30,
+          "y": 30
+        },
+        "search-result": {
+          "opcode": "data_setvariableto",
+          "next": "search-say",
+          "parent": "search",
+          "inputs": {
+            "VALUE": [
+              2,
+              "search-guide"
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "案内結果",
+              "guide-result"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "search-guide": {
+          "opcode": "kubohiroyaeditorguide_spriteAndWait",
+          "next": null,
+          "parent": "search-result",
+          "inputs": {
+            "TARGET": [
+              1,
+              [
+                10,
+                "project.search"
+              ]
+            ],
+            "SIDE": [
+              1,
+              [
+                10,
+                "right"
+              ]
+            ],
+            "MESSAGE": [
+              1,
+              [
+                10,
+                "作品全体の検索欄をクリックしてみよう"
+              ]
+            ],
+            "ACTION": [
+              1,
+              [
+                10,
+                "click"
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "search-say": {
+          "opcode": "looks_sayforsecs",
+          "next": null,
+          "parent": "search-result",
+          "inputs": {
+            "MESSAGE": [
+              3,
+              "search-value",
+              [
+                10,
+                ""
+              ]
+            ],
+            "SECS": [
+              1,
+              [
+                4,
+                "2"
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "search-value": {
+          "opcode": "data_variable",
+          "next": null,
+          "parent": "search-say",
+          "inputs": {},
+          "fields": {
+            "VARIABLE": [
+              "案内結果",
+              "guide-result"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "edit": {
+          "opcode": "event_whenkeypressed",
+          "next": "edit-result",
+          "parent": null,
+          "inputs": {},
+          "fields": {
+            "KEY_OPTION": [
+              "g",
+              null
+            ]
+          },
+          "shadow": false,
+          "topLevel": true,
+          "x": 30,
+          "y": 280
+        },
+        "edit-result": {
+          "opcode": "data_setvariableto",
+          "next": "edit-say",
+          "parent": "edit",
+          "inputs": {
+            "VALUE": [
+              2,
+              "edit-guide"
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "案内結果",
+              "guide-result"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "edit-guide": {
+          "opcode": "kubohiroyaeditorguide_spriteAndWait",
+          "next": null,
+          "parent": "edit-result",
+          "inputs": {
+            "TARGET": [
+              1,
+              [
+                10,
+                "code.workspace"
+              ]
+            ],
+            "SIDE": [
+              1,
+              [
+                10,
+                "center"
+              ]
+            ],
+            "MESSAGE": [
+              1,
+              [
+                10,
+                "練習用の「待つ」の秒数を変えてみよう"
+              ]
+            ],
+            "ACTION": [
+              1,
+              [
+                10,
+                "event:workspace.changed"
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "edit-say": {
+          "opcode": "looks_sayforsecs",
+          "next": null,
+          "parent": "edit-result",
+          "inputs": {
+            "MESSAGE": [
+              3,
+              "edit-value",
+              [
+                10,
+                ""
+              ]
+            ],
+            "SECS": [
+              1,
+              [
+                4,
+                "2"
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "edit-value": {
+          "opcode": "data_variable",
+          "next": null,
+          "parent": "edit-say",
+          "inputs": {},
+          "fields": {
+            "VARIABLE": [
+              "案内結果",
+              "guide-result"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "practice": {
+          "opcode": "control_wait",
+          "next": null,
+          "parent": null,
+          "inputs": {
+            "DURATION": [
+              1,
+              [
+                4,
+                "1"
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 30,
+          "y": 550
+        }
+      }
+    }
+  ],
+  "monitors": [
+    {
+      "id": "clock",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "時計"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 10,
+      "y": 65,
+      "visible": true,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    }
+  ],
+  "extensions": [
+    "kubohiroyaeditorguide"
+  ],
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "0.2.0",
+    "agent": "TurboWarp Plus feature guide sample"
+  }
+}

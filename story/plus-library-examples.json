@@ -1,0 +1,92 @@
+{
+  "6": {
+    "file": "assets/library-examples/top-split-minimap.png",
+    "width": 560,
+    "height": 252
+  },
+  "7": {
+    "file": "assets/library-examples/palette-search.png",
+    "width": 560,
+    "height": 475
+  },
+  "9": {
+    "file": "assets/library-examples/palette-groups-current.png",
+    "width": 560,
+    "height": 453
+  },
+  "15": {
+    "file": "assets/library-examples/minimap-current.png",
+    "width": 560,
+    "height": 389
+  },
+  "19": {
+    "file": "assets/library-examples/call-graph-current-detail.png",
+    "width": 560,
+    "height": 328
+  },
+  "20": {
+    "file": "assets/library-examples/messages-sprite.png",
+    "width": 560,
+    "height": 389
+  },
+  "21": {
+    "file": "assets/library-examples/properties-variables.png",
+    "width": 560,
+    "height": 389
+  },
+  "26": {
+    "file": "assets/library-examples/media-panes.png",
+    "width": 560,
+    "height": 389
+  },
+  "29": {
+    "file": "assets/library-examples/catalog-current.png",
+    "width": 560,
+    "height": 389
+  },
+  "30": {
+    "file": "assets/library-examples/project-diagnostics-failure.png",
+    "width": 560,
+    "height": 389
+  },
+  "31": {
+    "file": "assets/library-examples/validation-dialog.png",
+    "width": 560,
+    "height": 410
+  },
+  "33": {
+    "file": "assets/library-examples/asset-preview-development.png",
+    "width": 560,
+    "height": 477
+  },
+  "39": {
+    "file": "assets/library-examples/properties-current.png",
+    "width": 352,
+    "height": 560
+  },
+  "43": {
+    "file": "assets/library-examples/current-project-folder.png",
+    "width": 560,
+    "height": 373
+  },
+  "45": {
+    "file": "assets/library-examples/current-git-blocks.png",
+    "width": 560,
+    "height": 373
+  },
+  "46": {
+    "file": "assets/library-examples/current-git-commit.png",
+    "width": 560,
+    "height": 373
+  },
+  "50": {
+    "file": "assets/library-examples/current-pr-blocks.png",
+    "width": 560,
+    "height": 373
+  },
+  "53": {
+    "file": "assets/library-examples/editor-guide-search.png",
+    "width": 560,
+    "height": 362
+  }
+}

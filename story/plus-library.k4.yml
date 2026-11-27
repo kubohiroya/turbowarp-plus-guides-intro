@@ -1,0 +1,5024 @@
+kamishibai: "4.0"
+controls:
+  keymaps:
+    production:
+      Space: navigation.nextAction
+bubbleStyles:
+  lesson:
+    maxWidth: 320
+    textLocale: ja
+    distance: 0
+    tailLength: 8
+assets:
+  PuraIdle:
+    kind: costume
+    target: Pura
+    file: assets/pura.png
+  MokoIdle:
+    kind: costume
+    target: Moko
+    file: assets/moko.png
+  LibraryExample6:
+    kind: costume
+    file: assets/library-examples/top-split-minimap.png
+    target: LibraryExample
+  LibrarySlot1:
+    kind: costume
+    file: assets/LibrarySlot1.svg
+    target: LibrarySlot1
+  LibrarySlot2:
+    kind: costume
+    file: assets/LibrarySlot2.svg
+    target: LibrarySlot2
+  LibrarySlot3:
+    kind: costume
+    file: assets/LibrarySlot3.svg
+    target: LibrarySlot3
+  LibrarySlot4:
+    kind: costume
+    file: assets/LibrarySlot4.svg
+    target: LibrarySlot4
+  LibrarySlot5:
+    kind: costume
+    file: assets/LibrarySlot5.svg
+    target: LibrarySlot5
+  LibrarySlot6:
+    kind: costume
+    file: assets/LibrarySlot6.svg
+    target: LibrarySlot6
+  LibrarySlot7:
+    kind: costume
+    file: assets/LibrarySlot7.svg
+    target: LibrarySlot7
+  LibrarySlot8:
+    kind: costume
+    file: assets/LibrarySlot8.svg
+    target: LibrarySlot8
+  LibrarySlot9:
+    kind: costume
+    file: assets/LibrarySlot9.svg
+    target: LibrarySlot9
+  LibrarySlot10:
+    kind: costume
+    file: assets/LibrarySlot10.svg
+    target: LibrarySlot10
+  LibrarySlot11:
+    kind: costume
+    file: assets/LibrarySlot11.svg
+    target: LibrarySlot11
+  Library_menu:
+    kind: backdrop
+    file: assets/Library_menu.svg
+actors:
+  Pura: PuraIdle
+  Moko: MokoIdle
+  LibraryExample: LibraryExample6
+  LibrarySlot1: LibrarySlot1
+  LibrarySlot2: LibrarySlot2
+  LibrarySlot3: LibrarySlot3
+  LibrarySlot4: LibrarySlot4
+  LibrarySlot5: LibrarySlot5
+  LibrarySlot6: LibrarySlot6
+  LibrarySlot7: LibrarySlot7
+  LibrarySlot8: LibrarySlot8
+  LibrarySlot9: LibrarySlot9
+  LibrarySlot10: LibrarySlot10
+  LibrarySlot11: LibrarySlot11
+cover:
+  backdrop: Library_menu
+scenes:
+  menu:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_menu
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: 76
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: 76
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: 31
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: 31
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -14
+        scale: 100
+    - LibrarySlot6.show:
+        skin: LibrarySlot6
+        x: 113
+        y: -14
+        scale: 100
+    - LibrarySlot7.show:
+        skin: LibrarySlot7
+        x: -113
+        y: -59
+        scale: 100
+    - LibrarySlot8.show:
+        skin: LibrarySlot8
+        x: 113
+        y: -59
+        scale: 100
+    - LibrarySlot9.show:
+        skin: LibrarySlot9
+        x: -113
+        y: -104
+        scale: 100
+    - broadcastMessageAndWait: choice:library_menu
+    - goto: menu
+  recommended:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_recommended
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: 76
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: 76
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: 31
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: 31
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -14
+        scale: 100
+    - LibrarySlot6.show:
+        skin: LibrarySlot6
+        x: 113
+        y: -14
+        scale: 100
+    - LibrarySlot7.show:
+        skin: LibrarySlot7
+        x: -113
+        y: -59
+        scale: 100
+    - LibrarySlot8.show:
+        skin: LibrarySlot8
+        x: 113
+        y: -59
+        scale: 100
+    - LibrarySlot9.show:
+        skin: LibrarySlot9
+        x: -113
+        y: -104
+        scale: 100
+    - broadcastMessageAndWait: choice:library_recommended
+    - goto: recommended
+  topic_1:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_topic_1
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: 76
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: 76
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: 31
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: 31
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -14
+        scale: 100
+    - LibrarySlot6.show:
+        skin: LibrarySlot6
+        x: 113
+        y: -14
+        scale: 100
+    - LibrarySlot7.show:
+        skin: LibrarySlot7
+        x: -113
+        y: -59
+        scale: 100
+    - broadcastMessageAndWait: choice:library_topic_1
+    - goto: topic_1
+  topic_2:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_topic_2
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: 76
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: 76
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: 31
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: 31
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -14
+        scale: 100
+    - LibrarySlot6.show:
+        skin: LibrarySlot6
+        x: 113
+        y: -14
+        scale: 100
+    - LibrarySlot7.show:
+        skin: LibrarySlot7
+        x: -113
+        y: -59
+        scale: 100
+    - LibrarySlot8.show:
+        skin: LibrarySlot8
+        x: 113
+        y: -59
+        scale: 100
+    - LibrarySlot9.show:
+        skin: LibrarySlot9
+        x: -113
+        y: -104
+        scale: 100
+    - LibrarySlot10.show:
+        skin: LibrarySlot10
+        x: 113
+        y: -104
+        scale: 100
+    - LibrarySlot11.show:
+        skin: LibrarySlot11
+        x: -113
+        y: -149
+        scale: 100
+    - broadcastMessageAndWait: choice:library_topic_2
+    - goto: topic_2
+  topic_3:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_topic_3
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: 76
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: 76
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: 31
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: 31
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -14
+        scale: 100
+    - LibrarySlot6.show:
+        skin: LibrarySlot6
+        x: 113
+        y: -14
+        scale: 100
+    - LibrarySlot7.show:
+        skin: LibrarySlot7
+        x: -113
+        y: -59
+        scale: 100
+    - LibrarySlot8.show:
+        skin: LibrarySlot8
+        x: 113
+        y: -59
+        scale: 100
+    - LibrarySlot9.show:
+        skin: LibrarySlot9
+        x: -113
+        y: -104
+        scale: 100
+    - LibrarySlot10.show:
+        skin: LibrarySlot10
+        x: 113
+        y: -104
+        scale: 100
+    - broadcastMessageAndWait: choice:library_topic_3
+    - goto: topic_3
+  topic_4:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_topic_4
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: 76
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: 76
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: 31
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: 31
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -14
+        scale: 100
+    - LibrarySlot6.show:
+        skin: LibrarySlot6
+        x: 113
+        y: -14
+        scale: 100
+    - LibrarySlot7.show:
+        skin: LibrarySlot7
+        x: -113
+        y: -59
+        scale: 100
+    - LibrarySlot8.show:
+        skin: LibrarySlot8
+        x: 113
+        y: -59
+        scale: 100
+    - LibrarySlot9.show:
+        skin: LibrarySlot9
+        x: -113
+        y: -104
+        scale: 100
+    - broadcastMessageAndWait: choice:library_topic_4
+    - goto: topic_4
+  topic_5:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_topic_5
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: 76
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: 76
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: 31
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: 31
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -14
+        scale: 100
+    - LibrarySlot6.show:
+        skin: LibrarySlot6
+        x: 113
+        y: -14
+        scale: 100
+    - LibrarySlot7.show:
+        skin: LibrarySlot7
+        x: -113
+        y: -59
+        scale: 100
+    - LibrarySlot8.show:
+        skin: LibrarySlot8
+        x: 113
+        y: -59
+        scale: 100
+    - LibrarySlot9.show:
+        skin: LibrarySlot9
+        x: -113
+        y: -104
+        scale: 100
+    - LibrarySlot10.show:
+        skin: LibrarySlot10
+        x: 113
+        y: -104
+        scale: 100
+    - broadcastMessageAndWait: choice:library_topic_5
+    - goto: topic_5
+  topic_6:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_topic_6
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: 76
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: 76
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: 31
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: 31
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -14
+        scale: 100
+    - LibrarySlot6.show:
+        skin: LibrarySlot6
+        x: 113
+        y: -14
+        scale: 100
+    - LibrarySlot7.show:
+        skin: LibrarySlot7
+        x: -113
+        y: -59
+        scale: 100
+    - LibrarySlot8.show:
+        skin: LibrarySlot8
+        x: 113
+        y: -59
+        scale: 100
+    - LibrarySlot9.show:
+        skin: LibrarySlot9
+        x: -113
+        y: -104
+        scale: 100
+    - LibrarySlot10.show:
+        skin: LibrarySlot10
+        x: 113
+        y: -104
+        scale: 100
+    - LibrarySlot11.show:
+        skin: LibrarySlot11
+        x: -113
+        y: -149
+        scale: 100
+    - broadcastMessageAndWait: choice:library_topic_6
+    - goto: topic_6
+  topic_7:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_topic_7
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: 76
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: 76
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: 31
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: 31
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -14
+        scale: 100
+    - broadcastMessageAndWait: choice:library_topic_7
+    - goto: topic_7
+  chapter_01:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_01_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 星あつめゲーム。直したいけど、得点のブロックがどこか忘れちゃった。
+        seconds: 6.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 上の検索欄で「星」を探す。結果から使っているコードに飛べるよ。
+        seconds: 6.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: コードと実行画面を並べれば、直した結果がすぐ見える。あとでブロックの差分も読める。
+        seconds: 8
+        styles:
+          - lesson
+    - goto: chapter_01_try
+  chapter_01_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_01_try
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: まず検索欄をクリックして、この紙芝居の横に編集画面があることを確かめよう。
+        seconds: 7.4
+        styles:
+          - lesson
+    - broadcastMessageAndWait: lesson:library_chapter_01
+    - goto: chapter_01_result
+  chapter_01_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_01_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -121
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_01_result
+    - goto: chapter_01_result
+  chapter_02:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_02_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: Scratchで作った星あつめ、最初から作り直すの？
+        seconds: 5.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: Scratchで保存したSB3を「ファイル」→「SB3ファイルを開く…」で開くよ。
+        seconds: 8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 新規作成、手元のSB3、SB3のURL、作品フォルダは、ファイルメニューから入口を選べる。
+        seconds: 8.7
+        styles:
+          - lesson
+    - goto: chapter_02_try
+  chapter_02_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_02_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_02_try
+    - goto: chapter_02_try
+  chapter_02_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_02_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_02_result
+    - goto: chapter_02_result
+  chapter_03:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_03_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: スプライトや設定が、Scratchで見慣れた場所にないぞ。
+        seconds: 6.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: 上段にファイル・編集・検索・実行画面。左端はスプライト一覧や作品フォルダなどの切り替えだよ。
+        seconds: 8.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: Plusのロゴから言語・テーマ・動作設定へ。表示を変えても、作品のコードはそのまま。
+        seconds: 8.2
+        styles:
+          - lesson
+    - goto: chapter_03_try
+  chapter_03_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_03_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_03_try
+    - goto: chapter_03_try
+  chapter_03_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_03_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_03_result
+    - goto: chapter_03_result
+  chapter_04:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_04_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 星も背景も増えてきた。いま誰のコードを見ているんだろう。
+        seconds: 5.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 左の一覧で名前を検索し、対象をクリック。タブと左のアイコンでコード・絵・音などを切り替える。
+        seconds: 8.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 一覧は固定できる。ステージを選ぶと背景やグローバル変数を開けるよ。
+        seconds: 6.7
+        styles:
+          - lesson
+    - goto: chapter_04_try
+  chapter_04_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_04_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_04_try
+    - goto: chapter_04_try
+  chapter_04_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_04_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_04_result
+    - goto: chapter_04_result
+  chapter_05:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_05_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: コードも広く見たい。でも動いているところも見たいな。
+        seconds: 5.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 実行画面は引出し・タブ・別ウィンドウで開ける。引出しの境界で幅を変えられるよ。
+        seconds: 7.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 紙芝居とGuideを一緒に使うときは同じ画面の引出しが便利。作品のキー操作ではIME補正も働く。
+        seconds: 9.1
+        styles:
+          - lesson
+    - goto: chapter_05_try
+  chapter_05_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_05_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_05_try
+    - goto: chapter_05_try
+  chapter_05_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_05_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_05_result
+    - goto: chapter_05_result
+  chapter_06_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_06_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:6
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_06_example
+    - goto: chapter_06_example
+  chapter_06:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_06_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 関数の呼び出しと定義を、何度も往復しているよ。
+        seconds: 5.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: 編集パネルのレイアウトから横または縦に分割。同じスプライトも並べて見られる。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 片方でコード、片方で素材も見られる。作品に記録した配置は、次に開くとき戻せる。
+        seconds: 7.7
+        styles:
+          - lesson
+    - goto: chapter_06_example
+  chapter_06_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_06_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_06_try
+    - goto: chapter_06_try
+  chapter_06_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_06_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -121
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_06_result
+    - goto: chapter_06_result
+  chapter_07_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_07_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:7
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_07_example
+    - goto: chapter_07_example
+  chapter_07:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_07_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 「跳ね返る」と「もし」、色を覚えていないと見つからない？
+        seconds: 5.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: コード上のカテゴリを開き、小窓の「ブロックを検索」に語句を入れる。
+        seconds: 6.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 今開いているカテゴリ以外でも、表示対象のカテゴリなら候補に出る。そのままコードへドラッグできる。
+        seconds: 9.1
+        styles:
+          - lesson
+    - goto: chapter_07_example
+  chapter_07_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_07_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_07_try
+    - goto: chapter_07_try
+  chapter_07_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_07_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -121
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_07_result
+    - goto: chapter_07_result
+  chapter_08:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_08_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: よく使うカテゴリが奥にあるし、小窓も狭いよ。
+        seconds: 4.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: カテゴリを長押しして並べ替え、小窓の右下をドラッグして広げる。
+        seconds: 6.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 拡張の子グループはピンで広げられる。パレットを別ウィンドウに出せる配置もある。
+        seconds: 7.7
+        styles:
+          - lesson
+    - goto: chapter_08_try
+  chapter_08_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_08_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_08_try
+    - goto: chapter_08_try
+  chapter_08_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_08_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_08_result
+    - goto: chapter_08_result
+  chapter_09_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_09_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:9
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_09_example
+    - goto: chapter_09_example
+  chapter_09:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_09_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 拡張が増えたら、使いたい道具が埋もれちゃった。
+        seconds: 5.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: カテゴリの末尾の▼から「ブロックグループの表示・非表示の設定」を開く。
+        seconds: 7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 編集中の対象に出すグループを選んで「確定」。新規スプライトでは別の対象の設定もコピーできる。
+        seconds: 8.8
+        styles:
+          - lesson
+    - goto: chapter_09_example
+  chapter_09_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_09_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_09_try
+    - goto: chapter_09_try
+  chapter_09_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_09_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_09_result
+    - goto: chapter_09_result
+  chapter_10:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_10_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 吹き出しのセリフを長く書いたら、ブロックが読みにくいよ。
+        seconds: 5.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 長文の引数をクリックすると「テキストを編集」が開く。短い文字欄からShift+Enterでも改行して続けられる。
+        seconds: 10.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: ブロックの表示は省略されても値は残る。数値専用の欄に入れた全角数字は半角に整う。
+        seconds: 7.9
+        styles:
+          - lesson
+    - goto: chapter_10_try
+  chapter_10_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_10_try
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 練習用の「星を並べる」の個数を変えて、コードの表示を見よう。
+        seconds: 6.2
+        styles:
+          - lesson
+    - broadcastMessageAndWait: lesson:library_chapter_10
+    - goto: chapter_10_result
+  chapter_10_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_10_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_10_result
+    - goto: chapter_10_result
+  chapter_11:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_11_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 三つのスクリプトを動かすのに、三往復するの？
+        seconds: 4.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 自由配置でCtrl、Macなら⌘を押しながらクリック。Shiftで背景をドラッグすると範囲を選べる。
+        seconds: 9.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: Shift+Altの矩形で選択から外す。選んだものをドラッグすると関係を保って一緒に動く。
+        seconds: 8.7
+        styles:
+          - lesson
+    - goto: chapter_11_try
+  chapter_11_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_11_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_11_try
+    - goto: chapter_11_try
+  chapter_11_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_11_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_11_result
+    - goto: chapter_11_result
+  chapter_12:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_12_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 星の動きを別のキャラにも使いたい。元のコードは残したいな。
+        seconds: 6.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: 自由配置でスクリプトを選び、コピー先のスプライトかステージのタイルへドラッグ。
+        seconds: 7.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 選択したグループが位置関係を保ってコピーされる。Plus標準パレットでは必要なグループの表示設定も確認しよう。
+        seconds: 10.3
+        styles:
+          - lesson
+    - goto: chapter_12_try
+  chapter_12_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_12_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_12_try
+    - goto: chapter_12_try
+  chapter_12_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_12_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_12_result
+    - goto: chapter_12_result
+  chapter_13:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_13_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 別のゲームにも、星を並べる処理を持っていきたいな。
+        seconds: 5.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: スクリプトの右クリックの書き出しと、貼り込み先のコード画面の読み込みを使う。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: ステージは一覧の右クリックから書き出して再利用できる。
+        seconds: 5.8
+        styles:
+          - lesson
+    - goto: chapter_13_try
+  chapter_13_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_13_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_13_try
+    - goto: chapter_13_try
+  chapter_13_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_13_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_13_result
+    - goto: chapter_13_result
+  chapter_14:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_14_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 星のコードを直した後、別のスプライトを開いた。もう戻せない？
+        seconds: 6.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: 元の対象へ戻り、コード画面で「元に戻す」。取り消し履歴は対象ごとに保たれる。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 削除したスプライトは「編集」→「削除の取り消し」で直近から順に復元できる。
+        seconds: 7.4
+        styles:
+          - lesson
+    - goto: chapter_14_try
+  chapter_14_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_14_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_14_try
+    - goto: chapter_14_try
+  chapter_14_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_14_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_14_result
+    - goto: chapter_14_result
+  chapter_15_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_15_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:15
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_15_example
+    - goto: chapter_15_example
+  chapter_15:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_15_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: スクリプトが増えて、画面の端に何があるか分からない！
+        seconds: 5.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: ミニマップの表示範囲を動かし、ズームで全体と細部を切り替える。
+        seconds: 6.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 自由配置、行順のZ方式、列順のN方式で、見え方を変えられる。
+        seconds: 6.2
+        styles:
+          - lesson
+    - goto: chapter_15_example
+  chapter_15_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_15_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_15_try
+    - goto: chapter_15_try
+  chapter_15_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_15_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_15_result
+    - goto: chapter_15_result
+  chapter_16:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_16_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 整理すると、せっかく書いたコメントが隣のコードに重なりそう。
+        seconds: 6.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: 背景の右クリックから「きれいにする」。付いたコメントも一緒に整えられる。
+        seconds: 7.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: 関数やメッセージでつながる順に並べる機能には、確定前のプレビューがある。
+        seconds: 7.2
+        styles:
+          - lesson
+    - goto: chapter_16_try
+  chapter_16_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_16_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_16_try
+    - goto: chapter_16_try
+  chapter_16_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_16_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_16_result
+    - goto: chapter_16_result
+  chapter_17:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_17_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 星を並べている処理、どの黄色い帽子から始まるの？
+        seconds: 5.3
+        styles:
+          - lesson
+    - Pura.say:
+        text: ハットと関数のパネルで対象のスクリプトを一覧する。クリックすると該当箇所を開ける。
+        seconds: 8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 処理を追加するときも関数の入口が同じ画面にある。
+        seconds: 5.3
+        styles:
+          - lesson
+    - goto: chapter_17_try
+  chapter_17_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_17_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_17_try
+    - goto: chapter_17_try
+  chapter_17_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_17_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_17_result
+    - goto: chapter_17_result
+  chapter_18:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_18_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: ほかの処理が多くて、いま見ているスクリプトが埋もれる。
+        seconds: 5.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 自由配置でスクリプトを右クリックし「このスクリプトを個別の画面で編集する」を選ぶ。
+        seconds: 8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 注目するかたまりと周囲のコードを分けて読める。編集可能かは開いた画面の状態で確かめよう。
+        seconds: 8.5
+        styles:
+          - lesson
+    - goto: chapter_18_try
+  chapter_18_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_18_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_18_try
+    - goto: chapter_18_try
+  chapter_18_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_18_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_18_result
+    - goto: chapter_18_result
+  chapter_19_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_19_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:19
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_19_example
+    - goto: chapter_19_example
+  chapter_19:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_19_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 「星を並べる」を変えたら、どの処理に影響する？
+        seconds: 5.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: ハットと関数の画面で呼び出し関係を図にする。定義や呼び出し元をクリックしてコードへ移動。
+        seconds: 8.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: どこから何を呼ぶかが見える。呼ばれている場所を先に読めば、修正の影響を想像しやすい。
+        seconds: 8.2
+        styles:
+          - lesson
+    - goto: chapter_19_example
+  chapter_19_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_19_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_19_try
+    - goto: chapter_19_try
+  chapter_19_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_19_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -121
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_19_result
+    - goto: chapter_19_result
+  chapter_20_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_20_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:20
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_20_example
+    - goto: chapter_20_example
+  chapter_20:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_20_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 「ゲームオーバー」を送っているけど、誰が受け取るんだっけ？
+        seconds: 6.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: 対象のメッセージパネルで送信・受信を切り替え、関係図の名前やブロックを押す。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 相手のコードへ飛べる。送る側だけ、受け取る側だけのメッセージも警告で見つけられる。
+        seconds: 8
+        styles:
+          - lesson
+    - goto: chapter_20_example
+  chapter_20_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_20_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_20_try
+    - goto: chapter_20_try
+  chapter_20_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_20_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_20_result
+    - goto: chapter_20_result
+  chapter_21_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_21_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:21
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_21_example
+    - goto: chapter_21_example
+  chapter_21:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_21_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: ステージの得点と、星のクローンが持つ値は同じところにあるの？
+        seconds: 6.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: 対象の「変数」で位置・向きなどのプロパティと、その対象の変数・リストを確認する。
+        seconds: 7.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: ステージならグローバル変数。スプライト側ではローカル値や、対応する一時変数・クローンの値も調べられる。
+        seconds: 9.6
+        styles:
+          - lesson
+    - goto: chapter_21_example
+  chapter_21_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_21_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_21_try
+    - goto: chapter_21_try
+  chapter_21_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_21_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_21_result
+    - goto: chapter_21_result
+  chapter_22:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_22_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 「点数」と「得点」が同じ役なのに、二つできてしまった！
+        seconds: 5.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 同じ対象から見える既存名に名前を変更すると、統合を確認する画面が開く。
+        seconds: 7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 使っているブロックが統合先へ付け替わり、統合先の値が残る。リストも統合先の中身が残る。
+        seconds: 8.3
+        styles:
+          - lesson
+    - goto: chapter_22_try
+  chapter_22_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_22_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_22_try
+    - goto: chapter_22_try
+  chapter_22_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_22_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_22_result
+    - goto: chapter_22_result
+  chapter_23:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_23_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 星ごとの残り時間を、うっかり全員で共有していたよ。
+        seconds: 5.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 変数・リストのパレットメニューでグローバルかスプライト専用への変更を選ぶ。
+        seconds: 7.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 他の対象から使われている項目を専用にはできない。クローンの値の持ち方も変わる。
+        seconds: 7.7
+        styles:
+          - lesson
+    - goto: chapter_23_try
+  chapter_23_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_23_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_23_try
+    - goto: chapter_23_try
+  chapter_23_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_23_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_23_result
+    - goto: chapter_23_result
+  chapter_24:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_24_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 変数を読む場所と、書き換える場所を一つずつ見つけたい。
+        seconds: 5.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 上段の検索欄に名前を入れて範囲を選ぶ。変数の読み取りと変更を区別して探せる。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 結果から該当位置へ移動。対応する作品内YAMLや文書も検索対象にできる。
+        seconds: 7.2
+        styles:
+          - lesson
+    - goto: chapter_24_try
+  chapter_24_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_24_try
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 検索欄を開き、「星を並べる」を入力して、呼び出しと定義を探そう。
+        seconds: 6.6
+        styles:
+          - lesson
+    - broadcastMessageAndWait: lesson:library_chapter_24
+    - goto: chapter_24_result
+  chapter_24_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_24_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -121
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_24_result
+    - goto: chapter_24_result
+  chapter_25:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_25_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: セリフの「星」を「宝石」に変えたい。でも変数名までは変えたくない。
+        seconds: 6.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 「編集」→「検索と置換」で語句を探し、対象の種類と変える結果を選ぶ。
+        seconds: 6.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 変更前の結果を読み、必要な箇所だけ置換する。未知の範囲は一度選択から外そう。
+        seconds: 7.5
+        styles:
+          - lesson
+    - goto: chapter_25_try
+  chapter_25_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_25_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_25_try
+    - goto: chapter_25_try
+  chapter_25_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_25_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_25_result
+    - goto: chapter_25_result
+  chapter_26_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_26_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:26
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_26_example
+    - goto: chapter_26_example
+  chapter_26:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_26_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 音が鳴るのに、どの絵を使っているか見たい。
+        seconds: 4.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 分割した片方で「コスチューム」、もう片方で「音」を開く。
+        seconds: 5.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 操作中のペインが編集画面になり、もう片方にはプレビューが残る。
+        seconds: 6.4
+        styles:
+          - lesson
+    - goto: chapter_26_example
+  chapter_26_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_26_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_26_try
+    - goto: chapter_26_try
+  chapter_26_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_26_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_26_result
+    - goto: chapter_26_result
+  chapter_27:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_27_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: タイトルの文字を変えたい。友だちにも同じ見た目で配れる？
+        seconds: 5.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: ペイントの「フォント…」から「Web フォントを追加」。フォントと代替フォントを選ぶ。
+        seconds: 8.3
+        styles:
+          - lesson
+    - Pura.say:
+        text: 開き直す際の読み込み確認で外部取得を選べる。オフラインやPackagerでは代替フォントを使う。
+        seconds: 9.1
+        styles:
+          - lesson
+    - goto: chapter_27_try
+  chapter_27_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_27_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_27_try
+    - goto: chapter_27_try
+  chapter_27_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_27_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_27_result
+    - goto: chapter_27_result
+  chapter_28:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_28_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 背景や効果音を、毎回新しく描いたり録ったりするの？
+        seconds: 5.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 背景・コスチューム・音を追加するとき、使いたいバンドル素材を選ぶ。
+        seconds: 6.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 取り込んだ素材は、対象の一覧で確認し、作品の見せ方に合わせて選び直せる。
+        seconds: 7.2
+        styles:
+          - lesson
+    - goto: chapter_28_try
+  chapter_28_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_28_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_28_try
+    - goto: chapter_28_try
+  chapter_28_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_28_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_28_result
+    - goto: chapter_28_result
+  chapter_29_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_29_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:29
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_29_example
+    - goto: chapter_29_example
+  chapter_29:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_29_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: スクリーンにないブロックは、どこから増やせるの？
+        seconds: 5.3
+        styles:
+          - lesson
+    - Pura.say:
+        text: 拡張ボタンやパレットの追加操作からライブラリを開き、公式カタログで名前と説明を読む。
+        seconds: 8.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: 追加すると対応ブロックのカテゴリが使える。使う用途から探すと依存用の項目と見分けやすい。
+        seconds: 8.5
+        styles:
+          - lesson
+    - goto: chapter_29_example
+  chapter_29_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_29_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_29_try
+    - goto: chapter_29_try
+  chapter_29_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_29_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_29_result
+    - goto: chapter_29_result
+  chapter_30_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_30_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:30
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_30_example
+    - goto: chapter_30_example
+  chapter_30:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_30_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: もらった作品で、拡張の確認やエラーが出た。全部押していけばいい？
+        seconds: 6.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 作品を開くときの確認画面で、拡張の出所と実行条件を読む。
+        seconds: 5.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 取得に失敗したときは、再試行やプロジェクト診断でどこまで読み込めたかを確認する。
+        seconds: 7.9
+        styles:
+          - lesson
+    - goto: chapter_30_example
+  chapter_30_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_30_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_30_try
+    - goto: chapter_30_try
+  chapter_30_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_30_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_30_result
+    - goto: chapter_30_result
+  chapter_31_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_31_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:31
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_31_example
+    - goto: chapter_31_example
+  chapter_31:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_31_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 長い設定が一つの引数に詰まっていて、どこを書けばいいか分からない。
+        seconds: 6.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 対応拡張のブロックからフォームを開き、項目名を見ながら入力する。
+        seconds: 6.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 必須項目や型に誤りがあれば、その場で分かる。入れ子の編集を用意している拡張もある。
+        seconds: 8
+        styles:
+          - lesson
+    - goto: chapter_31_example
+  chapter_31_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_31_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_31_try
+    - goto: chapter_31_try
+  chapter_31_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_31_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_31_result
+    - goto: chapter_31_result
+  chapter_32:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_32_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 紙芝居の台本と、呼び出すコードを見比べたい。
+        seconds: 4.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 対応する作品内文書のYAMLタブを開く。必要ならコードとペインを分けて並べる。
+        seconds: 7.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 作品内の文書・ブロック・外部原文には異なる保存先がある。対応するDesktop環境では外部編集の入口もある。
+        seconds: 10.1
+        styles:
+          - lesson
+    - goto: chapter_32_try
+  chapter_32_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_32_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_32_try
+    - goto: chapter_32_try
+  chapter_32_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_32_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_32_result
+    - goto: chapter_32_result
+  chapter_33_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_33_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:33
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_33_example
+    - goto: chapter_33_example
+  chapter_33:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_33_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 背景のファイル名だけでは、どの絵か分からないよ。
+        seconds: 5.3
+        styles:
+          - lesson
+    - Pura.say:
+        text: プレビュー対応の編集画面なら、候補の画像や音をその場で確かめられる。
+        seconds: 6.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 対応する作品は、場面や動作を試してから編集結果を反映できる。
+        seconds: 6.2
+        styles:
+          - lesson
+    - goto: chapter_33_example
+  chapter_33_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_33_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_33_try
+    - goto: chapter_33_try
+  chapter_33_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_33_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_33_result
+    - goto: chapter_33_result
+  chapter_34:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_34_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 星が急に消える。どの処理が原因か、実行だけでは見えないよ。
+        seconds: 6.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: デバッガーでログや変数を見て、気になる処理へブレークポイントを置く。
+        seconds: 6.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 止まった位置と実行中のスレッドを調べる。ステップ実行を使える条件では、一段ずつ進めて値を追う。
+        seconds: 9
+        styles:
+          - lesson
+    - goto: chapter_34_try
+  chapter_34_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_34_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_34_try
+    - goto: chapter_34_try
+  chapter_34_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_34_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_34_result
+    - goto: chapter_34_result
+  chapter_35:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_35_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 毎回遊んで確認するのは楽しいけど、直すたびに全部は大変だな。
+        seconds: 6.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: TurboWarp-Testのテストハットに名前を付けて、準備、操作、確かめるブロックを書く。
+        seconds: 9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 例えば得点0から加点を一度呼び、結果が10と期待する。一つのテストの期待を短く名前にする。
+        seconds: 8.7
+        styles:
+          - lesson
+    - goto: chapter_35_try
+  chapter_35_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_35_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_35_try
+    - goto: chapter_35_try
+  chapter_35_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_35_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_35_result
+    - goto: chapter_35_result
+  chapter_36:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_36_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 失敗とだけ言われても、何を直せばいいの？
+        seconds: 4.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 実行画面の表示メニューからテスト実行画面を開き、全件か一件を実行する。
+        seconds: 7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 期待10・実際8なら、失敗の「ブロックを表示」から該当の確かめるブロックへ戻れる。
+        seconds: 8
+        styles:
+          - lesson
+    - goto: chapter_36_try
+  chapter_36_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_36_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_36_try
+    - goto: chapter_36_try
+  chapter_36_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_36_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -121
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_36_result
+    - goto: chapter_36_result
+  chapter_37:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_37_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 練習で大きく変えたい。でも元の星あつめを残したいんだ。
+        seconds: 5.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 元の版も残すには「プロジェクトのコピーを保存」。通常の保存は編集中の作品の保存先を使う。
+        seconds: 8.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 未保存の印と、ショートカットが作品全体・アクティブなファイルのどちらに付くかをメニューで確認。
+        seconds: 9
+        styles:
+          - lesson
+    - goto: chapter_37_try
+  chapter_37_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_37_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_37_try
+    - goto: chapter_37_try
+  chapter_37_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_37_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_37_result
+    - goto: chapter_37_result
+  chapter_38:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_38_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 昨日はうまく動いた。Undoを何十回も押すしかない？
+        seconds: 5.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 作品の復元ポイントを開き、残っている世代を名前や時刻で確認する。
+        seconds: 6.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: Undoは編集の履歴。復元ポイントやGitでは、過去に保存した作品の状態を選べる。
+        seconds: 8
+        styles:
+          - lesson
+    - goto: chapter_38_try
+  chapter_38_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_38_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_38_try
+    - goto: chapter_38_try
+  chapter_38_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_38_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_38_result
+    - goto: chapter_38_result
+  chapter_39_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_39_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:39
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_39_example
+    - goto: chapter_39_example
+  chapter_39:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_39_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 同じ名前のファイルがいっぱい。誰の、どの作品だっけ？
+        seconds: 5.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 作品情報からタイトル、作者、説明、保存用の名前などを確認して記入する。
+        seconds: 7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 作品の表示名と保存用ファイル名は用途が異なる。URIは作品の参照やキャッシュ分離に使われる。
+        seconds: 8.8
+        styles:
+          - lesson
+    - goto: chapter_39_example
+  chapter_39_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_39_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_39_try
+    - goto: chapter_39_try
+  chapter_39_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_39_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_39_result
+    - goto: chapter_39_result
+  chapter_40:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_40_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 渡したファイルだけで開ける？ 別の素材や拡張も必要？
+        seconds: 5.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 拡張コードや素材、ソースデータの格納方式を確認する。作品に含めるか、参照するかで条件が変わる。
+        seconds: 9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 参照先が必要な方式では、相手にもネット接続や取得先が必要になることがある。
+        seconds: 7.4
+        styles:
+          - lesson
+    - goto: chapter_40_try
+  chapter_40_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_40_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_40_try
+    - goto: chapter_40_try
+  chapter_40_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_40_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_40_result
+    - goto: chapter_40_result
+  chapter_41:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_41_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 友だちが遊ぶだけなら、編集画面を見せなくてもいいよね。
+        seconds: 5.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 編集できる作品を渡すならSB3。ブラウザーで遊ぶ形には書き出しから単一HTMLを検討する。
+        seconds: 8.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: Packagerの設定と、フォント・拡張の互換性で見え方や動作が変わることがある。
+        seconds: 8
+        styles:
+          - lesson
+    - goto: chapter_41_try
+  chapter_41_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_41_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_41_try
+    - goto: chapter_41_try
+  chapter_41_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_41_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_41_result
+    - goto: chapter_41_result
+  chapter_42:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_42_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 最近開いた星あつめの別版をもっと探しやすくしたい。
+        seconds: 5.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 「ファイル」→「プロジェクト一覧…」。名前、保存場所、最終利用日時で並べ替える。
+        seconds: 7.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 表示する作品名と保存先のファイル・フォルダ名は別に変えられる。
+        seconds: 6.4
+        styles:
+          - lesson
+    - goto: chapter_42_try
+  chapter_42_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_42_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_42_try
+    - goto: chapter_42_try
+  chapter_42_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_42_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_42_result
+    - goto: chapter_42_result
+  chapter_43_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_43_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:43
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_43_example
+    - goto: chapter_43_example
+  chapter_43:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_43_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: SB3の中を、ファイルごとに見られると便利そう。
+        seconds: 5.3
+        styles:
+          - lesson
+    - Pura.say:
+        text: 新規作成で作品フォルダを選ぶか、すでに展開したフォルダを開く。
+        seconds: 6.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: ブラウザーに保存する方式と、対応ブラウザーで手元のフォルダを選ぶ方式がある。
+        seconds: 7.5
+        styles:
+          - lesson
+    - goto: chapter_43_example
+  chapter_43_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_43_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_43_try
+    - goto: chapter_43_try
+  chapter_43_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_43_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_43_result
+    - goto: chapter_43_result
+  chapter_44:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_44_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: エディターとVS Codeで同じ説明文を直すとどうなる？
+        seconds: 5.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 作品フォルダの一覧からファイルを開き、Gitの変更印や編集中のタブを確認する。
+        seconds: 7.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 外部の変更を検知したら表示を読み、手元の未保存変更があれば先に扱いを決める。
+        seconds: 7.5
+        styles:
+          - lesson
+    - goto: chapter_44_try
+  chapter_44_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_44_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_44_try
+    - goto: chapter_44_try
+  chapter_44_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_44_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_44_result
+    - goto: chapter_44_result
+  chapter_45_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_45_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:45
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_45_example
+    - goto: chapter_45_example
+  chapter_45:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_45_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 「星を少し増やしたよ」って、どこが変わったの？
+        seconds: 5.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: Gitの変更一覧から対象のスプライトやファイルを選び、ブロックの差分を開く。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: テキスト上の識別子の違いから読み解かなくても、個数が5から6に変わった場所を探せる。
+        seconds: 8.2
+        styles:
+          - lesson
+    - goto: chapter_45_example
+  chapter_45_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_45_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_45_try
+    - goto: chapter_45_try
+  chapter_45_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_45_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -121
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_45_result
+    - goto: chapter_45_result
+  chapter_46_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_46_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:46
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_46_example
+    - goto: chapter_46_example
+  chapter_46:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_46_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 保存したのに「コミット」も必要なの？
+        seconds: 4.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 作品を保存してから、Gitで変更の候補と含める項目、作者を確認する。
+        seconds: 6.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 「星を一つ増やす」のように目的を書いてローカルに記録する。別件の変更は別に残せる。
+        seconds: 8
+        styles:
+          - lesson
+    - goto: chapter_46_example
+  chapter_46_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_46_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_46_try
+    - goto: chapter_46_try
+  chapter_46_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_46_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_46_result
+    - goto: chapter_46_result
+  chapter_47:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_47_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 星以外に月も入れたい。でも動いている版は保ちたい。
+        seconds: 5.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 何をしたいかをIssueなどに短く書き、作業用のブランチを作る。
+        seconds: 6.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 別の変更を独立して試し、確認できたら取り込む計画にできる。
+        seconds: 6.1
+        styles:
+          - lesson
+    - goto: chapter_47_try
+  chapter_47_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_47_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_47_try
+    - goto: chapter_47_try
+  chapter_47_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_47_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_47_result
+    - goto: chapter_47_result
+  chapter_48:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_48_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 手元の星あつめを、チームにも見える場所へ置きたい。
+        seconds: 5.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 対応する接続方式を選び、必要な認証を行う。既存のSB3は作品フォルダに移してから管理できる。
+        seconds: 8.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: GitHubから開く場合はリポジトリを選び、編集するコピーの保存先を決める。
+        seconds: 7.5
+        styles:
+          - lesson
+    - goto: chapter_48_try
+  chapter_48_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_48_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_48_try
+    - goto: chapter_48_try
+  chapter_48_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_48_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_48_result
+    - goto: chapter_48_result
+  chapter_49:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_49_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: チームの変更を見たいだけなのに、いきなり上書きされたら困る。
+        seconds: 6.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: 取り込む前にfetchで向こうの履歴を確認。pullで手元へ取り込み、pushでこちらの履歴を送る。
+        seconds: 9.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 作業ブランチと送信先、手元・相手側の変更を確かめてから操作する。
+        seconds: 6.6
+        styles:
+          - lesson
+    - goto: chapter_49_try
+  chapter_49_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_49_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_49_try
+    - goto: chapter_49_try
+  chapter_49_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_49_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_49_result
+    - goto: chapter_49_result
+  chapter_50_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_50_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:50
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_50_example
+    - goto: chapter_50_example
+  chapter_50:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_50_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 「できたよ」と言うだけだと、どこを見てほしいか分からない。
+        seconds: 6.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: PRで何を変え、どう確かめたかを伝える。対応する接続ならスクリプトの差分を確認できる。
+        seconds: 8.3
+        styles:
+          - lesson
+    - Pura.say:
+        text: 変更箇所を絞ってレビューし、チェックの結果やSB3の動作を見る。
+        seconds: 6.6
+        styles:
+          - lesson
+    - goto: chapter_50_example
+  chapter_50_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_50_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_50_try
+    - goto: chapter_50_try
+  chapter_50_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_50_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_50_result
+    - goto: chapter_50_result
+  chapter_51:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_51_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: レビューが終わった！ 自分の画面にも自動で入る？
+        seconds: 5.3
+        styles:
+          - lesson
+    - Pura.say:
+        text: PRの向き、確認結果、取り込む差分を見てマージ。接続と権限に合う画面を使う。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 取り込み後は手元の作品を同期・再読み込みし、実際に新しい版で開いたか確認する。
+        seconds: 7.7
+        styles:
+          - lesson
+    - goto: chapter_51_try
+  chapter_51_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_51_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_51_try
+    - goto: chapter_51_try
+  chapter_51_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_51_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_51_result
+    - goto: chapter_51_result
+  chapter_52:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_52_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: チームには最新版が見えるけど、遊ぶ人に配る版はどれ？
+        seconds: 5.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 渡す版を決め、対応するコミットのSB3やHTMLを確認する。GitHub Releasesも配布先に使える。
+        seconds: 10.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: 版名と遊び方があると、受け取った人は以前の版と区別できる。
+        seconds: 6.1
+        styles:
+          - lesson
+    - goto: chapter_52_try
+  chapter_52_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_52_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_52_try
+    - goto: chapter_52_try
+  chapter_52_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_52_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_52_result
+    - goto: chapter_52_result
+  chapter_53_example:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_53_example
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:example:53
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -125
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -125
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_53_example
+    - goto: chapter_53_example
+  chapter_53:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_53_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: プラがステージの外でしゃべってる。しかも裏側の検索欄が押せる？
+        seconds: 6.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 案内中のスプライトは登録された場所の横へ表示される。検索欄を押すまで紙芝居の続きが待つよ。
+        seconds: 8.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 案内先の操作は利用者が行う。待機中でも別のスクリプトや操作を進められる。
+        seconds: 7.2
+        styles:
+          - lesson
+    - goto: chapter_53_example
+  chapter_53_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_53_try
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: ステージ外のマスコットを見てから、案内先の検索欄をクリックしよう。
+        seconds: 6.7
+        styles:
+          - lesson
+    - broadcastMessageAndWait: lesson:library_chapter_53
+    - goto: chapter_53_result
+  chapter_53_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_53_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - LibrarySlot5.show:
+        skin: LibrarySlot5
+        x: -113
+        y: -121
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_53_result
+    - goto: chapter_53_result
+  chapter_54:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_54_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 自分の作品でも「ここを変えてね」と言えるようにしたい！
+        seconds: 5.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 「エディター案内」ブロックで論理名と待つ操作を指定する。コードなら workspace.changed を使える。
+        seconds: 10.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 変化の通知と正しい答えかどうかは別。結果に応じて次へ、再試行、スキップを用意する。
+        seconds: 8
+        styles:
+          - lesson
+    - goto: chapter_54_try
+  chapter_54_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_54_try
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 練習スプライトの個数を変え、案内が閉じて紙芝居へ戻るところを見よう。
+        seconds: 6.9
+        styles:
+          - lesson
+    - broadcastMessageAndWait: lesson:library_chapter_54
+    - goto: chapter_54_result
+  chapter_54_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_54_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_54_result
+    - goto: chapter_54_result
+  chapter_55:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_55_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 説明文を書く相談をしたい。いつも使うサービスを開ける？
+        seconds: 5.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: Plusメニューの「AI エージェント設定…」でサービスを選び、左端のAIエージェントから開く。
+        seconds: 9.1
+        styles:
+          - lesson
+    - Pura.say:
+        text: Webでは設定したHTTPSのサービスを開く。アプリ起動は対応するDesktopホストで利用できる。
+        seconds: 9.5
+        styles:
+          - lesson
+    - goto: chapter_55_try
+  chapter_55_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_55_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_55_try
+    - goto: chapter_55_try
+  chapter_55_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_55_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_55_result
+    - goto: chapter_55_result
+  chapter_56:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_56_learn
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: まだ知らない機能がありそう。どうやって自分に合うものを探す？
+        seconds: 6.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: Plusメニューの「アドオン」で用途や名前を検索し、説明と設定を読む。
+        seconds: 7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 組み込み操作、TurboWarp由来のアドオン、作品が追加する拡張では入口と使える条件が違う。
+        seconds: 9
+        styles:
+          - lesson
+    - goto: chapter_56_try
+  chapter_56_try:
+    - broadcastMessageAndWait: library:clear
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_56_try
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -40
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -40
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_56_try
+    - goto: chapter_56_try
+  chapter_56_result:
+    - broadcastMessageAndWait: library:clear
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - broadcastMessageAndWait: library:backdrop:Library_chapter_56_result
+    - LibrarySlot1.show:
+        skin: LibrarySlot1
+        x: -113
+        y: -31
+        scale: 100
+    - LibrarySlot2.show:
+        skin: LibrarySlot2
+        x: 113
+        y: -31
+        scale: 100
+    - LibrarySlot3.show:
+        skin: LibrarySlot3
+        x: -113
+        y: -76
+        scale: 100
+    - LibrarySlot4.show:
+        skin: LibrarySlot4
+        x: 113
+        y: -76
+        scale: 100
+    - broadcastMessageAndWait: choice:library_chapter_56_result
+    - goto: chapter_56_result

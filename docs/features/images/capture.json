@@ -1,0 +1,1113 @@
+{
+  "date": "2026-11-16",
+  "site": "https://kubohiroya.github.io/turbowarp-plus-editor/",
+  "url": "https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=ja",
+  "siteRevision": "f98acb6a4c73c245174d5da2abe1e6cec3f2c3e4",
+  "editorVersion": "0.2.0-rc.4",
+  "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+  "securityVersion": "0.9.0",
+  "catalog": "https://kubohiroya.github.io/turbowarp-plus-packages/extensions-v1.json",
+  "browser": "Playwright 1.64.1 Chromium, headless, ja-JP, deviceScaleFactor 1",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "note": "Images outside \"retained\" and \"additionalCaptures\" were captured in one scripted run from the public Editor at siteRevision f98acb6, which pinned every family package at its latest npm version; the site revision was checked before and after the run. No feature-flag queries; no UI text was altered. Sample projects are fictional and built as SB3 files: ネコ/ボール (variable 速さ, messages 開始 and ゲームオーバー, sound ポーン), Ball Demo.sb3 and Ball Demo Plus.sb3 from the tutorial, and the ネコのさんぽ repository (sb3-toolchain import, Git with branch 12-neko-walk, origin kubohiroya/turbowarp-kamishibai-app) handed to the real directory picker through a CDP drop. Projects with extensions are opened with project_url from a routed test host. PR images read public PR #219 without signing in. Headless Chromium does not show the 「…」 debug button or the アドオン palette category.",
+  "additionalCaptures": {
+    "call-graph-detail.png": {
+      "english": "en/call-graph-detail.png",
+      "date": "2026-11-18",
+      "source": "sprite-calls.png",
+      "englishSource": "en/sprite-calls.png",
+      "description": "Detail of sprite-calls.png for the README and landing page: every node and arrow tag of the graph, clipped 24 px around them in the same capture run (1478x387 in Japanese, 1378x329 in English)."
+    },
+    "readme-messages.png": {
+      "english": "en/readme-messages.png",
+      "date": "2026-11-18",
+      "source": "messages-sprite.png",
+      "englishSource": "en/messages-sprite.png",
+      "description": "Cropped from the existing message screenshot with the landing page's hero-detail-messages CSS, rendered at 1284px wide for the README."
+    },
+    "readme-block-diff.png": {
+      "english": "en/readme-block-diff.png",
+      "date": "2026-11-18",
+      "source": "current-git-blocks.png",
+      "englishSource": "en/current-git-blocks.png",
+      "description": "Cropped from the existing Git screenshot with the landing page's hero-detail-diff CSS, rendered at 740px wide for the README."
+    },
+    "top-split-minimap.png": {
+      "english": "en/top-split-minimap.png",
+      "date": "2026-11-19",
+      "siteRevision": "dbf1ba3f4a2ef316dd321090d32e411bec24c449",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "codeViewsVersion": "0.21.2",
+      "workbenchVersion": "0.27.0",
+      "sourceType": "local production build",
+      "viewport": {
+        "width": 1440,
+        "height": 646
+      },
+      "deviceScaleFactor": 2,
+      "imageSize": {
+        "width": 2656,
+        "height": 1196
+      },
+      "englishImageSize": {
+        "width": 2656,
+        "height": 1196
+      },
+      "description": "Cat/Ball sample split right, zoom 65%, pointer over the right code pane. Native viewport crop excludes the menu bar and activity drawer.",
+      "method": "Exact npm pins, production build, headless Playwright Chromium. Native screenshots and viewport clips only; no UI text or image pixels were edited. Fictional sample project; no project execution or OS input.",
+      "clip": {
+        "x": 112,
+        "y": 48,
+        "width": 1328,
+        "height": 598
+      },
+      "englishClip": {
+        "x": 112,
+        "y": 48,
+        "width": 1328,
+        "height": 598
+      }
+    },
+    "project-folder-detail.png": {
+      "english": "en/project-folder-detail.png",
+      "date": "2026-11-18",
+      "siteRevision": "ad2d8d25c357a25ad5fc825f3c523b881649f1ac",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "projectFolderVersion": "0.15.1",
+      "documentEditorVersion": "0.1.0-rc.9",
+      "viewport": {
+        "width": 1200,
+        "height": 700
+      },
+      "deviceScaleFactor": 1,
+      "description": "A native 1200x700 viewport capture for the README and landing page; the full floating controls and minimap fit in the image.",
+      "method": "Local production build with exact npm pins, served by the companion. Fictional project, actual directory handles; the OS picker and VSCode launcher were injected. No UI text changes or feature-flag queries."
+    },
+    "project-tools-workflow.svg": {
+      "english": "en/project-tools-workflow.svg",
+      "date": "2026-11-18",
+      "description": "Code-native workflow illustration for shared project-folder editing with VS Code and AI coding apps, followed by Editor verification and Git review. A conceptual diagram, not an application screenshot."
+    },
+    "current-project-file.png": {
+      "english": "en/current-project-file.png",
+      "date": "2026-11-18",
+      "siteRevision": "ad2d8d25c357a25ad5fc825f3c523b881649f1ac",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "projectFolderVersion": "0.15.1",
+      "documentEditorVersion": "0.1.0-rc.9",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "deviceScaleFactor": 1,
+      "description": "The real file tab with the transparent floating toolbar, capsule view toggle and bottom-right minimap.",
+      "method": "Local production build with exact npm pins, served by the companion. Fictional project, actual directory handles; the OS picker and VSCode launcher were injected. No UI text changes or feature-flag queries."
+    },
+    "current-project-file-states.png": {
+      "english": "en/current-project-file-states.png",
+      "date": "2026-11-18",
+      "siteRevision": "ad2d8d25c357a25ad5fc825f3c523b881649f1ac",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "projectFolderVersion": "0.15.1",
+      "documentEditorVersion": "0.1.0-rc.9",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "deviceScaleFactor": 1,
+      "description": "The real file list shows an unsaved README, modified project data, an untracked todo and a deleted note beside the file tab.",
+      "method": "Local production build with exact npm pins, served by the companion. Fictional project, actual directory handles; the OS picker and VSCode launcher were injected. No UI text changes or feature-flag queries."
+    },
+    "current-project-file-external.png": {
+      "english": "en/current-project-file-external.png",
+      "date": "2026-11-18",
+      "siteRevision": "ad2d8d25c357a25ad5fc825f3c523b881649f1ac",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "projectFolderVersion": "0.15.1",
+      "documentEditorVersion": "0.1.0-rc.9",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "deviceScaleFactor": 1,
+      "description": "The real companion session locks the file tab while its workcopy is open for external editing. The VSCode launcher is injected; no native window was opened.",
+      "method": "Local production build with exact npm pins, served by the companion. Fictional project, actual directory handles; the OS picker and VSCode launcher were injected. No UI text changes or feature-flag queries."
+    },
+    "plus-workspace-current.png": {
+      "english": "en/plus-workspace-current.png",
+      "date": "2026-11-19",
+      "siteRevision": "dbf1ba3f4a2ef316dd321090d32e411bec24c449",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "codeViewsVersion": "0.21.2",
+      "workbenchVersion": "0.27.0",
+      "sourceType": "local production build",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 1,
+      "imageSize": {
+        "width": 1440,
+        "height": 1000
+      },
+      "englishImageSize": {
+        "width": 1440,
+        "height": 1000
+      },
+      "description": "New project at startup in Free layout; pointer over the code area to show the minimap.",
+      "method": "Exact npm pins, production build, headless Playwright Chromium. Native screenshots and viewport clips only; no UI text or image pixels were edited. Fictional sample project; no project execution or OS input."
+    },
+    "top-editor.png": {
+      "english": "en/top-editor.png",
+      "date": "2026-11-19",
+      "siteRevision": "dbf1ba3f4a2ef316dd321090d32e411bec24c449",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "codeViewsVersion": "0.21.2",
+      "workbenchVersion": "0.27.0",
+      "sourceType": "local production build",
+      "viewport": {
+        "width": 1200,
+        "height": 660
+      },
+      "deviceScaleFactor": 2,
+      "imageSize": {
+        "width": 2400,
+        "height": 1320
+      },
+      "englishImageSize": {
+        "width": 2400,
+        "height": 1320
+      },
+      "description": "Fictional Cat/Ball sample in Free layout, with a custom procedure call and a message receiver. Solid function and dashed message arrows are visible.",
+      "method": "Exact npm pins, production build, headless Playwright Chromium. Native screenshots and viewport clips only; no UI text or image pixels were edited. Fictional sample project; no project execution or OS input."
+    },
+    "minimap-current.png": {
+      "english": "en/minimap-current.png",
+      "date": "2026-11-19",
+      "siteRevision": "dbf1ba3f4a2ef316dd321090d32e411bec24c449",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "codeViewsVersion": "0.21.2",
+      "workbenchVersion": "0.27.0",
+      "sourceType": "local production build",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 1,
+      "imageSize": {
+        "width": 1440,
+        "height": 1000
+      },
+      "englishImageSize": {
+        "width": 1440,
+        "height": 1000
+      },
+      "description": "The same sample with its message receiver at (1650,1400), outside the viewport but visible in the minimap.",
+      "method": "Exact npm pins, production build, headless Playwright Chromium. Native screenshots and viewport clips only; no UI text or image pixels were edited. Fictional sample project; no project execution or OS input."
+    },
+    "workspace-context-menu.png": {
+      "english": "en/workspace-context-menu.png",
+      "date": "2026-11-19",
+      "siteRevision": "dbf1ba3f4a2ef316dd321090d32e411bec24c449",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "codeViewsVersion": "0.21.2",
+      "workbenchVersion": "0.27.0",
+      "sourceType": "local production build",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "deviceScaleFactor": 1,
+      "imageSize": {
+        "width": 575,
+        "height": 311
+      },
+      "englishImageSize": {
+        "width": 533,
+        "height": 261
+      },
+      "description": "Native workspace context menu with its Normal/Z/N layout submenu open. Cropped directly by Playwright around both menus.",
+      "method": "Exact npm pins, production build, headless Playwright Chromium. Native screenshots and viewport clips only; no UI text or image pixels were edited. Fictional sample project; no project execution or OS input.",
+      "clip": {
+        "x": 692,
+        "y": 662,
+        "width": 575.1875,
+        "height": 311
+      },
+      "englishClip": {
+        "x": 692,
+        "y": 662,
+        "width": 533.546875,
+        "height": 261.546875
+      }
+    },
+    "editor-guide-search.png": {
+      "date": "2026-11-27",
+      "siteRevision": "1558b6c8a70794cd8182ef3e4066f5b63ca68643",
+      "guiRevision": "60b87e2f2503206847f509285aa4de3cee3670c7",
+      "vmRevision": "88a2c06e9deb3dd652c52c20daf4f728b387d41d",
+      "viewport": {
+        "width": 1700,
+        "height": 1100
+      },
+      "browser": "Playwright 1.64.1 Chromium, headless, deviceScaleFactor 1",
+      "source": "Local preview serving unmodified public Editor assets; docs/features/samples/editor-guide.sb3",
+      "note": "Japanese UI; native Guide sprite projection. Search click and workspace numeric-field edit completed through actual browser input. No UI text or extension implementation was injected."
+    },
+    "editor-guide-workspace.png": {
+      "date": "2026-11-27",
+      "siteRevision": "1558b6c8a70794cd8182ef3e4066f5b63ca68643",
+      "guiRevision": "60b87e2f2503206847f509285aa4de3cee3670c7",
+      "vmRevision": "88a2c06e9deb3dd652c52c20daf4f728b387d41d",
+      "viewport": {
+        "width": 1700,
+        "height": 1100
+      },
+      "browser": "Playwright 1.64.1 Chromium, headless, deviceScaleFactor 1",
+      "source": "Local preview serving unmodified public Editor assets; docs/features/samples/editor-guide.sb3",
+      "note": "Japanese UI; native Guide sprite projection. Search click and workspace numeric-field edit completed through actual browser input. No UI text or extension implementation was injected."
+    },
+    "palette-add-detail-046.png": {
+      "date": "2026-11-27",
+      "siteRevision": "25655d487b20630f77f61cc2397991e25f9bbe55",
+      "guiRevision": "60b87e2f2503206847f509285aa4de3cee3670c7",
+      "vmRevision": "88a2c06e9deb3dd652c52c20daf4f728b387d41d",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "browser": "Playwright Chromium, headless, Japanese UI, deviceScaleFactor 1",
+      "note": "The horizontal palette menu in the public build. Cropped from the top right of the original screenshot."
+    },
+    "debugger-tab-046.png": {
+      "date": "2026-11-27",
+      "siteRevision": "25655d487b20630f77f61cc2397991e25f9bbe55",
+      "guiRevision": "60b87e2f2503206847f509285aa4de3cee3670c7",
+      "vmRevision": "88a2c06e9deb3dd652c52c20daf4f728b387d41d",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "browser": "Playwright Chromium, headless, Japanese UI, deviceScaleFactor 1",
+      "note": "A command-block breakpoint in the Guide sample. Debugger Threads view with the interpreter enabled, before clicking Step and Resume."
+    }
+  },
+  "retained": {
+    "local-media-panes.png": {
+      "size": "1440x575",
+      "captured": "2026-11-06",
+      "description": "Local integrated build comparison (development badge): the inactive pane caps the costume preview height. Not yet in the public Editor. Checked again on 2026-11-23 against siteRevision 40dc4c6 (sprite-panes 0.11.3, the latest on npm): the public Editor still does not cap the inactive pane's costume preview, so the figure is kept."
+    }
+  },
+  "images": {
+    "block-context-menu.png": {
+      "size": "640x480",
+      "description": "Context menu of the green-flag hat block (clip x100 y84)."
+    },
+    "catalog-current.png": {
+      "size": "1440x1000",
+      "description": "機能拡張の追加 → TurboWarp Plus with TurboWarp-Markdown checked; the sandbox notice was closed."
+    },
+    "current-git-blocks.png": {
+      "size": "1440x960",
+      "description": "Local Git, 保存のコミット with the ネコ コード: 1 か所 entry selected. The folder was opened with File → フォルダを開く…, and Local Git with ローカル Git を開く in the branch menu."
+    },
+    "current-git-commit.png": {
+      "size": "1440x960",
+      "description": "コミットに含める pressed and message ネコが進む歩数を変更 (#12) typed. The folder was opened with File → フォルダを開く…, and Local Git with ローカル Git を開く in the branch menu."
+    },
+    "current-git-file-window.png": {
+      "size": "1200x860",
+      "description": "Pop-up from 別ウィンドウで開く on the app/project.source.json card, first script expanded (1200x860)."
+    },
+    "current-git-file.png": {
+      "size": "1440x960",
+      "description": "Local Git, 保存のコミット with README.md selected after saving. The folder was opened with File → フォルダを開く…, and Local Git with ローカル Git を開く in the branch menu."
+    },
+    "current-git-history.png": {
+      "size": "1440x960",
+      "description": "Git 履歴 drawer; PRを作成 with the commit and the ネコ そのほかの設定: X 座標 change selected, so the block diff stays in current-git-blocks.png. The folder was opened with File → フォルダを開く…, and Local Git with ローカル Git を開く in the branch menu."
+    },
+    "current-git-release-workflow.png": {
+      "size": "1440x960",
+      "description": "File → リリース… with tag v1.0.0; without a connection the tag push command is shown. The folder was opened with File → フォルダを開く…, and Local Git with ローカル Git を開く in the branch menu."
+    },
+    "current-git-remote.png": {
+      "size": "1440x960",
+      "description": "マージ step with the PR list (no GitHub connection). The folder was opened with File → フォルダを開く…, and Local Git with ローカル Git を開く in the branch menu."
+    },
+    "current-git-unsaved.png": {
+      "size": "1440x960",
+      "description": "Local Git, ファイルの保存 with README.md selected. The folder was opened with File → フォルダを開く…, and Local Git with ローカル Git を開く in the branch menu."
+    },
+    "current-open-folder.png": {
+      "size": "1440x960",
+      "description": "File menu of a new project, pointer on フォルダを開く…; a divider sets リリース… apart from the open commands (viewport 1440x960)."
+    },
+    "current-pr-blocks.png": {
+      "size": "1440x960",
+      "description": "#219 変更ファイル, green-flag script in app/project.source.json expanded."
+    },
+    "current-pr-checks.png": {
+      "size": "1440x960",
+      "description": "#219 チェック."
+    },
+    "current-pr-commits.png": {
+      "size": "1440x960",
+      "description": "#219 コミット."
+    },
+    "current-pr-files-tab.png": {
+      "size": "1440x960",
+      "description": "#219 変更ファイル, top of the list."
+    },
+    "current-pr-overview.png": {
+      "size": "1440x960",
+      "description": "Public PR kubohiroya/turbowarp-kamishibai-app#219, 概要 (public API, signed out)."
+    },
+    "current-project-file-states.png": {
+      "size": "1440x960",
+      "description": "After saving, README.md edited in a tab: unsaved *, bold saved change, ✨ untracked file, strikethrough deleted file."
+    },
+    "current-project-file.png": {
+      "size": "1440x960",
+      "description": "project.source.json opened in a tab after the commit."
+    },
+    "current-project-folder.png": {
+      "size": "1440x960",
+      "description": "Project folder view; ネコ moved 25 steps and its x changed through the VM, so project.source.json is unsaved. The folder was opened with File → フォルダを開く…, and Local Git with ローカル Git を開く in the branch menu."
+    },
+    "current-save-active-tab.png": {
+      "size": "1440x960",
+      "description": "ネコのさんぽ project folder open, project.source.json in a tab; File menu shows アクティブなタブを保存 ⌘S (viewport 1440x960)."
+    },
+    "edit-menu.png": {
+      "size": "720x420",
+      "description": "Edit menu on the ネコ/ボール sample (clip 0,0)."
+    },
+    "export-dialog.png": {
+      "size": "640x194",
+      "description": "File → 書き出し… (dialog element)."
+    },
+    "extensions-dialog.png": {
+      "size": "640x184",
+      "description": "File → 機能拡張… on a new project (dialog element)."
+    },
+    "form-dialog.png": {
+      "size": "820x520",
+      "description": "Form editor of the repository sample extension for its scene block (dialog element)."
+    },
+    "form.png": {
+      "size": "1440x1000",
+      "description": "The same form over the editor; used by README.md (English: en/form.png)."
+    },
+    "git-branch-workspace.png": {
+      "size": "1440x960",
+      "description": "Branch menu of the ネコのさんぽ repository right after File → フォルダを開く…, which opened the project and connected Git (viewport 1440x960)."
+    },
+    "layout-menu.png": {
+      "size": "600x329",
+      "description": "編集パネルのレイアウト menu, clipped to the menu (x840 y44)."
+    },
+    "local-stage-workspace.png": {
+      "size": "1440x1000",
+      "description": "Same tab state without the menu."
+    },
+    "media-panes.png": {
+      "size": "1440x1000",
+      "description": "Panel split; コスチューム on the left, 音 on the right. The sound ポーン is a generated 440 Hz tone."
+    },
+    "messages-sprite.png": {
+      "size": "1440x1000",
+      "description": "メッセージ of ボール, 送信 tab."
+    },
+    "messages-stage.png": {
+      "size": "1440x1000",
+      "description": "メッセージ of the backdrop; it sends nothing, so the 受信 tab opens."
+    },
+    "minimap-current.png": {
+      "size": "1440x1000",
+      "description": "The second script placed at (1150,1050), pointer over the code area."
+    },
+    "palette-order-detail.png": {
+      "size": "540x64",
+      "description": "動き held (900 ms) and dragged over 音 (clip x154 y80)."
+    },
+    "palette-popout.png": {
+      "size": "520x520",
+      "description": "Block palette opened in a separate window (popup viewport 520x520)."
+    },
+    "palette-resize-detail.png": {
+      "size": "330x230",
+      "description": "Resize grip of the 見た目 flyout (clipped around the grip)."
+    },
+    "palette-search.png": {
+      "size": "900x520",
+      "description": "Search 歩 in the 動き category (clip x100 y40)."
+    },
+    "plus-menu.png": {
+      "size": "720x420",
+      "description": "TurboWarp Plus menu opened from the logo (clip 0,0)."
+    },
+    "plus-workspace-current.png": {
+      "size": "1440x1000",
+      "description": "New project at startup; pointer over the code area so the minimap and zoom buttons show."
+    },
+    "project-data-dialog.png": {
+      "size": "640x716",
+      "description": "File → 組み込みデータ… on the ネコ/ボール sample, HTTPS から毎回取得 chosen for コスチューム1; not applied."
+    },
+    "project-diagnostics-failure.png": {
+      "size": "1440x1000",
+      "description": "Same fixture with an all-zero sha256; 詳細ログを表示 from the failure notice, 読み込みを拒否 event expanded. TurboWarp's own error modal is visible behind it."
+    },
+    "project-diagnostics.png": {
+      "size": "1440x1000",
+      "description": "SB3 built like test/e2e/extension-loader/project.cts (embedded plusfixture), run without sandbox, then 作品のプロパティ → 作品の診断…."
+    },
+    "project-search.png": {
+      "size": "1100x560",
+      "description": "Menu-bar search for 開始 (clip x0 y0)."
+    },
+    "project-uri-detail.png": {
+      "size": "622x116",
+      "description": "Same dialog, URI field focused; clipped around the 作品の URI field and its note."
+    },
+    "properties-current.png": {
+      "size": "640x1016",
+      "description": "File → 作品のプロパティ with fictional values (title ネコのさんぽ, URI https://example.com/projects/neko-game, author 山田 花子); 保存用の名前 left empty; not applied. Viewport 1440x1200 so the whole dialog fits."
+    },
+    "properties-variables.png": {
+      "size": "1440x1000",
+      "description": "Panel split right; 変数 (スプライトのプロパティと変数) on the left, ネコ(2) code on the right."
+    },
+    "review-dialog.png": {
+      "size": "768x427",
+      "description": "Fictional SB3 storing the repository sample extension (examples/extensions/block-editor.ts, as served at static/extensions/block-editor.js, with a // Name: header) as an embedded file; review dialog element with サンドボックスなしで chosen."
+    },
+    "save-as-dialog.png": {
+      "size": "640x296",
+      "description": "File → プロジェクトのコピーを保存… (dialog element; focus moved off the input)."
+    },
+    "sprite-calls.png": {
+      "size": "1800x1000",
+      "description": "SB3 built for the guide: ネコ (green flag → ジャンプする → 着地する, which broadcasts and waits for 着地 and calls 背景をゆらす; space key → はねる; receiving 得点 → 得点を数える), ボール (named function はねる for all sprites; receiving 着地 broadcasts 得点) and the stage (named function 背景をゆらす; receiving 着地), with the Named Functions extension 0.4.2 from the catalog. 呼び出し関係 of ネコ, zoomed out once in Japanese and twice in English so the graph fits (viewport 1800x1000)."
+    },
+    "sprite-context-menu.png": {
+      "size": "420x360",
+      "description": "Context menu of the ネコ tile (clip x0 y80)."
+    },
+    "sprite-divider.png": {
+      "size": "700x560",
+      "description": "Ball Demo; sprite list divider focused and widened with ArrowRight x8 (clip 0,40)."
+    },
+    "sprite-functions.png": {
+      "size": "1440x1000",
+      "description": "New project with functions ジャンプする (calls 着地する) and 着地する and two hats calling ジャンプする, built as an SB3; ハット・関数一覧 with ジャンプする picked."
+    },
+    "sprite-list-window.png": {
+      "size": "540x420",
+      "description": "Sprite list undocked into a separate window (540x420) with its layout menu open."
+    },
+    "sprite-search.png": {
+      "size": "560x360",
+      "description": "スプライトを検索 with ボ typed (clip x0 y40)."
+    },
+    "stage-menu-current.png": {
+      "size": "720x220",
+      "description": "Ball Demo; ステージの開き方 (▾) menu open (clip x720 y0)."
+    },
+    "stage-tab.png": {
+      "size": "1440x1000",
+      "description": "Ball Demo; stage opened with タブで表示, ステージの表示 menu open."
+    },
+    "validation-dialog.png": {
+      "size": "820x601",
+      "description": "Same form with Scene label cleared."
+    },
+    "workspace-context-menu.png": {
+      "size": "600x340",
+      "description": "Workspace context menu with コードの並びの見え方を変更する expanded (clip x680 y540)."
+    },
+    "new-project-dialog.png": {
+      "size": "512x290",
+      "description": "File → 新しいプロジェクトを作成… (dialog element). The public Editor has no GitHub connection, so the Git remote destination is not listed."
+    },
+    "open-remote-dialog.png": {
+      "size": "462x257",
+      "description": "File → Git のリモートリポジトリを開く… (dialog clipped below its Open button)."
+    }
+  },
+  "topPage": {
+    "date": "2026-11-16",
+    "url": "https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=ja",
+    "siteRevision": "f98acb6a4c73c245174d5da2abe1e6cec3f2c3e4",
+    "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+    "viewport": {
+      "width": 1200,
+      "height": 660
+    },
+    "deviceScaleFactor": 2,
+    "note": "Captured in the same run at 1200x660 with deviceScaleFactor 2, from the ネコ/ボール sample.",
+    "images": {
+      "top-editor.png": "Editor with the ネコ/ボール sample, pointer over the code area.",
+      "top-stage-window.png": "The stage in a separate window (別ウィンドウで表示) at 560×380.",
+      "top-search.png": "Search panel after typing 開始 in the menu-bar search field (clipped).",
+      "top-layout-menu.png": "The 編集パネルのレイアウト menu (clipped)."
+    }
+  },
+  "english": {
+    "date": "2026-11-16",
+    "url": "https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=en",
+    "siteRevision": "f98acb6a4c73c245174d5da2abe1e6cec3f2c3e4",
+    "browser": "Playwright 1.64.1 Chromium, headless, en-US, deviceScaleFactor 1",
+    "directory": "images/en/",
+    "note": "Images for the English guide pages, taken in the same run and states as the Japanese images with English sample names (Cat/Ball, speed, start, game over, Pop; Git fixture \"Cat Walk\" with branch 12-cat-walk; functions jump and land). The English pages reuse the Japanese images listed under \"retained\".",
+    "images": [
+      "block-context-menu.png",
+      "catalog-current.png",
+      "current-git-blocks.png",
+      "current-git-commit.png",
+      "current-git-file-window.png",
+      "current-git-file.png",
+      "current-git-history.png",
+      "current-git-release-workflow.png",
+      "current-git-remote.png",
+      "current-git-unsaved.png",
+      "current-open-folder.png",
+      "current-pr-blocks.png",
+      "current-pr-checks.png",
+      "current-pr-commits.png",
+      "current-pr-files-tab.png",
+      "current-pr-overview.png",
+      "current-project-file-states.png",
+      "current-project-file.png",
+      "current-project-folder.png",
+      "current-save-active-tab.png",
+      "edit-menu.png",
+      "export-dialog.png",
+      "extensions-dialog.png",
+      "form-dialog.png",
+      "form.png",
+      "git-branch-workspace.png",
+      "layout-menu.png",
+      "local-stage-workspace.png",
+      "media-panes.png",
+      "messages-sprite.png",
+      "messages-stage.png",
+      "minimap-current.png",
+      "palette-order-detail.png",
+      "palette-popout.png",
+      "palette-resize-detail.png",
+      "palette-search.png",
+      "plus-menu.png",
+      "plus-workspace-current.png",
+      "project-data-dialog.png",
+      "project-diagnostics-failure.png",
+      "project-diagnostics.png",
+      "project-search.png",
+      "project-uri-detail.png",
+      "properties-current.png",
+      "properties-variables.png",
+      "review-dialog.png",
+      "save-as-dialog.png",
+      "sprite-calls.png",
+      "sprite-context-menu.png",
+      "sprite-divider.png",
+      "sprite-functions.png",
+      "sprite-list-window.png",
+      "sprite-search.png",
+      "stage-menu-current.png",
+      "stage-tab.png",
+      "top-editor.png",
+      "top-layout-menu.png",
+      "top-search.png",
+      "top-stage-window.png",
+      "validation-dialog.png",
+      "workspace-context-menu.png",
+      "new-project-dialog.png",
+      "open-remote-dialog.png"
+    ]
+  },
+  "tutorial": {
+    "date": "2026-11-16",
+    "siteRevision": "f98acb6a4c73c245174d5da2abe1e6cec3f2c3e4",
+    "directory": "../ball-demo/images/",
+    "note": "Ball demo tutorial figures (ja-*, en-*), captured in the same run by following the tutorial steps on Ball Demo.sb3 and Ball Demo Plus.sb3. Most are 1320 or 1360 px wide at deviceScaleFactor 1; the list figures and the sprite list close-ups use deviceScaleFactor 2. English figures keep the sprite name ボール, as the English tutorial does."
+  },
+  "retakes": [
+    {
+      "date": "2026-11-18",
+      "site": "https://kubohiroya.github.io/turbowarp-plus-editor/",
+      "siteRevision": "0b8b47d5c4d542b84f120f07eb6d5372caec039e",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "packages": {
+        "@kubohiroya/turbowarp-plus-editor-auth": "0.5.0",
+        "@kubohiroya/turbowarp-plus-editor-code-views": "0.19.0",
+        "@kubohiroya/turbowarp-plus-editor-fonts": "0.1.0",
+        "@kubohiroya/turbowarp-plus-editor-git": "0.25.2",
+        "@kubohiroya/turbowarp-plus-editor-host": "0.1.1",
+        "@kubohiroya/turbowarp-plus-editor-project-folder": "0.20.0",
+        "@kubohiroya/turbowarp-plus-editor-project-model": "0.2.0",
+        "@kubohiroya/turbowarp-plus-editor-project-starter": "0.3.1",
+        "@kubohiroya/turbowarp-plus-editor-sprite-panes": "0.10.0",
+        "@kubohiroya/turbowarp-plus-editor-windows": "0.2.1",
+        "@kubohiroya/turbowarp-plus-editor-workbench": "0.26.0"
+      },
+      "browser": "Playwright Chromium, headless, ja-JP and en-US, deviceScaleFactor 1",
+      "images": [
+        "current-open-folder.png",
+        "save-as-dialog.png",
+        "properties-current.png",
+        "project-uri-detail.png",
+        "git-branch-workspace.png",
+        "current-project-folder.png",
+        "current-git-unsaved.png",
+        "current-git-file.png",
+        "current-git-blocks.png",
+        "current-git-commit.png",
+        "current-git-history.png",
+        "current-git-release-workflow.png",
+        "current-git-remote.png",
+        "current-pr-overview.png",
+        "current-pr-commits.png",
+        "current-pr-checks.png",
+        "current-pr-files-tab.png",
+        "current-pr-blocks.png",
+        "current-git-file-window.png",
+        "new-project-dialog.png",
+        "open-remote-dialog.png"
+      ],
+      "english": "The same images in images/en/, taken in the same run with the English fixture (Cat Walk, branch 12-cat-walk).",
+      "note": "Retaken after the File menu, Git setup and project-folder changes: opening a folder with .git connects Git, Local Git opens from the branch menu, and Releases… has its own section. The site revision was checked before and after the run, and every family package was at its latest npm version. The ネコのさんぽ fixture keeps the project at the repository root. Call graph and text editing figures (sprite-calls, call-graph-detail, current-project-file, current-project-file-states, current-project-file-external, current-save-active-tab) are on hold and not retaken here. The project folder now records screen state in .tw-plus/workspace.json, which Local Git lists as an untracked file."
+    },
+    {
+      "date": "2026-11-18",
+      "siteRevision": "6d402772a807ac596ccfe8e1058e4dfef5667318",
+      "editorVersion": "0.2.0-rc.5",
+      "images": [
+        "plus-menu.png"
+      ],
+      "note": "Retaken in Japanese and English after the version moved to 0.2.0-rc.5, so the menu shows the version being released. Nothing else on screen changed between 0b8b47d and 6d40277."
+    },
+    {
+      "date": "2026-11-18",
+      "siteRevision": "80e26a863ecd29dedbaf0331734e9988bf6b1823",
+      "editorVersion": "0.2.0-rc.5",
+      "images": [
+        "sprite-calls.png",
+        "call-graph-detail.png",
+        "current-git-history.png"
+      ],
+      "note": "Japanese and English. The call graph now includes hat scripts and per-view controls (workbench 0.26.0, code-views 0.19.0). current-git-history.png now shows the other-settings change of the commit instead of repeating the block diff in current-git-blocks.png."
+    },
+    {
+      "date": "2026-11-18",
+      "siteRevision": "c5b81577feac35af65977985f9f9a18ff1b4dbf6",
+      "editorVersion": "0.2.0-rc.5",
+      "images": [
+        "sprite-calls.png",
+        "call-graph-detail.png"
+      ],
+      "note": "Japanese and English. A project with messages and named functions in other sprites and the stage, so the figure shows message arrows and gray boxes for other targets' functions (sprite-panes 0.10.0, code-views 0.19.0, workbench 0.26.0)."
+    },
+    {
+      "date": "2026-11-18",
+      "siteRevision": "291abede91625b073bb1859aa366ea23016d3338",
+      "editorVersion": "0.2.0-rc.5",
+      "images": [
+        "sprite-calls.png",
+        "call-graph-detail.png"
+      ],
+      "note": "Japanese and English, retaken after sprite-panes 0.10.1, which wraps call graph text between words, so English hat names no longer break in the middle of a word. Same project and steps as the previous capture."
+    },
+    {
+      "date": "2026-11-19",
+      "siteRevision": "dbf1ba3f4a2ef316dd321090d32e411bec24c449",
+      "guiRevision": "e9d05e0f6f931693f95eaf40245b3bde2d76d283",
+      "sourceType": "local production build",
+      "codeViewsVersion": "0.21.2",
+      "browser": "Playwright 1.64.1 Chromium, headless, ja-JP and en-US",
+      "images": [
+        "plus-workspace-current.png",
+        "en/plus-workspace-current.png",
+        "top-editor.png",
+        "en/top-editor.png",
+        "minimap-current.png",
+        "en/minimap-current.png",
+        "workspace-context-menu.png",
+        "en/workspace-context-menu.png",
+        "top-split-minimap.png",
+        "en/top-split-minimap.png"
+      ],
+      "note": "Free-layout figures refreshed after the code-views 0.21.2 pin and production build. Screenshot source is local production build dbf1ba3, not the previously published 4944f9f build. README, landing page and feature guides keep the same image paths."
+    },
+    {
+      "date": "2026-11-19",
+      "source": "local Editor integration candidate served at http://127.0.0.1:8738/turbowarp-plus-editor/",
+      "baseSiteRevision": "c61e4a30f0c9ba99748872a364273d2143d6d881",
+      "guiRevision": "97b876ac206c2a7b6a4cd47a77e5827c70f3173a",
+      "packages": {
+        "@kubohiroya/turbowarp-plus-editor-code-views": "0.22.1",
+        "@kubohiroya/turbowarp-plus-editor-sprite-panes": "0.11.1",
+        "@kubohiroya/turbowarp-plus-editor-workbench": "0.28.0"
+      },
+      "browser": "Playwright Chromium, headless, ja-JP and en-US, deviceScaleFactor 1",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        "free-layout-current.png",
+        "zn-layout.png",
+        "n-layout.png",
+        "call-graph-current.png",
+        "call-graph-current-detail.png",
+        "en/free-layout-current.png",
+        "en/zn-layout.png",
+        "en/n-layout.png",
+        "en/call-graph-current.png",
+        "en/call-graph-current-detail.png"
+      ],
+      "method": "Native full-viewport screenshots and native viewport clips only; no UI text or image pixels altered. A fictional project was created through the real Editor VM using test/e2e/turbowarp/message-scripts.cts plus one standard custom block (準備する / prepare scene). No project execution or OS input.",
+      "note": "The recorded Editor SHA identifies the clean base of this local candidate, not a reproducible released Editor revision with these pins: code-views 0.22.1 and sprite-panes 0.11.1 were locally installed on that base. The final workbench 0.28.1 update only changes cursor timing; these images document code and message-arrow rendering. The script verified computed dash arrays 3.5 2.5 and 7 5, absence of hourglass elements, and unchanged build-info identity before/after each language capture."
+    },
+    {
+      "date": "2026-11-19",
+      "source": "published Editor at https://kubohiroya.github.io/turbowarp-plus-editor/",
+      "siteRevision": "fc9a8db6d61712f11d1129c0e6c9a321723fa18c",
+      "guiRevision": "97b876ac206c2a7b6a4cd47a77e5827c70f3173a",
+      "packages": {
+        "@kubohiroya/turbowarp-plus-editor-code-views": "0.22.1",
+        "@kubohiroya/turbowarp-plus-editor-sprite-panes": "0.11.2",
+        "@kubohiroya/turbowarp-plus-editor-workbench": "0.28.1"
+      },
+      "browser": "Playwright 1.64.1 Chromium, headless, ja-JP and en-US, deviceScaleFactor 1",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        "block-context-menu.png",
+        "palette-search.png",
+        "palette-groups-current.png",
+        "en/block-context-menu.png",
+        "en/palette-search.png",
+        "en/palette-groups-current.png"
+      ],
+      "clips": {
+        "ja": {
+          "block-context-menu.png": {
+            "x": 222,
+            "y": 180,
+            "width": 527,
+            "height": 487
+          },
+          "palette-search.png": {
+            "x": 110,
+            "y": 80,
+            "width": 660,
+            "height": 560
+          },
+          "palette-groups-current.png": "native dialog element screenshot"
+        },
+        "en": {
+          "block-context-menu.png": {
+            "x": 226,
+            "y": 153,
+            "width": 533,
+            "height": 424
+          },
+          "palette-search.png": {
+            "x": 110,
+            "y": 80,
+            "width": 660,
+            "height": 560
+          },
+          "palette-groups-current.png": "native dialog element screenshot"
+        }
+      },
+      "method": "Native viewport clips and dialog element screenshots; no image pixels or UI text altered. A fictional disposable project uses test/e2e/turbowarp/message-scripts.cts through the real VM. No project execution, extension loading or OS input.",
+      "note": "The published build-info identity was checked before and after each language capture. Search starts from Motion and matches both Motion and Control. The block menu shows the first two script actions; the group dialog shows the standard group settings. Page errors: 0 in both languages."
+    },
+    {
+      "date": "2026-11-23",
+      "source": "published Editor at https://kubohiroya.github.io/turbowarp-plus-editor/",
+      "siteRevision": "f1064b6c781f2d3e63b8d7b73e45dafef4576c9d",
+      "guiRevision": "b2e75a129546db48e6563f72c80a3d3d46d86fb5",
+      "packages": {
+        "@kubohiroya/turbowarp-plus-editor-sprite-panes": "0.11.3"
+      },
+      "browser": "Playwright 1.64.1 Chromium, headless, ja-JP and en-US, deviceScaleFactor 1",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "images": [
+        "messages-sprite.png",
+        "messages-stage.png",
+        "properties-variables.png",
+        "en/properties-variables.png",
+        "../ball-demo/images/ja-variables.png",
+        "../ball-demo/images/ja-direction.png",
+        "../ball-demo/images/ja-variable-reads.png"
+      ],
+      "method": "Native full-viewport screenshots; no UI text or image pixels altered. Guide figures use a fictional ネコ/ボール (Cat/Ball) SB3 rebuilt from the Editor's default project and the Ball Demo ball costume (variable 速さ/speed, messages 開始/start and ゲームオーバー/game over), opened with project_url from a routed test host. Ball demo figures follow the tutorial steps on Ball Demo Plus.sb3 at 1360 px wide. No project execution or OS input.",
+      "note": "Retaken after sprite-panes 0.11.3 renamed the variable table column to 実行画面 / Run view and the stage in the message panel to ステージ. The sprite-list tile and tab still read 背景 / Backdrops. Other figures that show the old column header (the remaining ball demo variable, list, clone and message figures, and readme-messages.png) are not yet retaken."
+    },
+    {
+      "date": "2026-11-23",
+      "source": "published Editor at https://kubohiroya.github.io/turbowarp-plus-editor/",
+      "siteRevision": "b0a3a634d43956eddcf9be5986c11a5fd2bbfeea",
+      "editorVersion": "0.3.4",
+      "guiRevision": "b2e75a129546db48e6563f72c80a3d3d46d86fb5",
+      "packages": {
+        "@kubohiroya/turbowarp-plus-editor-sprite-panes": "0.11.3",
+        "@kubohiroya/turbowarp-plus-editor-code-views": "0.26.3",
+        "@kubohiroya/turbowarp-plus-editor-workbench": "0.35.6"
+      },
+      "browser": "Playwright 1.64.1 Chromium, headless, ja-JP and en-US",
+      "images": [
+        "local-stage-workspace.png",
+        "messages-sprite.png",
+        "messages-stage.png",
+        "plus-workspace-current.png",
+        "properties-variables.png",
+        "readme-messages.png",
+        "sprite-functions.png",
+        "stage-menu-current.png",
+        "stage-tab.png",
+        "top-editor.png",
+        "en/local-stage-workspace.png",
+        "en/messages-sprite.png",
+        "en/messages-stage.png",
+        "en/plus-workspace-current.png",
+        "en/properties-variables.png",
+        "en/readme-messages.png",
+        "en/sprite-functions.png",
+        "en/stage-menu-current.png",
+        "en/stage-tab.png",
+        "en/top-editor.png",
+        "../ball-demo/images/en-clone.png",
+        "../ball-demo/images/en-direction.png",
+        "../ball-demo/images/en-global-variables.png",
+        "../ball-demo/images/en-list-create-01-open-panel.png",
+        "../ball-demo/images/en-list-create-03-empty-list.png",
+        "../ball-demo/images/en-list-create-05-saved-list.png",
+        "../ball-demo/images/en-list-edit.png",
+        "../ball-demo/images/en-list-saved.png",
+        "../ball-demo/images/en-list-table.png",
+        "../ball-demo/images/en-message-rename.png",
+        "../ball-demo/images/en-messages-stage.png",
+        "../ball-demo/images/en-messages.png",
+        "../ball-demo/images/en-run.png",
+        "../ball-demo/images/en-sprite-tabs.png",
+        "../ball-demo/images/en-stage-menu.png",
+        "../ball-demo/images/en-variable-reads.png",
+        "../ball-demo/images/en-variables.png",
+        "../ball-demo/images/ja-clone.png",
+        "../ball-demo/images/ja-direction.png",
+        "../ball-demo/images/ja-global-variables.png",
+        "../ball-demo/images/ja-list-create-01-open-panel.png",
+        "../ball-demo/images/ja-list-create-03-empty-list.png",
+        "../ball-demo/images/ja-list-create-05-saved-list.png",
+        "../ball-demo/images/ja-list-edit.png",
+        "../ball-demo/images/ja-list-saved.png",
+        "../ball-demo/images/ja-list-table.png",
+        "../ball-demo/images/ja-message-rename.png",
+        "../ball-demo/images/ja-messages-stage.png",
+        "../ball-demo/images/ja-messages.png",
+        "../ball-demo/images/ja-run.png",
+        "../ball-demo/images/ja-sprite-tabs.png",
+        "../ball-demo/images/ja-stage-menu.png",
+        "../ball-demo/images/ja-variable-reads.png",
+        "../ball-demo/images/ja-variables.png"
+      ],
+      "method": "Native viewport screenshots, viewport clips and element screenshots at the original sizes; no UI text or image pixels altered. Guide figures use fictional SB3 files rebuilt from the Editor's default project: ネコ/ボール (Cat/Ball) with variable 速さ/speed and messages 開始/start and ゲームオーバー/game over, and スプライト1/Sprite1 with functions ジャンプする/jump and 着地する/land. Ball demo figures follow the tutorial steps on Ball Demo.sb3 and Ball Demo Plus.sb3. Projects are opened with project_url from a routed test host. The clone is created by sending the C key to the project VM (vm.postIOData); no OS input. readme-messages.png is rendered from messages-sprite.png with the landing page's hero-detail-messages crop CSS.",
+      "note": "Retaken after workbench 0.35.6 and code-views 0.26.3 renamed the run view to 実行画面 / Run view (menu-bar button, opening options, display menu, tab) and the stage tile and tab to ステージ / Stage. messages-sprite.png from the previous retake showed ネコ instead of ボール and is corrected here. Figures still showing the old labels and not retaken: the Git, PR and project-folder figures (they need the ネコのさんぽ repository fixture, a folder-picker drop or a simulated GitHub connection), sprite-calls.png, call-graph-detail.png, call-graph-current*.png, media-panes.png, local-media-panes.png, catalog-current.png, form.png, project-diagnostics*.png, free-layout-current.png, minimap-current.png, n-layout.png, zn-layout.png, top-split-minimap.png, and the ball demo figures not listed here."
+    },
+    {
+      "date": "2026-11-23",
+      "source": "published Editor at https://kubohiroya.github.io/turbowarp-plus-editor/",
+      "siteRevision": "00b8bac03b6da7442ab956a00dc90f6b24a28545",
+      "editorVersion": "0.3.4",
+      "guiRevision": "b2e75a129546db48e6563f72c80a3d3d46d86fb5",
+      "packages": {
+        "@kubohiroya/turbowarp-plus-editor-code-views": "0.26.3",
+        "@kubohiroya/turbowarp-plus-editor-git": "0.27.3",
+        "@kubohiroya/turbowarp-plus-editor-project-folder": "0.22.0",
+        "@kubohiroya/turbowarp-plus-editor-sprite-panes": "0.11.3",
+        "@kubohiroya/turbowarp-plus-editor-windows": "0.2.2",
+        "@kubohiroya/turbowarp-plus-editor-workbench": "0.35.6"
+      },
+      "browser": "Playwright 1.64.1 Chromium, headless, ja-JP and en-US",
+      "images": [
+        "../ball-demo/images/en-copy.png",
+        "../ball-demo/images/en-costumes.png",
+        "../ball-demo/images/en-drag-motion.png",
+        "../ball-demo/images/en-drag-result.png",
+        "../ball-demo/images/en-drag.png",
+        "../ball-demo/images/en-layout-menu.png",
+        "../ball-demo/images/en-minimap.png",
+        "../ball-demo/images/en-open.png",
+        "../ball-demo/images/en-palette-reopen.png",
+        "../ball-demo/images/en-palette.png",
+        "../ball-demo/images/en-paste-result.png",
+        "../ball-demo/images/en-paste.png",
+        "../ball-demo/images/en-rearrange.png",
+        "../ball-demo/images/en-search.png",
+        "../ball-demo/images/en-sounds.png",
+        "../ball-demo/images/en-split.png",
+        "../ball-demo/images/en-sprite-window.png",
+        "../ball-demo/images/ja-copy.png",
+        "../ball-demo/images/ja-costumes.png",
+        "../ball-demo/images/ja-drag-motion.png",
+        "../ball-demo/images/ja-drag-result.png",
+        "../ball-demo/images/ja-drag.png",
+        "../ball-demo/images/ja-layout-menu.png",
+        "../ball-demo/images/ja-minimap.png",
+        "../ball-demo/images/ja-open.png",
+        "../ball-demo/images/ja-palette-reopen.png",
+        "../ball-demo/images/ja-palette.png",
+        "../ball-demo/images/ja-paste-result.png",
+        "../ball-demo/images/ja-paste.png",
+        "../ball-demo/images/ja-rearrange.png",
+        "../ball-demo/images/ja-search.png",
+        "../ball-demo/images/ja-sounds.png",
+        "../ball-demo/images/ja-split.png",
+        "../ball-demo/images/ja-sprite-window.png",
+        "call-graph-current.png",
+        "call-graph-detail.png",
+        "current-git-blocks.png",
+        "current-git-commit.png",
+        "current-git-file.png",
+        "current-git-history.png",
+        "current-git-release-workflow.png",
+        "current-git-remote.png",
+        "current-git-unsaved.png",
+        "current-open-folder.png",
+        "current-pr-blocks.png",
+        "current-pr-checks.png",
+        "current-pr-commits.png",
+        "current-pr-files-tab.png",
+        "current-pr-overview.png",
+        "current-project-folder.png",
+        "current-save-active-tab.png",
+        "en/call-graph-current.png",
+        "en/call-graph-detail.png",
+        "en/current-git-blocks.png",
+        "en/current-git-commit.png",
+        "en/current-git-file.png",
+        "en/current-git-history.png",
+        "en/current-git-release-workflow.png",
+        "en/current-git-remote.png",
+        "en/current-git-unsaved.png",
+        "en/current-open-folder.png",
+        "en/current-pr-blocks.png",
+        "en/current-pr-checks.png",
+        "en/current-pr-commits.png",
+        "en/current-pr-files-tab.png",
+        "en/current-pr-overview.png",
+        "en/current-project-folder.png",
+        "en/current-save-active-tab.png",
+        "en/form.png",
+        "en/free-layout-current.png",
+        "en/git-branch-workspace.png",
+        "en/media-panes.png",
+        "en/minimap-current.png",
+        "en/n-layout.png",
+        "en/project-diagnostics-failure.png",
+        "en/project-diagnostics.png",
+        "en/sprite-calls.png",
+        "en/sprite-list-window.png",
+        "en/zn-layout.png",
+        "form.png",
+        "free-layout-current.png",
+        "git-branch-workspace.png",
+        "media-panes.png",
+        "minimap-current.png",
+        "n-layout.png",
+        "project-diagnostics-failure.png",
+        "project-diagnostics.png",
+        "sprite-calls.png",
+        "sprite-list-window.png",
+        "zn-layout.png"
+      ],
+      "method": "Native viewport screenshots, viewport clips and element screenshots at the original sizes and device scale factors; no UI text or image pixels altered, no OS input. The site revision was checked before and after each group. Git and PR figures: the ネコのさんぽ / Cat Walk repository fixture rebuilt as in the 2026-11-18 retake (branch 12-neko-walk / 12-cat-walk, origin kubohiroya/turbowarp-kamishibai-app, nothing pushed) and handed to the real folder picker through a CDP Input.dispatchDragEvent drop; PR figures read public PR #219 signed out. Call graph figures: the 2026-11-18 fictional SB3 (ネコ/ボール/Stage, functions はねる and 背景をゆらす, messages 着地/得点) loaded through vm.loadProject; call-graph-detail.png is the 24 px padded clip of all nodes. Free-layout figures: test/e2e/turbowarp/message-scripts.cts plus 準備する / prepare scene through the VM, project not run. media-panes, form and project-diagnostics*: the ネコ/ボール sample, the block-editor sample extension and the extension-loader fixture opened with project_url. Ball demo figures follow the tutorial steps on Ball Demo.sb3 / Ball Demo Plus.sb3; drags use Playwright synthetic pointer input.",
+      "note": "Retake of the figures that still showed 背景 / Backdrops on the stage tile or ステージを開く / Open stage in the menu bar. Checked and left unchanged because they show no old label: project-uri-detail, save-as-dialog, readme-block-diff, current-git-file-window, call-graph-current-detail, top-split-minimap, workspace-context-menu, top-layout-menu, layout-menu, top-search, top-stage-window, sprite-divider, sprite-search, sprite-context-menu, block-context-menu, palette-*, catalog-current, form-dialog, properties-current, project-search, project-data-dialog, edit-menu, plus-menu, export-dialog, extensions-dialog, new-project-dialog, open-remote-dialog, review-dialog, validation-dialog and ball demo layout-z, list-create-02/04, save-dialog, sprite-drawer, sprite-unpinned. Not retaken: current-project-file, current-project-file-states, current-project-file-external and project-folder-detail (taken with a local build and the VSCode companion, which the public site does not have), plus the retained figures. In drag-motion the headless renderer draws Blockly's drag shadow as a pale box. The load failure is now a full page instead of a notice, so project-diagnostics-failure shows that page behind the diagnostics."
+    },
+    {
+      "date": "2026-11-23",
+      "source": "published Editor at https://kubohiroya.github.io/turbowarp-plus-editor/",
+      "siteRevision": "23174d523a82ebfc27d07a93f90b90643489858e",
+      "editorVersion": "0.3.5",
+      "securityVersion": "0.13.1",
+      "browser": "Playwright 1.64.1 Chromium, headless, ja-JP and en-US, deviceScaleFactor 1",
+      "images": [
+        "review-dialog.png",
+        "en/review-dialog.png",
+        "plus-menu.png",
+        "en/plus-menu.png",
+        "../ball-demo/images/ja-save-dialog.png",
+        "../ball-demo/images/en-save-dialog.png"
+      ],
+      "method": "review-dialog: element screenshot of the review dialog (768 px wide; 697 px high in Japanese, 691 px in English) after opening the ネコ/ボール sample with the block-editor sample extension embedded (project_url from a routed test host), pressing 機能拡張を個別に確認 / Review each extension and choosing 信頼してサンドボックスなしで動かす / Trust and run without the sandbox; the warning notice at the bottom of the page is outside the dialog. Nothing was run. plus-menu: viewport clip 720x420 with the logo menu open on a new project. save-dialog: element screenshot 640x296 of File → プロジェクトを保存 / Save Project on Ball Demo.sb3. No UI text or image pixels altered, no OS input.",
+      "note": "The extension review screen was redesigned (title 確認: この作品は機能拡張を使います, buttons 実行しない / 機能拡張を個別に確認 / すべて有効にして実行, individual review mode), so review-dialog.png changes height. The review dialog was captured while the site moved from b177684 to 23174d5; both ship security-dialog 0.13.1. plus-menu now shows 0.3.5 and the renamed source and license items. The ball demo save dialog is now titled プロジェクトを保存 / Save Project."
+    },
+    {
+      "date": "2026-11-23",
+      "source": "published Editor at https://kubohiroya.github.io/turbowarp-plus-editor/",
+      "siteRevision": "96106f13f8c408db37b1b90048f05d383d3c27ad",
+      "editorVersion": "0.3.6",
+      "browser": "Playwright 1.64.1 Chromium, headless, ja-JP and en-US, deviceScaleFactor 1",
+      "images": [
+        "review-dialog.png",
+        "en/review-dialog.png"
+      ],
+      "method": "Same steps and element screenshot as the previous review-dialog retake (individual review mode, 信頼してサンドボックスなしで動かす / Trust and run without the sandbox chosen, nothing run).",
+      "note": "Retaken after windows 0.2.3 (#768) changed the dialog backdrop from the solid accent color to translucent black; the dark red at the corners is the loading screen seen through the backdrop."
+    },
+    {
+      "date": "2026-11-23",
+      "editorRevision": "40dc4c60d7a4e67993751a87687940fe57dcd362",
+      "editorVersion": "0.3.6",
+      "guiRevision": "b2e75a129546db48e6563f72c80a3d3d46d86fb5",
+      "browser": "Playwright 1.64.1 Chromium, headless, ja-JP and en-US, deviceScaleFactor 1",
+      "images": [
+        "current-project-file.png",
+        "en/current-project-file.png",
+        "current-project-file-states.png",
+        "en/current-project-file-states.png",
+        "project-folder-detail.png",
+        "en/project-folder-detail.png",
+        "current-git-create-pr.png",
+        "en/current-git-create-pr.png",
+        "current-git-merge-ready.png",
+        "en/current-git-merge-ready.png",
+        "github-files-changed.png",
+        "asset-preview-development.png"
+      ],
+      "sources": {
+        "current-project-file*, project-folder-detail": "local build of main 40dc4c6 (npm run build:pages, then build:yaml-tools; the scaffolding step after build-info was skipped for lack of a pinned Packager checkout) served by npm run editor:yaml with the local companion, so Edit in VSCode is enabled. VS Code was never launched. ネコのさんぽ / Cat Walk fixture with .gitignore, old-notes.txt (deleted) and todo.txt (untracked), opened through Open Folder… in a new tab with a CDP Input.dispatchDragEvent drop.",
+        "current-git-create-pr, current-git-merge-ready": "published Editor at siteRevision 40dc4c6 with the GitHub connection simulated as in test/git-pull-request.browser.ts (Desktop-mode connection, routed GitHub API answers, Git traffic to the Git package's test/smart-http-fixture.js on 127.0.0.1); test repository client, PR #42. Every other external request was aborted; nothing reached GitHub. The English versions are new.",
+        "github-files-changed": "GitHub Files changed of public PR kubohiroya/turbowarp-kamishibai-app#219, signed out, viewport screenshot.",
+        "asset-preview-development": "published Editor at siteRevision 40dc4c6 with the published Kamishibai extension 4.0.5 (npm); an authoring SB3 made with turbowarp-kamishibai author-block-dsl holding one remote image asset served by a routed test response; clip of the asset preview opened from the asset block's icon. The extension's labels are Japanese only, so there is no English version. The storage form is now remote-non-cacheable because the CLI does not write a retained copy."
+      },
+      "method": "Native viewport screenshots and clips at the original sizes; no UI text or image pixels altered; no OS input.",
+      "note": "Retake of the figures that could not be taken from the public site before. current-project-file-external.png is not retaken because reaching it launches VS Code. local-media-panes.png stays retained because the behaviour it shows is still not in the public Editor."
+    },
+    {
+      "date": "2026-11-24",
+      "source": "published Editor at https://kubohiroya.github.io/turbowarp-plus-editor/",
+      "siteRevision": "aa4f4b391cf43fb926260057a3bab8258dd90edf",
+      "browser": "Playwright 1.64.1 Chromium, headless, ja-JP, deviceScaleFactor 1",
+      "images": [
+        "asset-preview-development.png"
+      ],
+      "method": "Same as the 2026-11-23 asset preview retake, with the Kamishibai extension 4.0.13 from npm: an authoring SB3 made with turbowarp-kamishibai author-block-dsl on the v4.0.13 release kamishibai-4.0.13.sb3, holding one remote image asset served by a routed test response; clip of the asset preview opened from the asset block's icon, 374x319.",
+      "note": "Retaken after the guide moved from Kamishibai rc.87 to 4.0.13, where scene and behavior previews are on by default and twPlusBlockPreview=0 turns all previews off."
+    }
+  ]
+}
