@@ -23,12 +23,12 @@
   },
   "sources": {
     "story/plus-library-chapters.txt": "c038975babd0e17f86e9df96c4c8fe1736350a81f1476deb46a7f867251629ce",
-    "story/plus-library.k4.yml": "d0542044f7719808502677344ad59b2eca0495b360819f9d737588d6b80d475c"
+    "story/plus-library.k4.yml": "d69c7176e059e09526eb6eb8f9bc585b750b0e7594724b2e0e4c6eeb1732ccce"
   },
   "artifact": {
     "filename": "plus-library-4.0.sb3",
-    "bytes": 6571155,
-    "sha256": "9b5185e277b0d464bdd4ec5bfcfec1bd0adef2d052842eb9abf291b17e71879c"
+    "bytes": 6610299,
+    "sha256": "87c1b0ac109a5da8eb2c157ab330cb8563a23e5646b5dbb3d00b7f7728ec8561"
   },
   "chapters": 56,
   "topics": 7,

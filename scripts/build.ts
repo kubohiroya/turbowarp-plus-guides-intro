@@ -7,6 +7,9 @@ import {strFromU8, strToU8, unzipSync, zipSync} from 'fflate';
 import YAML from 'yaml';
 import {readAppRelease, appBasePath} from './app-dependency.ts';
 import {createPlusLibrary, writeLibraryIndex} from './build-plus-library.ts';
+import {advanceActor, advanceArt, createReadingPacing} from './reading.ts';
+
+const pacing = createReadingPacing(block);
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const storyRoot = path.join(root, 'story');
@@ -38,18 +41,18 @@ async function board(id: string, title: string, rows: readonly string[], label:s
   body+=text(label,34,39,11,'#666b88',600)+text(title,34,68,21,'#263454',700);
   let y=92;
   for(const row of rows) for (const line of wrap(row,30)) {body+=text(line,34,y,13.5); y+=20;}
-  body+=text('プラ',70,337,11,'#454fbe',700)+text('モコ',355,337,11,'#178c77',700);
-  body+=text('Space：次へ　・　緑の旗：最初から',132,352,10,'#626f86');
+  body+=text('▼が点滅したらクリック／Space',145,352,10,'#626f86');
   await svg(id,body);
 }
 const show=(actor:string,x:number,y:number,scale=100,skin=actors[actor])=>({[`${actor}.show`]:{skin,x,y,scale}});
 const hide=(actor:string)=>({[`${actor}.hide`]:{}});
 const cast=()=>[show('Pura',-135,-110,9.5),show('Moko',135,-110,9.5)];
+const hideCast=()=>[hide('Pura'),hide('Moko')];
+const showAdvance=()=>show(advanceActor,220,-151);
+const readBoard=()=>[...hideCast(),showAdvance(),...pacing.wait('Stage'),hide(advanceActor)];
 function say(lines: readonly (readonly string[])[]) {
-  return lines.map(([speaker,line]) => {
-    const seconds = Math.max(4.5,Math.round((Array.from(line).length/6.2+1.4)*10)/10);
-    return {[`${speaker==='P'?'Pura':'Moko'}.say`]:{text:line,seconds,styles:['lesson']}};
-  });
+  return [showAdvance(),...lines.flatMap(([speaker,line])=>
+    pacing.wait(speaker==='P'?'Pura':'Moko',line)),hide(advanceActor)];
 }
 function guide(id:string, spec:any) {guides[id]=spec; return {broadcastMessageAndWait:`lesson:${id}`};}
 function nativeChoices(scenes:Record<string,any[]>,prefix:string) {
@@ -63,7 +66,9 @@ async function createStory() {
   await mkdir(path.join(storyRoot,'assets'),{recursive:true}); await mkdir(output,{recursive:true});
   art.PuraIdle={kind:'costume',target:'Pura',file:'assets/pura.png'};
   art.MokoIdle={kind:'costume',target:'Moko',file:'assets/moko.png'};
-  const common={kamishibai:'4.0',controls:{keymaps:{production:{Space:'navigation.nextAction'}}},bubbleStyles:{lesson:{maxWidth:320,textLocale:'ja',distance:0,tailLength:8}},assets:art,actors};
+  await svg(advanceActor,advanceArt,20,18,'costume',advanceActor);
+  actors[advanceActor]=advanceActor;
+  const common={kamishibai:'4.0',controls:{keymaps:{production:{Space:'navigation.nextAction'}}},assets:art,actors};
   const documentFor=(scenes:Record<string,any[]>,backdrop:string)=>{
     const used=new Set([...Object.values(actors),backdrop]);
     for(const actions of Object.values(scenes))for(const action of actions)for(const[key,value]of Object.entries(action)){
@@ -72,7 +77,7 @@ async function createStory() {
     }
     return {...common,assets:Object.fromEntries(Object.entries(art).filter(([id])=>used.has(id))),cover:{backdrop},scenes};
   };
-  const library = await createPlusLibrary(storyRoot, {actors,art,svg,board,text,show,hide,cast,say,guide});
+  const library = await createPlusLibrary(storyRoot, {actors,art,svg,board,text,show,hide,cast,readBoard,say,guide});
   nativeChoices(library.scenes,'library');
   const libraryDocument = documentFor(library.scenes,library.backdrop);
   const libraryBackdrops: Record<string,string> = {};
@@ -103,6 +108,7 @@ async function actorBase(base:Uint8Array) {
   stage.blocks.lessonStart=block('kubohiroyakamishibai4_kubohiroyakamishibairuntime4__closeTitle',null,'titleFlagShow');
   delete stage.blocks.titleStageClick;
   delete stage.blocks.titleStageClickClose;
+  pacing.installStage(stage);
   stage.variables.lessonChoice=['教材の選択',''];
   {
     stage.broadcasts.library_clear='library:clear';
@@ -147,7 +153,8 @@ async function actorBase(base:Uint8Array) {
     const data=await readFile(path.join(storyRoot,art[asset].file));const png=art[asset].file.endsWith('.png');
     const assetId=hash(data,'md5'),md5ext=`${assetId}.${png?'png':'svg'}`;files[md5ext]=data;
     const blocks:Record<string,any>={};let y=40;
-    if(name!=='Pura'&&name!=='Moko'&&name!=='LibraryExample'){
+    pacing.install(name,blocks);
+    if(name!==advanceActor&&name!=='Pura'&&name!=='Moko'&&name!=='LibraryExample'){
       blocks.clicked=block('event_whenthisspriteclicked','choose',null,{}, {},true);
       blocks.choose=block('data_setvariableto',null,'clicked',{VALUE:literal(name)},{VARIABLE:['教材の選択','lessonChoice']});
     }
@@ -161,7 +168,7 @@ async function actorBase(base:Uint8Array) {
       blocks[`wait_${id}`]=block('kubohiroyaeditorguide_spriteAndWait',null,`save_${id}`,{TARGET:literal(g.target),SIDE:literal('bottom'),MESSAGE:literal(g.message),ACTION:literal(g.action)});
     }
     const costumes = [{name:asset,assetId,md5ext,dataFormat:png?'png':'svg',
-      rotationCenterX:art[asset].center?.[0]??(png?656:105),rotationCenterY:art[asset].center?.[1]??(png?599.5:31),
+      rotationCenterX:name===advanceActor?10:art[asset].center?.[0]??(png?656:105),rotationCenterY:name===advanceActor?9:art[asset].center?.[1]??(png?599.5:31),
       ...(png?{bitmapResolution:art[asset].center?1:2}:{})}];
     if (name==='LibraryExample') {
       const examples: Record<string,{file:string;width:number;height:number}> =
