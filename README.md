@@ -10,7 +10,7 @@ Scratchユーザー向けに、TurboWarp Plus Editorの操作を読んで試せ�
 
 ガイドをブラウザーで読むには、Node.js 24以上で `npm run preview` を実行し、http://127.0.0.1:8795/features/ を開きます。配布物をそのまま読むだけなら、依存のインストールは不要です。
 
-紙芝居を試すには、SB3をTurboWarp Plus Editorの「ファイル」→「SB3ファイルを開く…」で開きます。実行画面の引出しを表示して緑の旗を押し、分野または「はじめての8章」を選びます。会話中はステージにフォーカスを戻してSpaceで進めます。各章は練習を含めて1〜3分が目安です。
+紙芝居を試すには、SB3をTurboWarp Plus Editorの「ファイル」→「SB3ファイルを開く…」で開きます。実行画面の引出しを表示して緑の旗を押し、分野または「はじめての8章」を選びます。文章やセリフは▼が点滅したらステージをクリックして進めます。Spaceでも進めます。各章は練習を含めて1〜3分が目安です。
 
 [Plus Editorを開く](https://kubohiroya.github.io/turbowarp-plus-editor/editor.html?lang=ja)
 
@@ -26,6 +26,8 @@ npm run build
 
 `prepare:app` は固定した公式AppベースのサイズとSHA-256を照合します。 `build` は公式App 4.0.21のbuilderを使って `docs/work/` にSB3、章の索引、生成記録を出力します。作品で使うGuideは対応Editorの組み込み機能です。
 
-配布SB3は、公開Editorのコミット `25655d4` で全56章の遷移を確認したSB3と同じです。検証時のマニフェストと初回移管の記録は [verification/](verification/) にあります。機能ガイドには手順を説明するための小さなSB3サンプルも付属します。
+改訂版のクリック・Spaceでの進行とGuideを公開Editorで動作確認しました。[読み進め方の検証](verification/reader-pacing.json)
+
+旧版の全56章の遷移検証と初回移管の記録は [verification/](verification/) にあります。機能ガイドには手順を説明するための小さなSB3サンプルも付属します。
 
 素材のライセンスと由来は [NOTICE.md](NOTICE.md) を参照してください。

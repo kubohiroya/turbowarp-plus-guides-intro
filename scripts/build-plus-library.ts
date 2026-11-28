@@ -53,6 +53,7 @@ interface Surface {
   show(actor: string, x: number, y: number, scale?: number, skin?: string): Action;
   hide(actor: string): Action;
   cast(): Action[];
+  readBoard(): Action[];
   say(lines: readonly (readonly string[])[], id: string): Action[];
   guide(id: string, spec: {actor: string; target: string; message: string; action: string}): Action;
 }
@@ -61,7 +62,7 @@ export async function createPlusLibrary(storyRoot: string, surface: Surface) {
   const {chapters, topics} = await readLibrary(storyRoot);
   const examples: Record<number, {file: string; width: number; height: number}> =
     JSON.parse(await readFile(path.join(storyRoot,'plus-library-examples.json'),'utf8'));
-  const {actors, art, svg, board, text, show, hide, cast, say, guide} = surface;
+  const {actors, art, svg, board, text, show, hide, cast, readBoard, say, guide} = surface;
   const scenes: Record<string, Action[]> = {};
   const backdrop = (title: string, subtitle: string, note: string) =>
     '<rect width="480" height="360" fill="#edf3fb"/><rect width="480" height="78" fill="#28365d"/>' +
@@ -75,7 +76,7 @@ export async function createPlusLibrary(storyRoot: string, surface: Surface) {
   };
   const placement = (index: number, start: number) => [index % 2 ? 113 : -113, start - 45 * Math.floor(index / 2)] as const;
 
-  const clearSlots = {broadcastMessageAndWait: 'library:clear'};
+  const clearSlots = [{broadcastMessageAndWait: 'library:clear'}, hide('AdvanceCue')];
   const demoActor = 'LibraryExample';
   for (const [number, example] of Object.entries(examples)) {
     const skin = 'LibraryExample' + number;
@@ -110,10 +111,10 @@ export async function createPlusLibrary(storyRoot: string, surface: Surface) {
     const skin = 'Library_' + id;
     const {artwork, actions} = options(id, entries);
     await svg(skin, backdrop(title, subtitle, note) + artwork);
-    scenes[id] = [clearSlots, {stage: skin}, hide('Pura'), hide('Moko'), ...actions];
+    scenes[id] = [...clearSlots, {stage: skin}, hide('Pura'), hide('Moko'), ...actions];
   }
   await menu('menu', 'プラとモコのPlusエディター案内', '短い章を一つ選ぼう。途中の章から始められます。',
-    '緑の旗で目次へ。各章はSpaceで先に進めます。', [
+    '▼が点滅したらステージをクリック。Spaceでも進めます。', [
       ['第01章から順に見る', chapter(1)], ['はじめての8章', 'recommended'],
       ...topics.map((topic, i): [string, string] => [labels[i] + '（' + topic.chapters.length + '章）', 'topic_' + (i + 1)])
     ]);
@@ -155,10 +156,10 @@ export async function createPlusLibrary(storyRoot: string, surface: Surface) {
       const actions = options(exampleScene, [['練習へ進む', c.id + '_try'], ['この分野の章を選ぶ', 'topic_' + c.topic]], -125);
       await svg(exampleBoard, backdrop(c.title, c.number === 33 ? '対応拡張の画面例（開発版の図版）' : '機能ガイドの画面例',
         '画面の配置やボタン名は撮影時点のものです。') + actions.artwork);
-      scenes[exampleScene] = [clearSlots, {stage: exampleBoard}, hide('Pura'), hide('Moko'),
+      scenes[exampleScene] = [...clearSlots, {stage: exampleBoard}, hide('Pura'), hide('Moko'),
         {broadcastMessageAndWait: 'library:example:' + c.number}, ...actions.actions];
     }
-    scenes[c.id] = [clearSlots, {stage: learn}, ...cast(),
+    scenes[c.id] = [...clearSlots, {stage: learn}, ...readBoard(), ...cast(),
       ...say([['M', c.question], ['P', c.entry], ['P', c.example]], 'library_' + c.id),
       {goto: nextScene}];
     const practiceOptions = options(c.id + '_try', [['結果を見る', c.id + '_result'], ['この分野の章を選ぶ', 'topic_' + c.topic]], -40);
@@ -167,7 +168,7 @@ export async function createPlusLibrary(storyRoot: string, surface: Surface) {
       '<rect x="16" y="89" width="448" height="95" rx="12" fill="white"/>' + resultText(c.practice, text) +
       (c.guide ? '' : practiceOptions.artwork));
     const task: Action[] = c.guide ? [
-      ...cast(), ...say([['M', c.practice]], 'library_' + c.id + '_practice'),
+      ...readBoard(), ...cast(), ...say([['M', c.practice]], 'library_' + c.id + '_practice'),
       guide('library_' + c.id, {actor: 'Pura',
         target: c.guide === 'click' ? 'project.search' : 'code.workspace',
         message: c.guide === 'click' ? 'この検索欄をクリック。案内だけ省略するならステージを押してSpace。'
@@ -175,8 +176,8 @@ export async function createPlusLibrary(storyRoot: string, surface: Surface) {
         action: c.guide}),
       {goto: c.id + '_result'}
     ] : [hide('Pura'), hide('Moko'), ...practiceOptions.actions];
-    scenes[c.id + '_try'] = [clearSlots, {stage: tryIt}, ...task];
-    scenes[c.id + '_result'] = [clearSlots, hide('Pura'), hide('Moko'), {stage: recap},
+    scenes[c.id + '_try'] = [...clearSlots, {stage: tryIt}, ...task];
+    scenes[c.id + '_result'] = [...clearSlots, hide('Pura'), hide('Moko'), {stage: recap},
       ...resultOptions.actions];
 
   }
